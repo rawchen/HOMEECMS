@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.USER;
+import entity.User;
 import service.USERDao;
 
 /**
@@ -29,7 +29,7 @@ public class ToUserUpdate extends HttpServlet {
 		String id = request.getParameter("id");
 		
 		//通过ID到数据里查找
-		USER user = USERDao.selectByID(id);
+		User user = USERDao.selectByID(id);
 		
 		request.setAttribute("user", user);
 		

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.CATEGORY;
-import entity.PRODUCT;
+import entity.Category;
+import entity.Product;
 import service.CATEGORYDao;
 import service.PRODUCTDao;
 
@@ -24,17 +24,17 @@ public class SelectProductList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<CATEGORY> flist =  CATEGORYDao.selectCat("father");
+		ArrayList<Category> flist =  CATEGORYDao.selectCat("father");
 		request.setAttribute("flist", flist);
 		
-		ArrayList<CATEGORY> clist =  CATEGORYDao.selectCat("child");
+		ArrayList<Category> clist =  CATEGORYDao.selectCat("child");
 		request.setAttribute("clist", clist);
 		
 		String fid = request.getParameter("fid");
 		String cid = request.getParameter("cid");
 		
 		int id=0;
-		ArrayList<PRODUCT> list = null;
+		ArrayList<Product> list = null;
 		if(fid!=null) {
 			id=Integer.parseInt(fid);
 			list = PRODUCTDao.selectAllByFid(id);

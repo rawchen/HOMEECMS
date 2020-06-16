@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entity.CATEGORY;
-import entity.PRODUCT;
+import entity.Category;
+import entity.Product;
 import service.CATEGORYDao;
 import service.PRODUCTDao;
 
@@ -25,10 +25,10 @@ public class SelectProductView extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<CATEGORY> flist =  CATEGORYDao.selectCat("father");
+		ArrayList<Category> flist =  CATEGORYDao.selectCat("father");
 		request.setAttribute("flist", flist);
 		
-		ArrayList<CATEGORY> clist =  CATEGORYDao.selectCat("child");
+		ArrayList<Category> clist =  CATEGORYDao.selectCat("child");
 		request.setAttribute("clist", clist);
 		
 		String id = request.getParameter("id");
@@ -62,12 +62,12 @@ public class SelectProductView extends HttpServlet {
 		
 		if(ids!=null) {
 				
-			ArrayList<PRODUCT> lastlylist = PRODUCTDao.selectAllById(ids);
+			ArrayList<Product> lastlylist = PRODUCTDao.selectAllById(ids);
 			request.setAttribute("lastlylist", lastlylist);
 		}
 		
 		
-		PRODUCT p = null;
+		Product p = null;
 		
 		if(id !=null) {
 			p = PRODUCTDao.selectById(Integer.parseInt(id));
@@ -77,10 +77,10 @@ public class SelectProductView extends HttpServlet {
 		
 		if(p!=null) {
 			int cid = p.getPRODUCT_CID();
-			ArrayList<PRODUCT> classlist = PRODUCTDao.selectAllByCid(cid);
+			ArrayList<Product> classlist = PRODUCTDao.selectAllByCid(cid);
 			request.setAttribute("classlist", classlist);
 			
-			CATEGORY cate = CATEGORYDao.selectById(cid);
+			Category cate = CATEGORYDao.selectById(cid);
 			
 			request.setAttribute("cate", cate);
 		}

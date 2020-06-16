@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entity.CART;
-import entity.USER;
+import entity.Cart;
+import entity.User;
 import service.CARTDao;
 
 /**
@@ -32,12 +32,12 @@ public class ShowCart extends HttpServlet {
 		
 		String isLogin = (String)session.getAttribute("isLogin");
 		
-		USER user=(USER)session.getAttribute("name");
+		User user=(User)session.getAttribute("name");
 		
 		if(user!=null && isLogin.equals("1")) {
 			String uid = (String)user.getUSER_ID();
 			
-			ArrayList<CART> list= CARTDao.getCart(uid);
+			ArrayList<Cart> list= CARTDao.getCart(uid);
 			
 			request.setAttribute("shoplist", list);
 			

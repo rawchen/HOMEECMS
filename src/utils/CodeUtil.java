@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 
 
@@ -6,14 +6,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
-import java.awt.image.RenderedImage;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
-import javax.imageio.ImageIO;
 
 public class CodeUtil {
     private static int width = 100;// 定义图片的width

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entity.USER;
+import entity.User;
 import service.USERDao;
 
 /**
@@ -37,7 +37,7 @@ public class AdminLogin extends HttpServlet {
 		
 		if(count > 0) {
 			
-			USER user = USERDao.selectAdmin(userName, passWord);
+			User user = USERDao.selectAdmin(userName, passWord);
 			HttpSession session = request.getSession();
 			session.setAttribute("name", user);
 			session.setAttribute("isLogin", "1");

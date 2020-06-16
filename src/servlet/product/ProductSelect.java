@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.PRODUCT;
+import entity.Product;
 import service.PRODUCTDao;
 
 /**
@@ -24,7 +24,7 @@ public class ProductSelect extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		ArrayList<PRODUCT>  plist = PRODUCTDao.selectAll();
+		ArrayList<Product>  plist = PRODUCTDao.selectAll();
 		
 		request.setAttribute("plist", plist);
 		

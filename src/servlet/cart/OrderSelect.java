@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entity.USER;
-import entity.CART;
+import entity.User;
+import entity.Cart;
 import service.CARTDao;
 
 /**
@@ -34,7 +34,7 @@ public class OrderSelect extends HttpServlet {
 		
 		String isLogin = (String)session.getAttribute("isLogin");
 		
-		USER user=(USER)session.getAttribute("name");
+		User user=(User)session.getAttribute("name");
 		
 		
 		String eids = request.getParameter("eids");
@@ -46,10 +46,10 @@ public class OrderSelect extends HttpServlet {
 			
 			String ids[] = eids.split(",");
 			
-			ArrayList<CART> list = new ArrayList<CART>();
+			ArrayList<Cart> list = new ArrayList<Cart>();
 			
 			for(int i=0; i<ids.length; i++) {
-				CART es = CARTDao.getCartShop(ids[i]);
+				Cart es = CARTDao.getCartShop(ids[i]);
 				
 				int dprice = es.getCart_p_price() * es.getCart_quantity();
 				

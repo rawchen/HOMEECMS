@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entity.USER;
+import entity.User;
 import service.USERDao;
 
 /**
@@ -18,10 +18,7 @@ import service.USERDao;
  */
 @WebServlet("/login")
 public class Login extends HttpServlet {
-	
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
@@ -33,7 +30,7 @@ public class Login extends HttpServlet {
 		
 		if(count > 0) {
 			HttpSession session = request.getSession();
-			USER user = USERDao.selectAdmin(userName, passWord);
+			User user = USERDao.selectAdmin(userName, passWord);
 			
 			session.setAttribute("name", user);
 			session.setAttribute("isLogin", "1");

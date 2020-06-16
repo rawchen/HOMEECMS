@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.USER;
+import entity.User;
 import service.USERDao;
 
 /**
@@ -35,7 +35,7 @@ public class Register extends HttpServlet {
 				String mobile = request.getParameter("mobile");
 				String address = request.getParameter("address");
 				//创建用户实体
-				USER u = new USER(username, name, pwd, sex, year, null, email, mobile, address, 1);
+				User u = new User(username, name, pwd, sex, year, null, email, mobile, address, 1);
 				
 				//加入到数据库的用户表中
 				int count = USERDao.insert(u);

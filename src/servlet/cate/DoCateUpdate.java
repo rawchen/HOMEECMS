@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.CATEGORY;
+import entity.Category;
 import service.CATEGORYDao;
 
 /**
@@ -29,7 +29,7 @@ public class DoCateUpdate extends HttpServlet {
 		int fid = Integer.parseInt(request.getParameter("parentId"));
 		String name = request.getParameter("className");
 		
-		CATEGORY cate= new CATEGORY(id, name, fid);
+		Category cate= new Category(id, name, fid);
 		CATEGORYDao.update(cate);
 		
 		response.sendRedirect("admin_cateselect");

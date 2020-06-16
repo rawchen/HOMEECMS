@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.CATEGORY;
+import entity.Category;
 import service.CATEGORYDao;
 
 /**
@@ -22,7 +22,7 @@ public class CateSelect extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<CATEGORY> catelist = CATEGORYDao.selectAll();
+		ArrayList<Category> catelist = CATEGORYDao.selectAll();
 		
 		request.setAttribute("catelist", catelist);
 		

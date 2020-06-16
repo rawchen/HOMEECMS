@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.CATEGORY;
+import entity.Category;
 import service.CATEGORYDao;
 
 /**
@@ -23,10 +23,10 @@ public class ToProductAdd extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ArrayList<CATEGORY> flist =  CATEGORYDao.selectCat("father");
+		ArrayList<Category> flist =  CATEGORYDao.selectCat("father");
 		request.setAttribute("flist", flist);
 		
-		ArrayList<CATEGORY> clist =  CATEGORYDao.selectCat("child");
+		ArrayList<Category> clist =  CATEGORYDao.selectCat("child");
 		request.setAttribute("clist", clist);
 		
 		request.getRequestDispatcher("admin_productadd.jsp").forward(request, response);;

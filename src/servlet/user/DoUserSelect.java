@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.USER;
+import entity.User;
 import service.USERDao;
 
 /**
@@ -43,7 +43,7 @@ public class DoUserSelect extends HttpServlet {
 		
 		
 		//获取所有用户记录
-		ArrayList<USER>	list= USERDao.selectAll(cpage, count, keyword);
+		ArrayList<User>	list= USERDao.selectAll(cpage, count, keyword);
 	
 		//放到请求对象域里
 		request.setAttribute("userlist", list);

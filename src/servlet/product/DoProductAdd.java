@@ -18,7 +18,7 @@ import com.jspsmart.upload.Files;
 import com.jspsmart.upload.Request;
 import com.jspsmart.upload.SmartUpload;
 import com.jspsmart.upload.SmartUploadException;
-import entity.PRODUCT;
+import entity.Product;
 import service.PRODUCTDao;
 
 /**
@@ -66,7 +66,7 @@ public class DoProductAdd extends HttpServlet {
 		String desc = req1.getParameter("productDesc");
 		String stock = req1.getParameter("productStock");
 		
-		PRODUCT p = new PRODUCT(
+		Product p = new Product(
 						0,
 						pname,
 						desc,

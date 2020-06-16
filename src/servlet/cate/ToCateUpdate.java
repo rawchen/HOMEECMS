@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.CATEGORY;
+import entity.Category;
 import service.CATEGORYDao;
 
 /**
@@ -25,10 +25,10 @@ public class ToCateUpdate extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));	
 		
-		CATEGORY cate =  CATEGORYDao.selectById(id);
+		Category cate =  CATEGORYDao.selectById(id);
 		
 		
-		ArrayList<CATEGORY> catelist = CATEGORYDao.selectAll();
+		ArrayList<Category> catelist = CATEGORYDao.selectAll();
 		
 		request.setAttribute("catelist", catelist);
 		request.setAttribute("cate1", cate);

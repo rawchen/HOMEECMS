@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import entity.CART;
-import entity.PRODUCT;
-import entity.USER;
+import entity.Cart;
+import entity.Product;
+import entity.User;
 import service.CARTDao;
 import service.PRODUCTDao;
 
@@ -27,7 +27,7 @@ public class CartAdd extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		PRODUCT p = null;
+		Product p = null;
 		
 		String pid = request.getParameter("id");
 		String count = request.getParameter("count");
@@ -37,7 +37,7 @@ public class CartAdd extends HttpServlet {
 		
 		String isLogin = (String)session.getAttribute("isLogin");
 		
-		USER user=(USER)session.getAttribute("name");
+		User user=(User)session.getAttribute("name");
 		
 		if(user!=null && isLogin.equals("1")) {
 			
@@ -46,7 +46,7 @@ public class CartAdd extends HttpServlet {
 			
 			//通过用户ID和购物车中的商品ID 查看有没有这条记录
 			
-			CART srcsp = CARTDao.getCartShop(uid, pid);
+			Cart srcsp = CARTDao.getCartShop(uid, pid);
 			
 			if(srcsp != null) {
 				int srccount = srcsp.getCart_quantity();
@@ -66,7 +66,7 @@ public class CartAdd extends HttpServlet {
 					p  = PRODUCTDao.selectById(Integer.parseInt(pid));
 				}
 				
-				CART cart = new CART(
+				Cart cart = new Cart(
 							0,
 							p.getPRODUCT_FILENAME(),
 							p.getPRODUCT_NAME(),

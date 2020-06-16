@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import entity.USER;
+import entity.User;
 import service.USERDao;
 
 /**
@@ -43,7 +43,7 @@ public class DoUserUpdate extends HttpServlet {
 		}
 		
 		//创建用户实体
-		USER user = new USER(username, name, pwd, sex, birthday, null, email, mobile, address, status);
+		User user = new User(username, name, pwd, sex, birthday, null, email, mobile, address, status);
 		
 		//加入到数据库的用户表中
 		int count = USERDao.update(user);
