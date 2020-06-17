@@ -53,11 +53,11 @@
     cursor: pointer;
     padding-left: 10px;
     width: 160px;
-    background: url("../img/temp/down.jpg") no-repeat 140px center;
+    background: url("../images/temp/down.jpg") no-repeat 140px center;
 }
 
 .current p.default.on {
-    background: url("../img/temp/up.jpg") no-repeat 140px center;
+    background: url("../images/temp/up.jpg") no-repeat 140px center;
 }
 
 /*********************proList****************************/
@@ -777,7 +777,7 @@ section h3 {
     top: 0;
     width: 16px;
     height: 16px;
-    background: url("../img/temp/check.jpg");
+    background: url("../images/temp/check.jpg");
 }
 
 .table label input[type=checkbox]:checked + span {
@@ -786,7 +786,7 @@ section h3 {
     top: 0;
     width: 16px;
     height: 16px;
-    background: url("../img/temp/checkOn.jpg");
+    background: url("../images/temp/checkOn.jpg");
 }
 
 .table .tr p:last-child a, .table .tr p:last-child span {

@@ -1,6 +1,7 @@
 package entity;
 
 public class Product {
+	private int product_id;
 	private String product_name;
 	private String product_info;
 	private int product_price;
@@ -10,6 +11,10 @@ public class Product {
 	private String product_photo;
 	private String product_style;
 	private int product_sales;
+
+	public Product(){
+
+	}
 
 	public Product(String product_name, String product_info, int product_price, int product_stock, int product_fid, int product_cid, String product_photo, String product_style, int product_sales) {
 		this.product_name = product_name;

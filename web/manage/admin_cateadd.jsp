@@ -10,7 +10,7 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="/HOMEECMS/manage/admin_docateadd" method="post" id="myform" name="myform">
+                <form action="${pageContext.request.contextPath}/manage/admin_docateadd" method="post" id="myform" name="myform">
                     <table class="insert-tab" width="100%">
                         <tbody>
                             <tr>

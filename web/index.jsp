@@ -7,6 +7,13 @@
     <title>最家</title>
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link href="//cdn.bootcss.com/flexslider/2.6.3/flexslider.min.css" rel="stylesheet">
+    <style>
+        .flex-direction-nav a {
+            overflow: unset;
+
+        }
+    </style>
 </head>
 <body><!------------------------------head------------------------------>
 
@@ -15,7 +22,7 @@
 
 <!-------------------------banner--------------------------->
 <div class="block_home_slider">
-    <div id="home_slider" class="flexslider">
+    <div id="home_slider" class="flexslider slide">
         <ul class="slides">
             <li>
                 <div class="slide"><img src="img/banner2.jpg"/></div>
@@ -25,21 +32,11 @@
             </li>
         </ul>
     </div>
-</div><!------------------------------thImg------------------------------>
-<div class="thImg">
-    <div class="clearfix"><a href="vase_proList.html"><img src="img/i1.jpg"/></a><a href="proList.html"><img
-            src="img/i2.jpg"/></a><a href="#2"><img src="img/i3.jpg"/></a></div>
-</div><!------------------------------news------------------------------>
+</div>
+</div>
+<!------------------------------news------------------------------>
 <div class="news">
-    <div class="wrapper"><h2><img src="img/ih1.jpg"/></h2>
-        <div class="top clearfix"><a href="proDetail.html"><img src="img/n1.jpg"/>
-            <p></p></a><a href="proDetail.html"><img src="img/n2.jpg"/>
-            <p></p></a><a href="proDetail.html"><img src="img/n3.jpg"/>
-            <p></p></a></div>
-        <div class="bott clearfix"><a href="proDetail.html"><img src="img/n4.jpg"/>
-            <p></p></a><a href="proDetail.html"><img src="img/n5.jpg"/>
-            <p></p></a><a href="proDetail.html"><img src="img/n6.jpg"/>
-            <p></p></a></div>
+    <div class="wrapper">
         <h2><img src="img/ih2.jpg"/></h2>
         <div class="flower clearfix tran"><a href="proDetail.html" class="clearfix">
             <dl>
@@ -161,17 +158,12 @@
         </a></div>
     </div>
 </div><!--返回顶部-->
-<div class="gotop"><a href="cart.html">
+<div class="gotop"><a href="cart.jsp">
     <dl>
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>
     </dl>
-</a><a href="#" class="dh">
-    <dl>
-        <dt><img src="img/gt2.png"/></dt>
-        <dd>联系<br/>客服</dd>
-    </dl>
-</a><a href="mygxin.html">
+</a><a href="mygxin.jsp">
     <dl>
         <dt><img src="img/gt3.png"/></dt>
         <dd>个人<br/>中心</dd>
@@ -182,7 +174,7 @@
         <dd>返回<br/>顶部</dd>
     </dl>
 </a>
-    <p>400-800-8200</p></div><!-------------------login--------------------------><!--footer-->
+    <p>888-888-8888</p></div><!-------------------login--------------------------><!--footer-->
 <div class="footer">
     <div class="top">
         <div class="wrapper">
@@ -196,8 +188,8 @@
             </div>
         </div>
     </div>
-    <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br/>
-        违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
+    <p class="dibu">家居电子商城&copy;2000-2020公司版权所有 京ICP备000001-11备0000111000号<br/>
+        违法和不良信息举报电话：888-888-8888，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/nav.js" type="text/javascript" charset="utf-8"></script>

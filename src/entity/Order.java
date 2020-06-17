@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Order {
 
+    private int id;
     private String order_id;
     private int user_id;
     private int order_price;
@@ -11,6 +12,10 @@ public class Order {
     private String is_pay;
     private String is_ship;
     private String is_receipt;
+
+    public Order(){
+
+    }
 
     public Order(String order_id, int user_id, int order_price, Date order_time, String is_pay, String is_ship, String is_receipt) {
         this.order_id = order_id;

@@ -15,7 +15,7 @@
 <div class="banner"><a href="#"><img src="images/temp/banner1.jpg"/></a></div>
 <!-----------------address------------------------------->
 <div class="address">
-    <div class="wrapper clearfix"><a href="indexselect">首页</a><span>/</span><a
+    <div class="wrapper clearfix"><a href="indexServlet">首页</a><span>/</span><a
             href="flowerDer.html">学习猿地</a><span>/</span><a href="proList.html" class="on">${title }</a></div>
 </div><!-------------------current---------------------->
 <div class="current">
@@ -48,133 +48,133 @@
     
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro02.jpg"></dt>
+            <dt><img src="images/temp/pro02.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro03.jpg"></dt>
+            <dt><img src="images/temp/pro03.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro04.jpg"></dt>
+            <dt><img src="images/temp/pro04.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro05.jpg"></dt>
+            <dt><img src="images/temp/pro05.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro06.jpg"></dt>
+            <dt><img src="images/temp/pro06.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro07.jpg"></dt>
+            <dt><img src="images/temp/pro07.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro08.jpg"></dt>
+            <dt><img src="images/temp/pro08.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro01.jpg"></dt>
+            <dt><img src="images/temp/pro01.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro02.jpg"></dt>
+            <dt><img src="images/temp/pro02.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro03.jpg"></dt>
+            <dt><img src="images/temp/pro03.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro04.jpg"></dt>
+            <dt><img src="images/temp/pro04.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro05.jpg"></dt>
+            <dt><img src="images/temp/pro05.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro06.jpg"></dt>
+            <dt><img src="images/temp/pro06.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro07.jpg"></dt>
+            <dt><img src="images/temp/pro07.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
     <li><a href="proDetail.html">
         <dl>
-            <dt><img src="img/temp/pro08.jpg"></dt>
+            <dt><img src="images/temp/pro08.jpg"></dt>
             <dd>【最家】跳舞兰仿真花干花</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>
 </ul><!----------------mask------------------->
 <div class="mask"></div><!-------------------mask内容------------------->
-<div class="proDets"><img class="off" src="img/temp/off.jpg"/>
+<div class="proDets"><img class="off" src="images/temp/off.jpg"/>
     <div class="tit clearfix"><h4 class="fl">【最家】非洲菊仿真花干花</h4><span class="fr">￥17.90</span></div>
     <div class="proCon clearfix">
-        <div class="proImg fl"><img class="list" src="img/temp/proDet.jpg"/>
-            <div class="smallImg clearfix"><img src="img/temp/proDet01.jpg" data-src="img/temp/proDet01_big.jpg"><img
-                    src="img/temp/proDet02.jpg" data-src="img/temp/proDet02_big.jpg"><img src="img/temp/proDet03.jpg"
-                                                                                          data-src="img/temp/proDet03_big.jpg"><img
-                    src="img/temp/proDet04.jpg" data-src="img/temp/proDet04_big.jpg"></div>
+        <div class="proImg fl"><img class="list" src="images/temp/proDet.jpg"/>
+            <div class="smallImg clearfix"><img src="images/temp/proDet01.jpg" data-src="images/temp/proDet01_big.jpg"><img
+                    src="images/temp/proDet02.jpg" data-src="images/temp/proDet02_big.jpg"><img src="images/temp/proDet03.jpg"
+                                                                                          data-src="images/temp/proDet03_big.jpg"><img
+                    src="images/temp/proDet04.jpg" data-src="images/temp/proDet04_big.jpg"></div>
         </div>
         <div class="fr">
             <div class="proIntro"><p>颜色分类</p>
-                <div class="smallImg clearfix categ"><p class="fl"><img src="img/temp/prosmall01.jpg" alt="白瓷花瓶+20支快乐花"
-                                                                        data-src="img/temp/proBig01.jpg"></p>
-                    <p class="fl"><img src="img/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草"
-                                       data-src="img/temp/proBig02.jpg"></p>
-                    <p class="fl"><img src="img/temp/prosmall03.jpg" alt="20支快乐花" data-src="img/temp/proBig03.jpg"></p>
-                    <p class="fl"><img src="img/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="img/temp/proBig04.jpg"></p>
+                <div class="smallImg clearfix categ"><p class="fl"><img src="images/temp/prosmall01.jpg" alt="白瓷花瓶+20支快乐花"
+                                                                        data-src="images/temp/proBig01.jpg"></p>
+                    <p class="fl"><img src="images/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草"
+                                       data-src="images/temp/proBig02.jpg"></p>
+                    <p class="fl"><img src="images/temp/prosmall03.jpg" alt="20支快乐花" data-src="images/temp/proBig03.jpg"></p>
+                    <p class="fl"><img src="images/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="images/temp/proBig04.jpg"></p>
                 </div>
                 <p>数量&nbsp;&nbsp;库存<span>2096</span>件</p>
-                <div class="num clearfix"><img class="fl sub" src="img/temp/sub.jpg"><span class="fl"
+                <div class="num clearfix"><img class="fl sub" src="images/temp/sub.jpg"><span class="fl"
                                                                                            contentEditable="true">1</span><img
-                        class="fl add" src="img/temp/add.jpg">
+                        class="fl add" src="images/temp/add.jpg">
                     <p class="please fl">请选择商品属性!</p></div>
             </div>
             <div class="btns clearfix"><a href="#2"><p class="buy fl">立即购买</p></a><a href="#2"><p class="cart fr">
@@ -203,7 +203,7 @@
         <dd>返回<br/>顶部</dd>
     </dl>
 </a>
-    <p>400-800-8200</p></div>
+    <p>888-888-8888</p></div>
 <div class="msk"></div><!--footer-->
 <div class="footer">
     <div class="top">

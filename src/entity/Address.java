@@ -1,9 +1,14 @@
 package entity;
 
 public class Address {
+    private int id;
     private int user_id;
     private String user_phone;
     private String user_address;
+
+    public Address(){
+
+    }
 
     public Address(int user_id, String user_phone, String user_address) {
         this.user_id = user_id;

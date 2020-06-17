@@ -9,7 +9,7 @@ public class UserServiceImpl implements UserService {
     private UserDao dao = new UserDaoImpl();
 
     @Override
-    public User findUserByName(String name) {
-        return dao.findUserByName(name);
+    public User loginByNameAndPassword(String name,String password) {
+        return dao.loginByNameAndPassword(name,password);
     }
 }

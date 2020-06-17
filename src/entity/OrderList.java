@@ -2,9 +2,14 @@ package entity;
 
 public class OrderList {
 
+    private int id;
     private String order_id;
     private int product_id;
     private String product_quantity;
+
+    public OrderList(){
+
+    }
 
     public OrderList(String order_id, int product_id, String product_quantity) {
         this.order_id = order_id;

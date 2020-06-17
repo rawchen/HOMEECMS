@@ -6,14 +6,14 @@
 
         <div class="crumb-wrap">
             <div class="crumb-list"><i class="icon-font">
-            	</i><a href="/HOMEECMS/manage/admin_index.jsp">首页</a>
+            	</i><a href="${pageContext.request.contextPath}/manage/admin_index.jsp">首页</a>
             	<span class="crumb-step">&gt;</span>
-            	<a class="crumb-name" href="/HOMEECMS/manage/admin_douserselect">用户管理</a>
+            	<a class="crumb-name" href="${pageContext.request.contextPath}/manage/admin_douserselect">用户管理</a>
             	<span class="crumb-step">&gt;</span><span>修改用户</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="/HOMEECMS/manage/admin_douserupdate" method="post" id="myform" name="myform">
+                <form action="${pageContext.request.contextPath}/manage/admin_douserupdate" method="post" id="myform" name="myform">
                 	<input type="hidden" name="userStatus" value="${user.USER_STATUS }">
                 
                 	<input type="hidden" name="cpage" value="${cpage }">

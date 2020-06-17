@@ -9,7 +9,7 @@
 </head>
 <body><!-------------------login-------------------------->
 <div class="login">
-    <form action="login" method="post"><h1><a href="index.html"><img src="img/temp/logo.png"></a></h1>
+    <form action="${pageContext.request.contextPath}/loginServlet" method="post"><h1><a href="index.jsp"><img src="images/temp/logo.png"></a></h1>
         <p></p>
         <div class="msg-warn hide"><b></b>公共场所不建议自动登录，以防账号丢失</div>
         <p><input type="text" name="userName" value="" placeholder="昵称/邮箱/手机号"></p>

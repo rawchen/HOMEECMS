@@ -1,6 +1,7 @@
 package entity;
 
 public class Cart {
+	private int cart_id;
 	private int product_id;
 	private int user_id;
 	private String product_name;
@@ -8,6 +9,10 @@ public class Cart {
 	private String product_quantity;
 	private String product_style;
 	private String product_photo;
+
+	public Cart(){
+
+	}
 
 	public Cart(int product_id, int user_id, String product_name, String product_price, String product_quantity, String product_style, String product_photo) {
 		this.product_id = product_id;

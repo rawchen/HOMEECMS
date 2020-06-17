@@ -72,7 +72,7 @@
 </div>
 <div class="order cart mt"><!-----------------site------------------->
     <div class="site"><p class="wrapper clearfix"><span class="fl">订单确认</span><img class="top"
-                                                                                   src="img/temp/cartTop02.png"></p>
+                                                                                   src="images/temp/cartTop02.png"></p>
     </div><!-----------------orderCon------------------->
     <div class="orderCon wrapper clearfix">
         <div class="orderL fl"><!--------h3----------------><h3>收件信息<a href="#" class="fr">新增地址</a></h3>
@@ -100,8 +100,8 @@
                 </div>
             </div>
             <h3>支付方式</h3><!--------way---------------->
-            <div class="way clearfix"><img class="on" src="img/temp/way01.jpg"><img src="img/temp/way02.jpg"><img
-                    src="img/temp/way03.jpg"><img src="img/temp/way04.jpg"></div>
+            <div class="way clearfix"><img class="on" src="images/temp/way01.jpg"><img src="images/temp/way02.jpg"><img
+                    src="images/temp/way03.jpg"><img src="images/temp/way04.jpg"></div>
             <h3>选择快递</h3><!--------dis---------------->
             <div class="dis clearfix"><span class="on">顺风快递</span><span>百世汇通</span><span>圆通快递</span><span>中通快递</span>
             </div>
@@ -166,7 +166,7 @@
         <dd>返回<br/>顶部</dd>
     </dl>
 </a>
-    <p>400-800-8200</p></div><!--footer-->
+    <p>888-888-8888</p></div><!--footer-->
 <div class="footer">
     <div class="top">
         <div class="wrapper">

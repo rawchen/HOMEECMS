@@ -11,31 +11,30 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import entity.User;
-import service.USERDao;
+import service.UserService;
+import service.impl.UserServiceImpl;
 
-/**
- * Servlet implementation class Login
- */
-@WebServlet("/login")
-public class Login extends HttpServlet {
+@WebServlet("/loginServlet")
+public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html;charset=utf-8");
+
+		UserService service = new UserServiceImpl();
 		
 		String userName = request.getParameter("userName");
 		String passWord = request.getParameter("passWord");
 		
-		int count = USERDao.selectByNM(userName, passWord);
+		User user = service.loginByNameAndPassword(userName, passWord);
 		
-		if(count > 0) {
+		if(user != null && "1".equals(user.getUser_status())) {
 			HttpSession session = request.getSession();
-			User user = USERDao.selectAdmin(userName, passWord);
 			
 			session.setAttribute("name", user);
 			session.setAttribute("isLogin", "1");
 			
-			response.sendRedirect("indexselect");
+			response.sendRedirect("indexServlet");
 			
 		}else{
 			PrintWriter out = response.getWriter();
@@ -46,6 +45,10 @@ public class Login extends HttpServlet {
 			out.write("</script>");
 			out.close();
 		}
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request,response);
 	}
 
 }

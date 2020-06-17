@@ -15,7 +15,7 @@
 <!-----------------address------------------------------->
 <div class="address">
     <div class="wrapper clearfix">
-    		<a href="indexselect">首页</a><span>/</span>
+    		<a href="indexServlet">首页</a><span>/</span>
     		<a href="selectproductlist?cid=${cate.CATE_ID }">${cate.CATE_NAME }</a><span>/</span>
     		<a href="#" class="on">${p.PRODUCT_NAME }</a>
     </div>
@@ -27,9 +27,9 @@
             <img class="det" src="images/product/${p.PRODUCT_FILENAME }"/>
                 <div class="smallImg clearfix"><img src="images/product/${p.PRODUCT_FILENAME }"
                                                     data-src="images/product/${p.PRODUCT_FILENAME }"><img
-                        src="img/temp/proDet02.jpg" data-src="img/temp/proDet02_big.jpg"><img
-                        src="img/temp/proDet03.jpg" data-src="img/temp/proDet03_big.jpg"><img
-                        src="img/temp/proDet04.jpg" data-src="img/temp/proDet04_big.jpg"></div>
+                        src="images/temp/proDet02.jpg" data-src="images/temp/proDet02_big.jpg"><img
+                        src="images/temp/proDet03.jpg" data-src="images/temp/proDet03_big.jpg"><img
+                        src="images/temp/proDet04.jpg" data-src="images/temp/proDet04_big.jpg"></div>
             </div>
             <div class="fr intro">
                 <div class="title"><h4>【最家】${p.PRODUCT_NAME }</h4>
@@ -38,17 +38,17 @@
                     <div class="smallImg clearfix categ"><p class="fl"><img src="images/product/${p.PRODUCT_FILENAME }"
                                                                             alt="白瓷花瓶+20支快乐花"
                                                                             data-src="images/product/${p.PRODUCT_FILENAME }"></p>
-                        <p class="fl"><img src="img/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草"
-                                           data-src="img/temp/proBig02.jpg"></p>
-                        <p class="fl"><img src="img/temp/prosmall03.jpg" alt="20支快乐花" data-src="img/temp/proBig03.jpg">
+                        <p class="fl"><img src="images/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草"
+                                           data-src="images/temp/proBig02.jpg"></p>
+                        <p class="fl"><img src="images/temp/prosmall03.jpg" alt="20支快乐花" data-src="images/temp/proBig03.jpg">
                         </p>
-                        <p class="fl"><img src="img/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="img/temp/proBig04.jpg">
+                        <p class="fl"><img src="images/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="images/temp/proBig04.jpg">
                         </p></div>
                     <p>数量&nbsp;&nbsp;库存<span>${p.PRODUCT_STOCK }</span>件</p>
                     <div class="num clearfix">
-                    		<img class="fl sub" src="img/temp/sub.jpg">
+                    		<img class="fl sub" src="images/temp/sub.jpg">
                     		<span id="count" class="fl" contentEditable="true">1</span><img
-                            class="fl add" src="img/temp/add.jpg">
+                            class="fl add" src="images/temp/add.jpg">
                         <p class="please fl">请选择商品属性!</p></div>
                 </div>
                 <div class="btns clearfix">
@@ -73,81 +73,81 @@
     <div class="msgL fl">
         <div class="msgTit clearfix"><a class="on">商品详情</a><a>所有评价</a></div>
         <div class="msgAll">
-            <div class="msgImgs"><img src="img/temp/det01.jpg"><img src="img/temp/det02.jpg"><img
-                    src="img/temp/det03.jpg"><img src="img/temp/det04.jpg"><img src="img/temp/det05.jpg"><img
-                    src="img/temp/det06.jpg"><img src="img/temp/det07.jpg"></div>
+            <div class="msgImgs"><img src="images/temp/det01.jpg"><img src="images/temp/det02.jpg"><img
+                    src="images/temp/det03.jpg"><img src="images/temp/det04.jpg"><img src="images/temp/det05.jpg"><img
+                    src="images/temp/det06.jpg"><img src="images/temp/det07.jpg"></div>
             <div class="eva">
-                <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
                     <div class="perR fl"><p>馨***呀</p>
                         <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="img/temp/eva01.jpg"></p>
-                            <p><img src="img/temp/eva02.jpg"></p>
-                            <p><img src="img/temp/eva03.jpg"></p>
-                            <p><img src="img/temp/eva04.jpg"></p>
-                            <p><img src="img/temp/eva05.jpg"></p></div>
+                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
+                            <p><img src="images/temp/eva02.jpg"></p>
+                            <p><img src="images/temp/eva03.jpg"></p>
+                            <p><img src="images/temp/eva04.jpg"></p>
+                            <p><img src="images/temp/eva05.jpg"></p></div>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per02.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
                     <div class="perR fl"><p>么***周</p>
                         <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
                     <div class="perR fl"><p>馨***呀</p>
                         <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="img/temp/eva01.jpg"></p>
-                            <p><img src="img/temp/eva02.jpg"></p>
-                            <p><img src="img/temp/eva03.jpg"></p>
-                            <p><img src="img/temp/eva04.jpg"></p>
-                            <p><img src="img/temp/eva05.jpg"></p></div>
+                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
+                            <p><img src="images/temp/eva02.jpg"></p>
+                            <p><img src="images/temp/eva03.jpg"></p>
+                            <p><img src="images/temp/eva04.jpg"></p>
+                            <p><img src="images/temp/eva05.jpg"></p></div>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per02.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
                     <div class="perR fl"><p>么***周</p>
                         <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
                     <div class="perR fl"><p>馨***呀</p>
                         <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="img/temp/eva01.jpg"></p>
-                            <p><img src="img/temp/eva02.jpg"></p>
-                            <p><img src="img/temp/eva03.jpg"></p>
-                            <p><img src="img/temp/eva04.jpg"></p>
-                            <p><img src="img/temp/eva05.jpg"></p></div>
+                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
+                            <p><img src="images/temp/eva02.jpg"></p>
+                            <p><img src="images/temp/eva03.jpg"></p>
+                            <p><img src="images/temp/eva04.jpg"></p>
+                            <p><img src="images/temp/eva05.jpg"></p></div>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per02.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
                     <div class="perR fl"><p>么***周</p>
                         <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
                     <div class="perR fl"><p>馨***呀</p>
                         <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="img/temp/eva01.jpg"></p>
-                            <p><img src="img/temp/eva02.jpg"></p>
-                            <p><img src="img/temp/eva03.jpg"></p>
-                            <p><img src="img/temp/eva04.jpg"></p>
-                            <p><img src="img/temp/eva05.jpg"></p></div>
+                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
+                            <p><img src="images/temp/eva02.jpg"></p>
+                            <p><img src="images/temp/eva03.jpg"></p>
+                            <p><img src="images/temp/eva04.jpg"></p>
+                            <p><img src="images/temp/eva05.jpg"></p></div>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per02.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
                     <div class="perR fl"><p>么***周</p>
                         <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per01.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
                     <div class="perR fl"><p>馨***呀</p>
                         <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="img/temp/eva01.jpg"></p>
-                            <p><img src="img/temp/eva02.jpg"></p>
-                            <p><img src="img/temp/eva03.jpg"></p>
-                            <p><img src="img/temp/eva04.jpg"></p>
-                            <p><img src="img/temp/eva05.jpg"></p></div>
+                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
+                            <p><img src="images/temp/eva02.jpg"></p>
+                            <p><img src="images/temp/eva03.jpg"></p>
+                            <p><img src="images/temp/eva04.jpg"></p>
+                            <p><img src="images/temp/eva05.jpg"></p></div>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
                 </div>
-                <div class="per clearfix"><img class="fl" src="img/temp/per02.jpg">
+                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
                     <div class="perR fl"><p>么***周</p>
                         <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
                         <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
@@ -169,7 +169,7 @@
         
         <a href="#">
             <dl>
-                <dt><img src="img/temp/see02.jpg"></dt>
+                <dt><img src="images/temp/see02.jpg"></dt>
                 <dd>【最家】复古文艺风玻璃花瓶</dd>
                 <dd>￥193.20</dd>
             </dl>
@@ -177,13 +177,13 @@
         
         <a href="#">
             <dl>
-                <dt><img src="img/temp/see03.jpg"></dt>
+                <dt><img src="images/temp/see03.jpg"></dt>
                 <dd>【最家】复古文艺风玻璃花瓶</dd>
                 <dd>￥193.20</dd>
             </dl>
         </a><a href="#">
             <dl>
-                <dt><img src="img/temp/see04.jpg"></dt>
+                <dt><img src="images/temp/see04.jpg"></dt>
                 <dd>【最家】复古文艺风玻璃花瓶</dd>
                 <dd>￥193.20</dd>
             </dl>
@@ -192,8 +192,8 @@
 </div>
 <div class="like"><h4>最近访问</h4>
     <div class="bottom">
-        <div class="hd"><span class="prev"><img src="img/temp/prev.png"></span><span class="next"><img
-                src="img/temp/next.png"></span></div>
+        <div class="hd"><span class="prev"><img src="images/temp/prev.png"></span><span class="next"><img
+                src="images/temp/next.png"></span></div>
         <div class="imgCon bd">
             <div class="likeList clearfix">
                 <div>
@@ -212,7 +212,7 @@
                 
                 <a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like01.jpg"></dt>
+                        <dt><img src="images/temp/like01.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
@@ -220,56 +220,56 @@
                 
                 <a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like02.jpg"></dt>
+                        <dt><img src="images/temp/like02.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a><a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like03.jpg"></dt>
+                        <dt><img src="images/temp/like03.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a><a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like04.jpg"></dt>
+                        <dt><img src="images/temp/like04.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a><a href="proDetail.html" class="last">
                     <dl>
-                        <dt><img src="img/temp/like05.jpg"></dt>
+                        <dt><img src="images/temp/like05.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a></div>
                 <div><a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like01.jpg"></dt>
+                        <dt><img src="images/temp/like01.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a><a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like02.jpg"></dt>
+                        <dt><img src="images/temp/like02.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a><a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like03.jpg"></dt>
+                        <dt><img src="images/temp/like03.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a><a href="proDetail.html">
                     <dl>
-                        <dt><img src="img/temp/like04.jpg"></dt>
+                        <dt><img src="images/temp/like04.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
                 </a><a href="proDetail.html" class="last">
                     <dl>
-                        <dt><img src="img/temp/like05.jpg"></dt>
+                        <dt><img src="images/temp/like05.jpg"></dt>
                         <dd>【最家】复古文艺风玻璃花瓶</dd>
                         <dd>￥193.20</dd>
                     </dl>
@@ -299,7 +299,7 @@
         <dd>返回<br/>顶部</dd>
     </dl>
 </a>
-    <p>400-800-8200</p></div>
+    <p>888-888-8888</p></div>
 <div class="msk"></div><!--footer-->
 <div class="footer">
     <div class="top">

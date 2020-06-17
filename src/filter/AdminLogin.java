@@ -24,14 +24,12 @@ public class AdminLogin implements Filter {
      * Default constructor. 
      */
     public AdminLogin() {
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see Filter#destroy()
 	 */
 	public void destroy() {
-		// TODO Auto-generated method stub
 	}
 
 	/**
@@ -47,7 +45,7 @@ public class AdminLogin implements Filter {
 		
 		HttpSession session = req.getSession();
 		
-		String flag = (String)session.getAttribute("isAdminLogin");
+		String flag = (String)session.getAttribute("isLogin");
 		
 		String request_uri = req.getRequestURI();
 		String ctxPath= req.getContextPath();
@@ -56,7 +54,7 @@ public class AdminLogin implements Filter {
 	//	System.out.println(request_uri+"##"+ctxPath+"##"+uri+"##"+flag);
 		
 		if(uri.contains("admin_")){
-			if(flag !=null && flag.equals("1")) {
+			if(flag !=null && flag.equals("2")) {
 				chain.doFilter(req, resp);
 			}else{
 				PrintWriter out = resp.getWriter();

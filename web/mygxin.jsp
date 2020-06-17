@@ -77,7 +77,7 @@
     <div class="wrapper clearfix">
         <div class="zuo fl">
             <h3><a href="#"><img src="img/tx.png"/></a>
-                <p class="clearfix"><span class="fl">[${name.USER_NAME }]</span><span>[<a href="logout">退出登录</a>]</span></p></h3>
+                <p class="clearfix"><span class="fl">[${name.user_name}]</span><span>[<a href="logout">退出登录</a>]</span></p></h3>
             <div><h4>我的交易</h4>
                 <ul>
                     <li><a href="cart.html">我的购物车</a></li>
@@ -99,8 +99,8 @@
         <div class="you fl">
             <div class="tx clearfix">
                 <div class="fl clearfix"><a href="#" class="fl"><img src="img/tx.png"/></a>
-                    <p class="fl"><span>${name.USER_NAME }</span><a href="mygrxx.html">修改个人信息></a></p></div>
-                <div class="fr">绑定邮箱：${name.USER_EMAIL }</div>
+                    <p class="fl"><span>${name.user_nickname}</span><a href="mygrxx.html">修改个人信息></a></p></div>
+                <div class="fr">用户名：${name.user_name}</div>
             </div>
             <div class="bott">
                 <div class="clearfix"><a href="#" class="fl"><img src="img/gxin1.jpg"/></a>
@@ -136,7 +136,7 @@
         <dd>返回<br/>顶部</dd>
     </dl>
 </a>
-    <p>400-800-8200</p></div>
+    <p>888-888-8888</p></div>
 <div class="footer">
     <div class="top">
         <div class="wrapper">
@@ -150,8 +150,8 @@
             </div>
         </div>
     </div>
-    <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br/>
-        违法和不良信息举报电话：400-800-8200，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
+    <p class="dibu">家居电子商城&copy;2000-2020公司版权所有 京ICP备000001-11备0000111000号<br/>
+        违法和不良信息举报电话：888-888-8888，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/user.js" type="text/javascript" charset="utf-8"></script>

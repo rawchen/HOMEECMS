@@ -10,7 +10,7 @@
         </div>
         <div class="search-wrap">
             <div class="search-content">
-                <form action="/HOMEECMS/manage/admin_douserselect" method="get">
+                <form action="${pageContext.request.contextPath}/manage/admin_douserselect" method="get">
                     <table class="search-tab">
                         <tr>
                             <!--   th width="120">选择分类:</th>
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div id="register" class="result-wrap">
-            <form action="/HOMEECMS/manage/admin_douserdel" id="myform" method="post">
+            <form action="${pageContext.request.contextPath}/manage/admin_douserdel" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
                         <a href="admin_useradd.jsp"><i class="icon-font"></i>新增用户</a>
@@ -64,7 +64,7 @@
 	                                <a class="link-update" href="admin_touserupdate?id=${u.USER_ID}&cpage=${cpage}">修改</a>
 	                              
 	                              <c:if test="${u.USER_STATUS ==1 }">
-	                                <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.USER_NAME} }】吗？', '/HOMEECMS/manage/admin_douserdel?id=${u.USER_ID}&cpage=${cpage }')">删除</a>
+	                                <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.USER_NAME} }】吗？', '${pageContext.request.contextPath}/manage/admin_douserdel?id=${u.USER_ID}&cpage=${cpage }')">删除</a>
 	                              </c:if>
 	                            
 	                            </td>

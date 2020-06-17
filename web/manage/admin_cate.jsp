@@ -10,10 +10,10 @@
         </div>
      
         <div id="register" class="result-wrap">
-            <form action="/HOMEECMS/manage/admin_douserdel" id="myform" method="post">
+            <form action="${pageContext.request.contextPath}/manage/admin_douserdel" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="/HOMEECMS/manage/admin_tocateadd"><i class="icon-font"></i>新增分类</a>
+                        <a href="${pageContext.request.contextPath}/manage/admin_tocateadd"><i class="icon-font"></i>新增分类</a>
                      
                         <!--  a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a -->
                     </div>
@@ -30,19 +30,19 @@
                         
                         <c:forEach var="cate" items="${catelist}">
                         
-                        	 <c:if test="${cate.CATE_PARENT_ID ==0 }">
+                        	 <c:if test="${cate.category_parentid ==0 }">
 		                        <tr>
-		                        	<td>${cate.CATE_ID }</td>
-		                        	<td>|-${cate.CATE_NAME }</td>
-		                        	<td><a href="admin_tocateupdate?id=${cate.CATE_ID }">修改</a> <a href="javascript:catedel(${cate.CATE_ID })">删除</a></td>
+		                        	<td>${cate.category_id }</td>
+		                        	<td>|-${cate.category_name }</td>
+		                        	<td><a href="admin_tocateupdate?id=${cate.category_id }">修改</a> <a href="javascript:catedel(${cate.category_id })">删除</a></td>
 		                        
 		                        </tr>
 		                      	 <c:forEach var="zcate" items="${catelist}">
-		                      	 	<c:if test="${zcate.CATE_PARENT_ID ==cate.CATE_ID }">
+		                      	 	<c:if test="${zcate.category_parentid ==cate.category_id }">
 				                      	 <tr>
-				                        	<td>${zcate.CATE_ID }</td>
-				                        	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;｜-${zcate.CATE_NAME }</td>
-				                        	<td><a href="admin_tocateupdate?id=${zcate.CATE_ID }">修改</a> <a href="javascript:catedel(${zcate.CATE_ID })">删除</a></td>
+				                        	<td>${zcate.category_id }</td>
+				                        	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;｜-${zcate.category_name }</td>
+				                        	<td><a href="admin_tocateupdate?id=${zcate.category_id }">修改</a> <a href="javascript:catedel(${zcate.category_id })">删除</a></td>
 				                        
 				                        </tr>
 				                      </c:if>

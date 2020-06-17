@@ -7,6 +7,6 @@ import java.util.Map;
 
 public interface UserService {
 
-    User findUserByName(String name);
+    User loginByNameAndPassword(String name,String password);
 
 }

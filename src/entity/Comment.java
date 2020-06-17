@@ -3,10 +3,15 @@ package entity;
 import java.util.Date;
 
 public class Comment {
+    private int comment_id;
     private int user_id;
     private int product_id;
     private Date comment_time;
     private String comment_content;
+
+    public Comment(){
+
+    }
 
     public Comment(int user_id, int product_id, Date comment_time, String comment_content) {
         this.user_id = user_id;

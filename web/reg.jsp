@@ -24,7 +24,7 @@
 </head>
 <body><!-------------------reg-------------------------->
 <div class="reg">
-    <form action="register" method="post" onsubmit="return checkForm(this)"><h1><a href="index.html"><img src="img/temp/logo.png"></a></h1>
+    <form action="register" method="post" onsubmit="return checkForm(this)"><h1><a href="index.html"><img src="images/temp/logo.png"></a></h1>
         <h1 style="padding:0px;magin:0px;font-size:30px;background:#3344AA;text-align:center;line-height:60px;color:#FFFFFF">用户注册</h1>
         <p><input type="text" name="userName" value="" onfocus="FocusItem(this)" onblur="CheckItem(this)" placeholder="请输入用户名"><span></span></p>
         <p><input type="text" name="name" value="" onfocus="FocusItem(this)" onblur="CheckItem(this)" placeholder="请输入姓名"><span></span></p>
@@ -45,7 +45,7 @@
             <使用条款和隐私策略>
         </a></p>
         <p class="txt"><a href="#"><span></span>已有账号登录</a></p>
-        <!--<a href="#" class="off"><img src="img/temp/off.png"></a>--></form>
+        <!--<a href="#" class="off"><img src="images/temp/off.png"></a>--></form>
 </div>
 </body>
 </html>

@@ -2,6 +2,7 @@ package entity;
 
 public class User {
 
+	private int id;
 	private String user_name;
 	private String user_nickname;
 	private String user_password;
@@ -9,6 +10,10 @@ public class User {
 	private String user_vip;
 	private String user_viptime;
 	private String user_status;
+
+	public User() {
+
+	}
 
 	public User(String user_name, String user_nickname, String user_password, String user_sex, String user_vip, String user_viptime, String user_status) {
 		this.user_name = user_name;
