@@ -1,8 +1,8 @@
-package servlet.category;
+package servlet.product;
 
-import entity.Category;
-import service.CategoryService;
-import service.impl.CategoryServiceImpl;
+import entity.Product;
+import service.ProductService;
+import service.impl.ProductServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,15 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/categoryListServlet")
-public class categoryListServlet extends HttpServlet {
+@WebServlet("/productListServlet")
+public class ProductListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        CategoryService service = new CategoryServiceImpl();
-        List<Category> catelist = service.findAllCategory();
+        ProductService service = new ProductServiceImpl();
 
-        request.setAttribute("catelist", catelist);
+        List<Product> plist = service.findAllProduct();
 
-        request.getRequestDispatcher("manage/admin_cate.jsp").forward(request, response);
+        request.setAttribute("plist", plist);
+
+        request.getRequestDispatcher("manage/admin_product.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

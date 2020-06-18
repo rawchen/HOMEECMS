@@ -6,29 +6,29 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="admin_user.jsp">图书管理</a><span class="crumb-step">&gt;</span><span>新增图书</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="admin_user.jsp">商品管理</a><span class="crumb-step">&gt;</span><span>新增商品</span></div>
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="${pageContext.request.contextPath}/manage/admin_doproductadd" method="post"  enctype="multipart/form-data" id="myform" name="myform">
+                <form action="${pageContext.request.contextPath}/manage/addProductServlet" method="post"  enctype="multipart/form-data" id="myform" name="myform">
                     <table class="insert-tab" width="100%">
                         <tbody>
                           <tr>
-                                <th><i class="require-red">*</i>图书名称：</th>
+                                <th><i class="require-red">*</i>商品名称：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="productName" size="50" value="" type="text">
+                                    <input class="common-text required" required="required" id="title" name="productName" size="50" value="" type="text">
                                 </td>
                             </tr>
                             <tr>
-                                <th><i class="require-red">*</i>图书分类：</th>
+                                <th><i class="require-red">*</i>商品分类：</th>
                                 <td>
-                                    <select class="common-text required"  name="parentId">
+                                    <select class="common-text required" required="required" name="parentId">
                                     	
                                     	<c:forEach var="f" items="${flist }">
-                                    		<option value="${f.CATE_ID }" disabled="disabled"> |-${f.CATE_NAME } </option>
+                                    		<option value="${f.category_id }" disabled="disabled"> |-${f.category_name } </option>
                                     		<c:forEach var="c" items="${clist }">
-                                    			<c:if test="${c.CATE_PARENT_ID == f.CATE_ID}">
-                                    				<option value="${f.CATE_ID }-${c.CATE_ID }"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-${c.CATE_NAME } </option>
+                                    			<c:if test="${c.category_parentid == f.category_id}">
+                                    				<option value="${f.category_id }-${c.category_id }"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-${c.category_name } </option>
                                     			</c:if>
                                     		</c:forEach>
                                     	</c:forEach>
@@ -37,27 +37,27 @@
                             </tr>
                             
                              <tr>
-                                <th><i class="require-red">*</i>图书图片：</th>
+                                <th><i class="require-red">*</i>商品图片：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="photo" size="50" value="" type="file">
+                                    <input id="title" required="required" name="photo" size="50" accept="image/*" value="" type="file">
                                 </td>
                             </tr>
                               <tr>
-                                <th><i class="require-red">*</i>图书价格：</th>
+                                <th><i class="require-red">*</i>商品价格：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="productPrice" size="50" value="" type="text">
+                                    <input class="common-text required" required="required" id="title" name="productPrice" size="50" value="" type="text">
                                 </td>
                             </tr>
                               <tr>
-                                <th><i class="require-red">*</i>图书介绍：</th>
+                                <th><i class="require-red">*</i>商品介绍：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="productDesc" size="50" value="" type="text">
+                                    <input class="common-text required" required="required" id="title" name="productDesc" size="50" value="" type="text">
                                 </td>
                             </tr>
                               <tr>
-                                <th><i class="require-red">*</i>图书库存：</th>
+                                <th><i class="require-red">*</i>商品库存：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="productStock" size="50" value="" type="text">
+                                    <input class="common-text required" required="required" id="title" name="productStock" size="50" value="" type="text">
                                 </td>
                             </tr>
                             

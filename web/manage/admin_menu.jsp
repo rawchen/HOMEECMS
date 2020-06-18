@@ -37,9 +37,9 @@
                 <li>
                     <a href="#"><i class="icon-font">&#xe003;</i>常用操作</a>
                     <ul class="sub-menu">
-                        <li><a href="${pageContext.request.contextPath}/admin_douserselect"><i class="icon-font">&#xe008;</i>用户管理</a></li>
+                        <li><a href="${pageContext.request.contextPath}/userListServlet"><i class="icon-font">&#xe008;</i>用户管理</a></li>
                         <li><a href="${pageContext.request.contextPath}/categoryListServlet"><i class="icon-font">&#xe005;</i>分类管理</a></li>
-                        <li><a href="${pageContext.request.contextPath}/admin_productselect"><i class="icon-font">&#xe006;</i>图书管理</a></li>
+                        <li><a href="${pageContext.request.contextPath}/productListServlet"><i class="icon-font">&#xe006;</i>商品管理</a></li>
                         <li><a href="admin_order.jsp"><i class="icon-font">&#xe004;</i>订单管理</a></li>
                         <li><a href="admin_message.jsp"><i class="icon-font">&#xe012;</i>留言管理</a></li>
                         <li><a href="admin_news.jsp"><i class="icon-font">&#xe052;</i>新闻管理</a></li>

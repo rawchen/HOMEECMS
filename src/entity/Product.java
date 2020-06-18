@@ -28,6 +28,14 @@ public class Product {
 		this.product_sales = product_sales;
 	}
 
+	public int getProduct_id() {
+		return product_id;
+	}
+
+	public void setProduct_id(int product_id) {
+		this.product_id = product_id;
+	}
+
 	public String getProduct_name() {
 		return product_name;
 	}

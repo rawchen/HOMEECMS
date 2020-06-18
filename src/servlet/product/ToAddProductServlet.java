@@ -1,4 +1,4 @@
-package servlet.category;
+package servlet.product;
 
 import entity.Category;
 import service.CategoryService;
@@ -12,15 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/categoryListServlet")
-public class categoryListServlet extends HttpServlet {
+@WebServlet("/manage/toAddProductServlet")
+public class ToAddProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryService service = new CategoryServiceImpl();
-        List<Category> catelist = service.findAllCategory();
+        List<Category> f = service.findCategoryListByName("father");
+        List<Category> c = service.findCategoryListByName("child");
+        request.setAttribute("flist", f);
+        request.setAttribute("clist", c);
 
-        request.setAttribute("catelist", catelist);
-
-        request.getRequestDispatcher("manage/admin_cate.jsp").forward(request, response);
+        request.getRequestDispatcher("admin_productadd.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

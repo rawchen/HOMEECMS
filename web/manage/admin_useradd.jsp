@@ -9,20 +9,20 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="${pageContext.request.contextPath}/manage/admin_douseradd" method="post" id="myform" name="myform">
+                <form action="${pageContext.request.contextPath}/manage/addUserServlet" method="post" id="myform" name="myform" enctype="multipart/form-data">
                     <table class="insert-tab" width="100%">
                         <tbody>
                             <tr>
                                 <th><i class="require-red">*</i>用户名：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="userName" size="50" value="" type="text">
+                                    <input class="common-text required" name="userName" size="50" value="" type="text">
                                 </td>
                             </tr>
                             
                              <tr>
-                                <th><i class="require-red">*</i>用户姓名：</th>
+                                <th>用户昵称：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="name" size="50" value="" type="text">
+                                    <input class="common-text required" name="nickname" size="50" value="" type="text">
                                 </td>
                             </tr>
                             
@@ -43,38 +43,23 @@
                              <tr>
                                 <th>性别：</th>
                                 <td>
-                                	<input type="radio" name="sex" value="T" checked="checked">男
-                                	<input  type="radio" name="sex" value="F" >女
+                                	<input type="radio" name="sex" value="男" checked="checked">男
+                                	<input  type="radio" name="sex" value="女" >女
                                 </td>
                             </tr>
                             
                             
                             <tr>
-                                <th>出生日期：</th>
-                                <td><input class="common-text" name="birthday" size="50" value="" type="text"></td>
+                                <th><i class="require-red">*</i>权限：</th>
+                                <td><input class="common-text" placeholder="普通用户1/管理员2" name="status" size="50" value="" type="text"></td>
                             </tr>
                            
                               <tr>
-                                <th><i class="require-red">*</i>电子邮箱：</th>
+                                <th>头像：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="email" size="50" value="" type="text">
+                                    <input class="" id="title" name="photo" size="50" accept="image/*" value="" type="file">
                                 </td>
                             </tr>
-                            
-                            <tr>
-                                <th><i class="require-red">*</i>手机号码：</th>
-                                <td>
-                                    <input class="common-text required" id="title" name="mobile" size="50" value="" type="text">
-                                </td>
-                            </tr>
-                            
-                            <tr>
-                                <th><i class="require-red">*</i>送货地址：</th>
-                                <td>
-                                    <input class="common-text required" id="title" name="address" size="50" value="" type="text">
-                                </td>
-                            </tr>
-                           
                          
                             <tr>
                                 <th></th>

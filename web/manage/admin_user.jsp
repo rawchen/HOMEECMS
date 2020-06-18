@@ -32,7 +32,7 @@
             <form action="${pageContext.request.contextPath}/manage/admin_douserdel" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="admin_useradd.jsp"><i class="icon-font"></i>新增用户</a>
+                        <a href="manage/admin_useradd.jsp"><i class="icon-font"></i>新增用户</a>
                         <a id="batchDel" href="javascript:delmore('你确定删除这些用户吗？', 'myform')"><i class="icon-font"></i>批量删除</a>
                         <!--  a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a -->
                     </div>
@@ -42,29 +42,35 @@
                         <tr>
                             <th class="tc" width="5%"><input class="allChoose" name=""  onclick="selall(this)" type="checkbox"></th>
                             <th>ID</th>
-                            <th>姓名</th>
+                            <th>用户名</th>
+                            <th>昵称</th>
+                            <th>密码</th>
                             <th>性别</th>
-                            <th>EMAIL</th>
-                            <th>手机</th>                  
+                            <th>是否vip</th>
+                            <th>vip剩余时间(Day)</th>
+                            <th>头像</th>
                             <th>操作</th>
                         </tr>
                         
-                        <c:forEach var="u" items="${userlist}">
+                        <c:forEach var="u" items="${pb.list}">
 	                        <tr>
 	                        	
 	                        	
-	                            <td class="tc"><input name="id[]" value="${u.USER_ID}" type="checkbox"></td>
-	                            <td> ${u.USER_ID  }</td>
-	                             <td> ${u.USER_NAME  }</td>
-	                              <td> ${u.USER_SEX=='T'?'男':'女' }</td>
-	                               <td> ${u.USER_EMAIL  }</td>
-	                                <td> ${u.USER_MOBILE  }</td>
-	                       
+	                            <td class="tc"><input name="id[]" value="${u.user_id}" type="checkbox"></td>
+	                            <td> ${u.user_id  }</td>
+	                             <td> ${u.user_name  }</td>
+	                             <td> ${u.user_nickname  }</td>
+	                             <td> ${u.user_password  }</td>
+	                              <td> ${'男'.equals(u.user_sex)?'男':'女' }</td>
+	                               <td> ${u.user_vip  }</td>
+	                                <td> ${u.user_viptime  }</td>
+                                <td><img src="${pageContext.request.contextPath}/upload/user/${u.user_photo}" style="width: 40px;"></td>
+
 	                            <td>
-	                                <a class="link-update" href="admin_touserupdate?id=${u.USER_ID}&cpage=${cpage}">修改</a>
+	                                <a class="link-update" href="admin_touserupdate?id=${u.user_id}&cpage=${cpage}">修改</a>
 	                              
-	                              <c:if test="${u.USER_STATUS ==1 }">
-	                                <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.USER_NAME} }】吗？', '${pageContext.request.contextPath}/manage/admin_douserdel?id=${u.USER_ID}&cpage=${cpage }')">删除</a>
+	                              <c:if test="${u.user_status ==1 }">
+	                                <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name} }】吗？', '${pageContext.request.contextPath}/manage/admin_douserdel?id=${u.user_id}&cpage=${cpage }')">删除</a>
 	                              </c:if>
 	                            
 	                            </td>
@@ -100,11 +106,11 @@
                         
                     </table>
                     <div class="list-page"> 
-                    	共 ${tsum} 条记录， 当前 ${cpage}/${tpage} 页
-                    	<a href="admin_douserselect?cp=1${searchParams}">首页</a>
-                    	<a href="admin_douserselect?cp=${cpage-1<1?1:cpage-1}${searchParams}">上一页</a>
-                    	<a href="admin_douserselect?cp=${cpage+1>tpage?tpage:cpage+1}${searchParams}">下一页</a>
-                    	<a href="admin_douserselect?cp=${tpage}${searchParams}">尾页</a>
+                    	共 ${pb.totalCount} 条记录， 当前 ${pb.currentPage}/${pb.totalPage} 页
+                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=1&row=5">首页</a>
+                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.currentPage-1<1?1:pb.currentPage-1}&row=5">上一页</a>
+                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.currentPage+1>pb.totalPage?pb.totalPage:pb.currentPage+1}&row=5">下一页</a>
+                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.totalPage}&row=5">尾页</a>
                   
                     
                     

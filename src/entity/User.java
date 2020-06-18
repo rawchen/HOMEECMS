@@ -2,7 +2,7 @@ package entity;
 
 public class User {
 
-	private int id;
+	private int user_id;
 	private String user_name;
 	private String user_nickname;
 	private String user_password;
@@ -10,12 +10,13 @@ public class User {
 	private String user_vip;
 	private String user_viptime;
 	private String user_status;
+	private String user_photo;
 
 	public User() {
 
 	}
 
-	public User(String user_name, String user_nickname, String user_password, String user_sex, String user_vip, String user_viptime, String user_status) {
+	public User(String user_name, String user_nickname, String user_password, String user_sex, String user_vip, String user_viptime, String user_status, String user_photo) {
 		this.user_name = user_name;
 		this.user_nickname = user_nickname;
 		this.user_password = user_password;
@@ -23,6 +24,15 @@ public class User {
 		this.user_vip = user_vip;
 		this.user_viptime = user_viptime;
 		this.user_status = user_status;
+		this.user_photo = user_photo;
+	}
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getUser_name() {
@@ -81,16 +91,26 @@ public class User {
 		this.user_status = user_status;
 	}
 
+	public String getUser_photo() {
+		return user_photo;
+	}
+
+	public void setUser_photo(String user_photo) {
+		this.user_photo = user_photo;
+	}
+
 	@Override
 	public String toString() {
 		return "User{" +
-				"user_name='" + user_name + '\'' +
+				"user_id=" + user_id +
+				", user_name='" + user_name + '\'' +
 				", user_nickname='" + user_nickname + '\'' +
 				", user_password='" + user_password + '\'' +
 				", user_sex='" + user_sex + '\'' +
 				", user_vip='" + user_vip + '\'' +
 				", user_viptime='" + user_viptime + '\'' +
 				", user_status='" + user_status + '\'' +
+				", user_photo='" + user_photo + '\'' +
 				'}';
 	}
 }
