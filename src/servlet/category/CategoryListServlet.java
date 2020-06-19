@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/categoryListServlet")
-public class categoryListServlet extends HttpServlet {
+public class CategoryListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         CategoryService service = new CategoryServiceImpl();
         List<Category> catelist = service.findAllCategory();

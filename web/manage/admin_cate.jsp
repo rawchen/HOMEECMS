@@ -13,7 +13,7 @@
             <form action="${pageContext.request.contextPath}/manage/admin_douserdel" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                        <a href="${pageContext.request.contextPath}/manage/admin_tocateadd"><i class="icon-font"></i>新增分类</a>
+                        <a href="${pageContext.request.contextPath}/manage/toAddCategoryServlet"><i class="icon-font"></i>新增分类</a>
                      
                         <!--  a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a -->
                     </div>

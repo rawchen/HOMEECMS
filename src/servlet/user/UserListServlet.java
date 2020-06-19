@@ -44,13 +44,7 @@ public class UserListServlet extends HttpServlet {
         UserService service = new UserServiceImpl();
         PageBean<User> pb = service.findUserByPage(currentPage,rows);
         request.setAttribute("pb",pb );
-        System.out.println(pb);
 
-//        int arr[] = service.totalPage(count, keyword);
-
-
-        //获取所有用户记录
-//        ArrayList<LMONKEY_USER>	list= LMONKEY_USERDao.selectAll(cpage, count, keyword);
         List<User> list = service.findAllUser();
 
         //放到请求对象域里
