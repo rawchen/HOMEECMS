@@ -10,7 +10,7 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="${pageContext.request.contextPath}/manage/updateProductServlet?productId=${p.product_price}" method="post"  enctype="multipart/form-data" id="myform" name="myform">
+                <form action="${pageContext.request.contextPath}/manage/updateProductServlet?productId=${p.product_id}" method="post"  enctype="multipart/form-data" id="myform" name="myform">
                     <table class="insert-tab" width="100%">
                         <tbody>
                           <tr>
@@ -57,7 +57,7 @@
                               <tr>
                                 <th><i class="require-red">*</i>商品介绍：</th>
                                 <td>
-                                    <input class="common-text required" required="required" id="title" name="productDesc" size="50" value="${p.product_info}" type="text">
+                                    <input class="common-text required" required="required" id="title" name="productInfo" size="50" value="${p.product_info}" type="text">
                                 </td>
                             </tr>
 

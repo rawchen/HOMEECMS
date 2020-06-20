@@ -24,4 +24,9 @@ public class CategoryServiceImpl implements CategoryService {
     public List<Category> findAllCategory() {
         return dao.findAllCategory();
     }
+
+    @Override
+    public Category findCategoryFidByCid(int productCid) {
+        return dao.findCategoryFidByCid(productCid);
+    }
 }

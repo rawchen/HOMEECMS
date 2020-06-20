@@ -19,15 +19,18 @@ public class AddCategoryServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         String a = request.getParameter("parentId");
         String b = request.getParameter("className");
-        System.out.println(a);
-        System.out.println(b);
+
+        System.out.println("parentId"+a);
+        System.out.println("className"+b);
+
+        Category category = new Category();
+        category.setCategory_parentid(Integer.valueOf(a));
+        category.setCategory_name(b);
+
+        CategoryService service = new CategoryServiceImpl();
+        service.addCategory(category);
 
         PrintWriter out = response.getWriter();
-        Boolean flag = false;
-        CategoryService service = new CategoryServiceImpl();
-
-        if (flag) {
-        }
         out.write("<script>");
         out.write("alert('插入分类成功！');");
         out.write("location.href='/HOMEECMS/categoryListServlet'");

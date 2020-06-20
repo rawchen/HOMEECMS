@@ -2,6 +2,7 @@ package service.impl;
 
 import dao.ProductDao;
 import dao.impl.ProductDaoImpl;
+import entity.Category;
 import entity.Product;
 import service.ProductService;
 
@@ -22,6 +23,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void updateProductById(Product p) {
-        return dao.updateProductById(p);
+        dao.updateProductById(p);
+    }
+
+    @Override
+    public void delProductById(int productId) {
+        dao.delProductById(productId);
+    }
+
+    @Override
+    public void addProduct(Product p) {
+        dao.addProduct(p);
     }
 }

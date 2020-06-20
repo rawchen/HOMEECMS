@@ -40,8 +40,28 @@ public class ProductDaoImpl implements ProductDao {
     public void updateProductById(Product p) {
         try {
             String sql = "update tb_product set product_name =?,product_info=?,product_price=?,product_stock=?,product_fid=?,product_cid=?,product_photo=? where product_id=?";
-            template.update(sql,p.getProduct_name(),student.getS_sex(),student.getS_age(),student.getS_phone(),student.getS_email(),student.getS_address(),student.getS_college(),student.getS_department(),student.getS_class(),student.getS_id());
+            template.update(sql,p.getProduct_name(),p.getProduct_info(),p.getProduct_price(),p.getProduct_stock(),p.getProduct_fid(),p.getProduct_cid(),p.getProduct_photo(),p.getProduct_id());
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void delProductById(int productId) {
+        try {
+            String sql = "delete from tb_product where product_id=?";
+            template.update(sql,productId);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void addProduct(Product p) {
+        try {
+            String sql = "insert into tb_product(product_name,product_info,product_price,product_stock,product_fid,product_cid,product_photo) values(?,?,?,?,?,?,?)";
+            template.update(sql,p.getProduct_name(),p.getProduct_info(),p.getProduct_price(),p.getProduct_stock(),p.getProduct_fid(),p.getProduct_cid(),p.getProduct_photo());
+        } catch (DataAccessException e) {
             e.printStackTrace();
         }
     }

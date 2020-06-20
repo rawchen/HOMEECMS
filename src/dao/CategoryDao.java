@@ -11,4 +11,6 @@ public interface CategoryDao {
     List<Category> findCategoryChildList();
 
     List<Category> findAllCategory();
+
+    Category findCategoryFidByCid(int productCid);
 }

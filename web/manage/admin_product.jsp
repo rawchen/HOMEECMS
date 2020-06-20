@@ -37,17 +37,16 @@
                         		</td>
                         		<td>
                         			<a href="${pageContext.request.contextPath}/manage/toUpdateProductServlet?productId=${p.product_id}">修改</a>
-                        			<a href="">删除</a>
+                        			<a href="javascript:del(${p.product_id});">删除</a>
                         		</td>
                         	</tr>
 	                    </c:forEach>
                         
                         
                         <script>
-                        	function catedel(id) {
+                        	function del(id) {
                         		if(confirm("你确认要删除这个分类吗")) {
-                        			location.href="admin_docatedel?id="+id;
-                        			
+                        			location.href="${pageContext.request.contextPath}/manage/delProductServlet?productId="+id
                         		}
                         	}
                         	

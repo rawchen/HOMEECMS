@@ -10,4 +10,6 @@ public interface CategoryService {
     List<Category> findCategoryListByName(String father);
 
     List<Category> findAllCategory();
+
+    Category findCategoryFidByCid(int productCid);
 }

@@ -48,4 +48,12 @@ public class CategoryDaoImpl implements CategoryDao {
             return null;
         }
     }
+
+    //通过子类找父类，未实现
+    @Override
+    public Category findCategoryFidByCid(int productCid) {
+        Category category = new Category();
+        category.setCategory_parentid(1);
+        return category;
+    }
 }

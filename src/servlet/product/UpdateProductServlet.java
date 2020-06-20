@@ -3,10 +3,13 @@ package servlet.product;
 import com.jspsmart.upload.Files;
 import com.jspsmart.upload.SmartUpload;
 import com.jspsmart.upload.SmartUploadException;
+import entity.Category;
 import entity.Product;
 import entity.User;
+import service.CategoryService;
 import service.ProductService;
 import service.UserService;
+import service.impl.CategoryServiceImpl;
 import service.impl.ProductServiceImpl;
 import service.impl.UserServiceImpl;
 
@@ -33,34 +36,37 @@ public class UpdateProductServlet extends HttpServlet {
 
             su.setAllowedFilesList("jpg,gif,jpeg,png");
             su.upload();
-            String userName = su.getRequest().getParameter("userName");
+            int productId = Integer.valueOf(request.getParameter("productId"));
             Files uploadFiles = su.getFiles();
-//            fileName = uploadFiles.getFile(0).getFileName();
             fileName = uploadFiles.getFile(0).getFileExt();
-            fileName = userName+"."+fileName;
+            fileName = productId+"."+fileName;
 
 
 
-            File f = new File(this.getServletContext().getRealPath("/upload/user"));
+            File f = new File(this.getServletContext().getRealPath("/upload/product"));
             if (!f.exists() && !f.isDirectory()) {
                 f.mkdir();
             }
-            uploadFiles.getFile(0).saveAs("/upload/user/"+ fileName);
+            uploadFiles.getFile(0).saveAs("/upload/product/"+ fileName);
 
         } catch (SmartUploadException e) {
             e.printStackTrace();
         }
-        int productId = Integer.valueOf(su.getRequest().getParameter("productId"));
-        String productName = su.getRequest().getParameter("productName");
-        String productInfo = su.getRequest().getParameter("nickname");
-        int productPrice = Integer.valueOf(su.getRequest().getParameter("passWord"));
-        int  productStock = Integer.valueOf(su.getRequest().getParameter("rePassWord"));
-        int  productFid = Integer.valueOf(su.getRequest().getParameter("sex"));
-        int  productCid = Integer.valueOf(su.getRequest().getParameter("status"));
-        String productPhoto = su.getRequest().getParameter("status");
 
-        Product p = new Product(productName,productInfo,productPrice,productStock,productFid,productCid,productPhoto);
+        int productId = Integer.valueOf(request.getParameter("productId"));
+        String productName = su.getRequest().getParameter("productName");
+        String productInfo = su.getRequest().getParameter("productInfo");
+        int productPrice = Integer.valueOf(su.getRequest().getParameter("productPrice"));
+        int  productStock = Integer.valueOf(su.getRequest().getParameter("productStock"));
+        String productFatherChildid = su.getRequest().getParameter("parentId");
+
+        String id[] = productFatherChildid.split("-");
+        int productFid = Integer.valueOf(id[0]);//f
+        int productCid = Integer.valueOf(id[1]);//c
+
+        Product p = new Product(productName,productInfo,productPrice,productStock,productFid,productCid,fileName);
         p.setProduct_id(productId);
+        System.out.println(p);
 
         ProductService service = new ProductServiceImpl();
         service.updateProductById(p);
@@ -69,7 +75,7 @@ public class UpdateProductServlet extends HttpServlet {
 
         out.write("<script>");
         out.write("alert('更新成功！');");
-            out.write("location.href='/HOMEECMS/ProductListServlet'");
+            out.write("location.href='/HOMEECMS/productListServlet'");
         out.write("</script>");
         out.close();
     }

@@ -28,7 +28,7 @@
             </form>
         </div>
     </div>
-    <p class="admin_copyright"><a tabindex="5" href="#" target="_blank">返回首页</a> &copy; 2014 Powered by 更多模板：<a href="http://www.lmonkey.com/" target="_blank">学习猿地</a></p>
+    <p class="admin_copyright"><a tabindex="5" href="#" target="_blank">返回首页</a> &copy; 2020</p>
 </div>
 </body>
 </html>

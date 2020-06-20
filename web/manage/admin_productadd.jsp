@@ -51,7 +51,7 @@
                               <tr>
                                 <th><i class="require-red">*</i>商品介绍：</th>
                                 <td>
-                                    <input class="common-text required" required="required" id="title" name="productDesc" size="50" value="" type="text">
+                                    <input class="common-text required" required="required" id="title" name="productInfo" size="50" value="" type="text">
                                 </td>
                             </tr>
                               <tr>

@@ -33,7 +33,6 @@ public class AddUserServlet extends HttpServlet {
             su.upload();
             String userName = su.getRequest().getParameter("userName");
             Files uploadFiles = su.getFiles();
-//            fileName = uploadFiles.getFile(0).getFileName();
             fileName = uploadFiles.getFile(0).getFileExt();
             fileName = userName+"."+fileName;
 
