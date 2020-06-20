@@ -28,7 +28,7 @@ public class AddCategoryServlet extends HttpServlet {
         category.setCategory_name(b);
 
         CategoryService service = new CategoryServiceImpl();
-        service.addCategory(category);
+//        service.addCategory(category);
 
         PrintWriter out = response.getWriter();
         out.write("<script>");
