@@ -4,9 +4,33 @@
 <%@ include file="admin_menu.jsp" %>
     <!--/sidebar-->
     <div class="main-wrap">
-
         <div class="crumb-wrap">
             <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">商品管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="${pageContext.request.contextPath}/productListByCategoryServlet" method="post">
+                <table class="search-tab">
+                    <tbody><tr>
+                        <th width="120">选择分类:</th>
+                        <td>
+                            <select class="common-text required" required="required" name="parentId">
+
+                                <c:forEach var="f" items="${flist }">
+                                    <option value="${f.category_id }" disabled="disabled"> |-${f.category_name } </option>
+                                    <c:forEach var="c" items="${clist }">
+                                        <c:if test="${c.category_parentid == f.category_id}">
+                                            <option value="${f.category_id }-${c.category_id }"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-${c.category_name } </option>
+                                        </c:if>
+                                    </c:forEach>
+                                </c:forEach>
+                            </select>
+                        </td>
+                        <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                    </tr>
+                    </tbody></table>
+            </form>
+            </div>
         </div>
      
         <div id="register" class="result-wrap">
@@ -14,7 +38,7 @@
                 <div class="result-title">
                     <div class="result-list">
                         <a href="${pageContext.request.contextPath}/manage/toAddProductServlet"><i class="icon-font"></i>新增商品</a>
-                     
+                        <a href="${pageContext.request.contextPath}/productListServlet"><i class="icon-font"></i>查看全部</a>
                         <!--  a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a -->
                     </div>
                 </div>

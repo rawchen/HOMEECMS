@@ -12,20 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/manage/addCategoryServlet")
-public class AddCategoryServlet extends HttpServlet {
+@WebServlet("/manage/addCategoryFatherServlet")
+public class AddCategoryFatherServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
-        String a = request.getParameter("parentId");
-        String b = request.getParameter("className");
+        String fatherName = request.getParameter("fatherName");
 
-        System.out.println("parentId"+a);
-        System.out.println("className"+b);
+        System.out.println("fatherName"+fatherName);
 
         Category category = new Category();
-        category.setCategory_parentid(Integer.valueOf(a));
-        category.setCategory_name(b);
+        category.setCategory_parentid(0);
+        category.setCategory_name(fatherName);
 
         CategoryService service = new CategoryServiceImpl();
         service.addCategory(category);
@@ -36,8 +34,6 @@ public class AddCategoryServlet extends HttpServlet {
         out.write("location.href='/HOMEECMS/categoryListServlet'");
         out.write("</script>");
         out.close();
-
-//        request.getRequestDispatcher("").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

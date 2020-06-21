@@ -43,6 +43,28 @@
                             </tr>
                         </tbody></table>
                 </form>
+                <form action="${pageContext.request.contextPath}/manage/addCategoryFatherServlet" method="post" id="myform" name="myform">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+
+
+                        <tr>
+                            <th><i class="require-red">*</i>一级名称：</th>
+                            <td>
+                                <input class="common-text required" id="title" name="fatherName" size="50" value="" type="text">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <th></th>
+                            <td>
+                                <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                <input class="btn btn6" onClick="history.go(-1)" value="返回" type="button">
+                            </td>
+                        </tr>
+                        </tbody></table>
+                </form>
             </div>
         </div>
 

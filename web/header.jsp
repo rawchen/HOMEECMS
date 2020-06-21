@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
-
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--1. Server info: <%= application.getServerInfo() %><br>--%>
+<%--2. Servlet version: <%= application.getMajorVersion() %>.<%= application.getMinorVersion() %><br>--%>
+<%--3. JSP version: <%= JspFactory.getDefaultFactory().getEngineInfo().getSpecificationVersion() %><br>--%>
+<%--4. Java version: <%= System.getProperty("java.version") %><br>--%>
 <div class="head">
     <div class="wrapper clearfix">
         <div class="clearfix" id="top"><h1 class="fl"><a href="indexServlet"><img alt="" src="img/logo.png"/></a></h1>
@@ -17,10 +20,9 @@
                     你好：<b style="font-size: 18px">${name.user_name}</b>
             	
             	</c:if>
-            	
-            	<c:if test="${isAdminLogin ==1 }">
-            		<a href="manage/admin_index.jsp" id="login1">进入后台</a>
-            	</c:if>
+<%--            	<c:if test="${isAdminLogin ==1 }">--%>
+<%--            		<a href="manage/admin_index.jsp" id="login1">进入后台</a>--%>
+<%--            	</c:if>--%>
             </p>
                 <form action="#" method="get" class="fl"><input type="text" placeholder="热门搜索：干花花瓶"/><input
                         type="button"/></form>
@@ -41,7 +43,7 @@
                         <div class="clearfix">
                             <c:forEach var="c" items="${clist}">
                                 <c:if test="${f.category_id == c.category_parentid}">
-                                    <a href="selectproductlist?cid=${c.category_id}">${c.category_name}</a>
+                                    <a href="selectProductList?cid=${c.category_id}">${c.category_name}</a>
                                 </c:if>
                             </c:forEach>
                         </div>

@@ -15,12 +15,19 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/productListServlet")
-public class ProductListServlet extends HttpServlet {
+@WebServlet("/productListByCategoryServlet")
+public class ProductListByCategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String parentId = request.getParameter("parentId");
+
+        String[] id = parentId.split("-");
+        int productFid = Integer.valueOf(id[0]);//f
+        int productCid = Integer.valueOf(id[1]);//c
+
+        System.out.println(productCid);
         ProductService service = new ProductServiceImpl();
 
-        List<Product> plist = service.findAllProduct();
+        List<Product> plist = service.findProductByCategoryCid(productCid);
 
         request.setAttribute("plist", plist);
 

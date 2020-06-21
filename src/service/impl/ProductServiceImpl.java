@@ -35,4 +35,9 @@ public class ProductServiceImpl implements ProductService {
     public void addProduct(Product p) {
         dao.addProduct(p);
     }
+
+    @Override
+    public List<Product> findProductByCategoryCid(int productCid) {
+        return dao.findProductByCategoryCid(productCid);
+    }
 }

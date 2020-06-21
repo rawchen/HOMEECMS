@@ -51,9 +51,24 @@ public class CategoryDaoImpl implements CategoryDao {
 
     //通过子类找父类，未实现
     @Override
-    public Category findCategoryFidByCid(int productCid) {
-        Category category = new Category();
-        category.setCategory_parentid(1);
-        return category;
+    public Category findCategoryByCid(int productCid) {
+        try {
+            String sql = "select * from tb_category where category_id = ?";
+            Category category = template.queryForObject(sql,new BeanPropertyRowMapper<Category>(Category.class),productCid);
+            return category;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public void addCategory(Category category) {
+        try {
+            String sql = "insert into tb_category(category_name,category_parentid) values(?,?)";
+            template.update(sql,category.getCategory_name(),category.getCategory_parentid());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
     }
 }

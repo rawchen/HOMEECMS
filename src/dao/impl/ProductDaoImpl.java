@@ -65,4 +65,16 @@ public class ProductDaoImpl implements ProductDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public List<Product> findProductByCategoryCid(int productCid) {
+        try {
+            String sql = "select * from tb_product where product_cid = ?";
+            List<Product> p = template.query(sql, new BeanPropertyRowMapper<Product>(Product.class),productCid);
+            return p;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

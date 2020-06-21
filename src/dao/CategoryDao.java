@@ -12,5 +12,8 @@ public interface CategoryDao {
 
     List<Category> findAllCategory();
 
-    Category findCategoryFidByCid(int productCid);
+    Category findCategoryByCid(int productCid);
+
+    void addCategory(Category category);
+
 }

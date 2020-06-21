@@ -15,4 +15,6 @@ public interface ProductService {
     void delProductById(int productId);
 
     void addProduct(Product p);
+
+    List<Product> findProductByCategoryCid(int productCid);
 }
