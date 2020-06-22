@@ -34,7 +34,7 @@
   
   
   	<c:forEach var="p" items="${productList}">
-	    <li><a href="selectproductview?id=${p.product_id}">
+	    <li><a href="toProductViewServlet?id=${p.product_id}">
 	        <dl>
 	            <dt><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"></dt>
 	            <dd>${p.product_name}</dd>
@@ -56,7 +56,7 @@
 </ul><!----------------mask------------------->
 <div class="mask"></div><!-------------------mask内容------------------->
 <div class="proDets"><img class="off" src="images/temp/off.jpg"/>
-    <div class="tit clearfix"><h4 class="fl">【最家】非洲菊仿真花干花</h4><span class="fr">￥17.90</span></div>
+    <div class="tit clearfix"><h4 class="fl">${p.product_name}</h4><span class="fr">￥17.90</span></div>
     <div class="proCon clearfix">
         <div class="proImg fl"><img class="list" src="images/temp/proDet.jpg"/>
             <div class="smallImg clearfix"><img src="images/temp/proDet01.jpg" data-src="images/temp/proDet01_big.jpg"><img
@@ -88,7 +88,7 @@
     <dl class="goCart">
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>
-        <span>1</span></dl>
+        <span>123</span></dl>
 </a><a href="#" class="dh">
     <dl>
         <dt><img src="img/gt2.png"/></dt>
@@ -106,7 +106,8 @@
     </dl>
 </a>
     <p>888-888-8888</p></div>
-<div class="msk"></div><!--footer-->
+<div class="msk"></div>
+<!--footer-->
 <div class="footer">
     <div class="top">
         <div class="wrapper">
@@ -120,8 +121,9 @@
             </div>
         </div>
     </div>
-    <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br/>
-        违法和不良信息举报电话：188-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
+    <p class="dibu">
+        家居电子商城&copy;2000-2020公司版权所有 京ICP备000001-11备0000111000号<br/>
+        违法和不良信息举报电话：888-888-8888，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/nav.js" type="text/javascript" charset="utf-8"></script>

@@ -15,36 +15,32 @@
 <!-----------------address------------------------------->
 <div class="address">
     <div class="wrapper clearfix">
-    		<a href="indexServlet">首页</a><span>/</span>
-    		<a href="selectproductlist?cid=${cate.CATE_ID }">${cate.CATE_NAME }</a><span>/</span>
-    		<a href="#" class="on">${p.PRODUCT_NAME }</a>
+    		<a href="indexServlet">首页</a><span>/</span>${fatherC.category_name }<span>/</span>${childC.category_name}</a>
     </div>
 </div><!-----------------------Detail------------------------------>
 <div class="detCon">
     <div class="proDet wrapper">
         <div class="proCon clearfix">
             <div class="proImg fl">
-            <img class="det" src="images/product/${p.PRODUCT_FILENAME }"/>
-                <div class="smallImg clearfix"><img src="images/product/${p.PRODUCT_FILENAME }"
-                                                    data-src="images/product/${p.PRODUCT_FILENAME }"><img
-                        src="images/temp/proDet02.jpg" data-src="images/temp/proDet02_big.jpg"><img
-                        src="images/temp/proDet03.jpg" data-src="images/temp/proDet03_big.jpg"><img
-                        src="images/temp/proDet04.jpg" data-src="images/temp/proDet04_big.jpg"></div>
+            <img class="det" src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"/>
+                <div class="smallImg clearfix"><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"
+                                                    data-src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"><img
+                        src="images/temp/proDet02_big.jpg" data-src="images/temp/proDet02_big.jpg"><img
+                        src="images/temp/proDet03_big.jpg" data-src="images/temp/proDet03_big.jpg"><img
+                        src="images/temp/proDet04_big.jpg" data-src="images/temp/proDet04_big.jpg"></div>
             </div>
             <div class="fr intro">
-                <div class="title"><h4>【最家】${p.PRODUCT_NAME }</h4>
-                    <p>【${p.PRODUCT_DESCRIPTION }】</p><span>￥${p.PRODUCT_PRICE }.00</span></div>
+                <div class="title"><h4>${p.product_name}</h4>
+                    <p>【${p.product_info}】</p><span>￥${p.product_price}.00</span></div>
                 <div class="proIntro"><p>颜色分类</p>
-                    <div class="smallImg clearfix categ"><p class="fl"><img src="images/product/${p.PRODUCT_FILENAME }"
-                                                                            alt="白瓷花瓶+20支快乐花"
-                                                                            data-src="images/product/${p.PRODUCT_FILENAME }"></p>
-                        <p class="fl"><img src="images/temp/prosmall02.jpg" alt="白瓷花瓶+20支兔尾巴草"
-                                           data-src="images/temp/proBig02.jpg"></p>
-                        <p class="fl"><img src="images/temp/prosmall03.jpg" alt="20支快乐花" data-src="images/temp/proBig03.jpg">
-                        </p>
-                        <p class="fl"><img src="images/temp/prosmall04.jpg" alt="20支兔尾巴草" data-src="images/temp/proBig04.jpg">
-                        </p></div>
-                    <p>数量&nbsp;&nbsp;库存<span>${p.PRODUCT_STOCK }</span>件</p>
+                    <div class="smallImg clearfix categ">
+                        <p class="fl"><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"
+                                                                            alt="${p.product_name}"
+                                                                            data-src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"></p>
+                        <p class="fl"><img src="images/temp/proDet02_big.jpg" alt="XXXX"
+                                           data-src="images/temp/proDet02_big.jpg"></p>
+                        </div>
+                    <p>数量&nbsp;&nbsp;库存<span>${p.product_stock}</span>件</p>
                     <div class="num clearfix">
                     		<img class="fl sub" src="images/temp/sub.jpg">
                     		<span id="count" class="fl" contentEditable="true">1</span><img
@@ -52,8 +48,8 @@
                         <p class="please fl">请选择商品属性!</p></div>
                 </div>
                 <div class="btns clearfix">
-                	<a href="javascript:shopAdd(${p.PRODUCT_ID },'z')"><p class="buy fl">立即购买</p></a>
-                	<a href="javascript:shopAdd(${p.PRODUCT_ID },'s')""><p class="cart fr"> 加入购物车</p></a></div>
+                	<a href="javascript:shopAdd(${p.product_id },'z')"><p class="buy fl">立即购买</p></a>
+                	<a href="javascript:shopAdd(${p.product_id },'s')""><p class="cart fr"> 加入购物车</p></a></div>
             </div>
         </div>
     </div>
@@ -157,37 +153,17 @@
     </div>
     <div class="msgR fr" style="width:200px;"><h4>为你推荐</h4>
         <div class="seeList">
-        <c:forEach var="cp" items="${classlist }">
-        <a href="selectproductview?id=${cp.PRODUCT_ID }">
+        <c:forEach var="cp" items="${classlist}">
+        <a href="toProductViewServlet?id=${cp.product_id }">
             <dl>
-                <dt><img src="images/product/${cp.PRODUCT_FILENAME }"></dt>
-                <dd>【学习猿地】${cp.PRODUCT_NAME }</dd>
-                <dd>￥${cp.PRODUCT_PRICE }.00</dd>
+                <dt><img src="${pageContext.request.contextPath}/upload/product/${cp.product_photo }" style="width: 160px"></dt>
+                <dd>${cp.product_name }</dd>
+                <dd>￥${cp.product_price }.00</dd>
             </dl>
         </a>
         </c:forEach>
         
-        <a href="#">
-            <dl>
-                <dt><img src="images/temp/see02.jpg"></dt>
-                <dd>【最家】复古文艺风玻璃花瓶</dd>
-                <dd>￥193.20</dd>
-            </dl>
-        </a>
-        
-        <a href="#">
-            <dl>
-                <dt><img src="images/temp/see03.jpg"></dt>
-                <dd>【最家】复古文艺风玻璃花瓶</dd>
-                <dd>￥193.20</dd>
-            </dl>
-        </a><a href="#">
-            <dl>
-                <dt><img src="images/temp/see04.jpg"></dt>
-                <dd>【最家】复古文艺风玻璃花瓶</dd>
-                <dd>￥193.20</dd>
-            </dl>
-        </a></div>
+        </div>
     </div>
 </div>
 <div class="like"><h4>最近访问</h4>
@@ -199,81 +175,16 @@
                 <div>
                 
                 
-                 <c:forEach var="lp" items="${lastlylist }">
-			        <a href="selectproductview?id=${lp.PRODUCT_ID }">
+                 <c:forEach var="lp" items="${lastlist}">
+			        <a href="toProductViewServlet?id=${lp.product_id }">
 			            <dl>
-			                <dt><img src="images/product/${lp.PRODUCT_FILENAME }"></dt>
-			                <dd>【学习猿地】${lp.PRODUCT_NAME }</dd>
-			                <dd>￥${lp.PRODUCT_PRICE }.00</dd>
+			                <dt><img src="${pageContext.request.contextPath}/upload/product/${lp.product_photo}" style="width: 216px;"></dt>
+			                <dd>${lp.product_name }</dd>
+			                <dd>￥${lp.product_price }.00</dd>
 			            </dl>
 			        </a>
        			 </c:forEach>
-                
-                
-                <a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like01.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a>
-                
-                <a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like02.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like03.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like04.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html" class="last">
-                    <dl>
-                        <dt><img src="images/temp/like05.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a></div>
-                <div><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like01.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like02.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like03.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html">
-                    <dl>
-                        <dt><img src="images/temp/like04.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a><a href="proDetail.html" class="last">
-                    <dl>
-                        <dt><img src="images/temp/like05.jpg"></dt>
-                        <dd>【最家】复古文艺风玻璃花瓶</dd>
-                        <dd>￥193.20</dd>
-                    </dl>
-                </a></div>
+                </div>
             </div>
         </div>
     </div>
@@ -282,7 +193,7 @@
     <dl class="goCart">
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>
-        <span>3</span></dl>
+        <span>99</span></dl>
 </a><a href="#" class="dh">
     <dl>
         <dt><img src="img/gt2.png"/></dt>
@@ -314,8 +225,8 @@
             </div>
         </div>
     </div>
-    <p class="dibu">最家家居&copy;2013-2017公司版权所有 京ICP备080100-44备0000111000号<br/>
-        违法和不良信息举报电话：188-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
+    <p class="dibu">家居电子商城&copy;2000-2020公司版权所有 京ICP备000001-11备0000111000号<br/>
+        违法和不良信息举报电话：888-888-8888，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p></div>
 <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
 <script src="js/public.js" type="text/javascript" charset="utf-8"></script>

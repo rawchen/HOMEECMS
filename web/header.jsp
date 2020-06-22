@@ -12,7 +12,6 @@
             <div class="fr clearfix" id="top1"><p class="fl">
             	<c:if test="${isLogin !=1 }">
             		<a href="login.jsp" id="login">登录</a><a href="reg.jsp" id="reg">注册</a>
-            	
             	</c:if>
             	
             	<c:if test="${isLogin ==1 }">

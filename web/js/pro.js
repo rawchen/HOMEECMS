@@ -11,7 +11,8 @@ $(function () {
     $(".proList li").on("mouseenter", function () {
         var c = "";
         c = '<p class="quick">快速浏览</p>';
-        $(this).css("border", "1px solid #000").append(c);
+        // $(this).css("border", "1px solid #000").append(c);
+        $(this).css("border", "1px solid #000");
         $(".quick").on("click", function () {
             $(".mask").show();
             $(".proDets").show()
