@@ -19,26 +19,32 @@ import java.util.List;
 @WebServlet("/toProductViewServlet")
 public class ToProductViewServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //获取参数商品id
         String id = request.getParameter("id");
 
+        //创建商品服务层对象 查询该商品后传到前台
         ProductService service2 = new ProductServiceImpl();
         Product productById = service2.findProductById(Integer.valueOf(id));
         request.setAttribute("p",productById);
 
+        //创建分类服务层对象 查询分类列表后传到前台
         CategoryService service = new CategoryServiceImpl();
         List<Category> flist =  service.findCategoryListByName("father");
         request.setAttribute("flist", flist);
         List<Category> clist =  service.findCategoryListByName("child");
         request.setAttribute("clist", clist);
 
+        //查询该商品的二级和一级分类
         Category c = service.findCategoryByCid(productById.getProduct_cid());
         request.setAttribute("childC",c);
         Category f = service.findCategoryByCid(c.getCategory_parentid());
         request.setAttribute("fatherC",f);
 
+        //查询二级分类商品
         List<Product> productList = service2.findProductByCategoryCid(c.getCategory_id());
         request.setAttribute("classlist",productList);
 
+        //查询最近访问的商品，未实现，改为了查询所有商品
         List<Product> productAllList =  service2.findAllProduct();
         request.setAttribute("lastlist",productAllList);
 
