@@ -17,4 +17,10 @@ public interface ProductService {
     void addProduct(Product p);
 
     List<Product> findProductByCategoryCid(int productCid);
+
+    List<Product> findProductTimeSort();
+
+    List<Product> findProductSalesSort();
+
+    List<Product> findProductByCategoryFid(int fid);
 }

@@ -12,7 +12,7 @@
 
 <%@ include file="header.jsp" %>
 
-<div class="banner"><a href="#"><img src="images/temp/banner2.jpg"/></a></div>
+<div class="banner"><a href="#"><img src="${link}"/></a></div>
 <!-----------------address------------------------------->
 <div class="address">
     <div class="wrapper clearfix"><a href="indexServlet">首页</a><span>/</span>${fatherC.category_name}<span>/</span>${childC.category_name}</div>
@@ -48,7 +48,7 @@
     <li><a href="proDetail.html">
         <dl>
             <dt><img src="images/temp/pro02.jpg"></dt>
-            <dd>【测试】测试测试测试测试测试测试</dd>
+            <dd>【静态测试】测试测试测试测试测试测试</dd>
             <dd>￥17.90</dd>
         </dl>
     </a></li>

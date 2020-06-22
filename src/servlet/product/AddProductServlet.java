@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @WebServlet("/manage/addProductServlet")
@@ -50,11 +52,11 @@ public class AddProductServlet extends HttpServlet {
         int  productStock = Integer.valueOf(su.getRequest().getParameter("productStock"));
         String productFatherChildid = su.getRequest().getParameter("parentId");
 
-        String ids[] = productFatherChildid.split("-");
+        String[] ids = productFatherChildid.split("-");
         int productFid = Integer.valueOf(ids[0]);//f
         int productCid = Integer.valueOf(ids[1]);//c
 
-        Product p = new Product(productName,productInfo,productPrice,productStock,productFid,productCid,fileName);
+        Product p = new Product(productName,productInfo,productPrice,productStock,productFid,productCid,fileName,new Date());
         ProductService service = new ProductServiceImpl();
         service.addProduct(p);
 

@@ -37,7 +37,7 @@
             
             
             <c:forEach var="f" items="${flist}">
-                <li><a href="selectproductlist?fid=${f.category_id}">${f.category_name}</a>
+                <li><a href="selectProductList?fid=${f.category_id}">${f.category_name}</a>
                     <div class="sList2">
                         <div class="clearfix">
                             <c:forEach var="c" items="${clist}">

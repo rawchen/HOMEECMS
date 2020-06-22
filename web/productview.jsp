@@ -31,7 +31,7 @@
             </div>
             <div class="fr intro">
                 <div class="title"><h4>${p.product_name}</h4>
-                    <p>【${p.product_info}】</p><span>￥${p.product_price}.00</span></div>
+                    <p>【${p.product_name}${p.product_name}】&emsp;&emsp;&emsp;<span style="font-size: 14px;color: #000000">销量 :</span> <span style="font-size: 16px;">123</span></p><span>￥${p.product_price}.00</span></div>
                 <div class="proIntro"><p>颜色分类</p>
                     <div class="smallImg clearfix categ">
                         <p class="fl"><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"
@@ -40,7 +40,7 @@
                         <p class="fl"><img src="images/temp/proDet02_big.jpg" alt="XXXX"
                                            data-src="images/temp/proDet02_big.jpg"></p>
                         </div>
-                    <p>数量&nbsp;&nbsp;库存<span>${p.product_stock}</span>件</p>
+                    <p>数量&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;库存<span>${p.product_stock}</span>件</p>
                     <div class="num clearfix">
                     		<img class="fl sub" src="images/temp/sub.jpg">
                     		<span id="count" class="fl" contentEditable="true">1</span><img
@@ -69,9 +69,9 @@
     <div class="msgL fl">
         <div class="msgTit clearfix"><a class="on">商品详情</a><a>所有评价</a></div>
         <div class="msgAll">
-            <div class="msgImgs"><img src="images/temp/det01.jpg"><img src="images/temp/det02.jpg"><img
-                    src="images/temp/det03.jpg"><img src="images/temp/det04.jpg"><img src="images/temp/det05.jpg"><img
-                    src="images/temp/det06.jpg"><img src="images/temp/det07.jpg"></div>
+            <div class="msgImgs">
+                ${p.product_info}
+            </div>
             <div class="eva">
                 <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
                     <div class="perR fl"><p>馨***呀</p>

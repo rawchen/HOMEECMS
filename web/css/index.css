@@ -95,14 +95,18 @@ img {
 }
 
 .news .flower {
-    display: flex;
+    /*display: flex;*/
     justify-content: space-around;
     text-align: center;
     color: #777;
 }
 
 .news .flower a {
+    width: 356px;
     display: block;
+    float: left;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 
 .news .flower dl dd span {
@@ -174,11 +178,14 @@ a.ad {
 
 /*people*/
 .people .pList {
-    display: flex;
+    /*display: flex;*/
     justify-content: space-around;
 }
 
 .people .pList a {
+    float: left;
+    margin-left: 6px;
+    margin-right: 6px;
     display: block;
     margin-bottom: 20px;
     text-align: center;

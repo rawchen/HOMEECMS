@@ -7,6 +7,7 @@
     <title>简单通用文章系统后台管理模板</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/manage/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/manage/css/main.css"/>
+    <script src="${pageContext.request.contextPath}/manage/js/ckeditor.js"></script>
 </head>
 <body>
 <div class="topbar-wrap white">

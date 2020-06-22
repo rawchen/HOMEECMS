@@ -48,6 +48,9 @@
             
                             <th>ID</th>
                             <th>商品名称</th>
+                            <th>商品价格</th>
+                            <th>商品库存</th>
+                            <th>发布时间</th>
                             <th>操作</th>
                            
                         </tr>
@@ -57,8 +60,10 @@
                         		<td>${p.product_id }</td>
                         		<td><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}" width="80" height="80">
                         			${p.product_name }
-                        		
                         		</td>
+                                <td>￥${p.product_price}.00</td>
+                                <td>${p.product_stock}</td>
+                                <td>${p.product_time}</td>
                         		<td>
                         			<a href="${pageContext.request.contextPath}/manage/toUpdateProductServlet?productId=${p.product_id}">修改</a>
                         			<a href="javascript:del(${p.product_id});">删除</a>

@@ -40,4 +40,19 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> findProductByCategoryCid(int productCid) {
         return dao.findProductByCategoryCid(productCid);
     }
+
+    @Override
+    public List<Product> findProductTimeSort() {
+        return dao.findProductTimeSort();
+    }
+
+    @Override
+    public List<Product> findProductSalesSort() {
+        return dao.findProductSalesSort();
+    }
+
+    @Override
+    public List<Product> findProductByCategoryFid(int fid) {
+        return dao.findProductByCategoryFid(fid);
+    }
 }

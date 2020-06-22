@@ -59,8 +59,8 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public void addProduct(Product p) {
         try {
-            String sql = "insert into tb_product(product_name,product_info,product_price,product_stock,product_fid,product_cid,product_photo) values(?,?,?,?,?,?,?)";
-            template.update(sql,p.getProduct_name(),p.getProduct_info(),p.getProduct_price(),p.getProduct_stock(),p.getProduct_fid(),p.getProduct_cid(),p.getProduct_photo());
+            String sql = "insert into tb_product(product_name,product_info,product_price,product_stock,product_fid,product_cid,product_photo,product_time) values(?,?,?,?,?,?,?,?)";
+            template.update(sql,p.getProduct_name(),p.getProduct_info(),p.getProduct_price(),p.getProduct_stock(),p.getProduct_fid(),p.getProduct_cid(),p.getProduct_photo(),p.getProduct_time());
         } catch (DataAccessException e) {
             e.printStackTrace();
         }
@@ -71,6 +71,42 @@ public class ProductDaoImpl implements ProductDao {
         try {
             String sql = "select * from tb_product where product_cid = ?";
             List<Product> p = template.query(sql, new BeanPropertyRowMapper<Product>(Product.class),productCid);
+            return p;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Product> findProductTimeSort() {
+        try {
+            String sql = "select * from tb_product order by product_time desc limit 6";
+            List<Product> p = template.query(sql, new BeanPropertyRowMapper<Product>(Product.class));
+            return p;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Product> findProductSalesSort() {
+        try {
+            String sql = "select * from tb_product order by product_sales desc limit 9";
+            List<Product> p = template.query(sql, new BeanPropertyRowMapper<Product>(Product.class));
+            return p;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<Product> findProductByCategoryFid(int productFid) {
+        try {
+            String sql = "select * from tb_product where product_fid = ?";
+            List<Product> p = template.query(sql, new BeanPropertyRowMapper<Product>(Product.class),productFid);
             return p;
         } catch (DataAccessException e) {
             e.printStackTrace();

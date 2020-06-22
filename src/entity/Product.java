@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Date;
+
 public class Product {
 	private int product_id;
 	private String product_name;
@@ -11,9 +13,21 @@ public class Product {
 	private String product_photo;
 	private String product_style;
 	private int product_sales;
+	private Date product_time;
 
 	public Product(){
 
+	}
+
+	public Product(String product_name, String product_info, int product_price, int product_stock, int product_fid, int product_cid, String product_photo,Date product_time) {
+		this.product_name = product_name;
+		this.product_info = product_info;
+		this.product_price = product_price;
+		this.product_stock = product_stock;
+		this.product_fid = product_fid;
+		this.product_cid = product_cid;
+		this.product_photo = product_photo;
+		this.product_time = product_time;
 	}
 
 	public Product(String product_name, String product_info, int product_price, int product_stock, int product_fid, int product_cid, String product_photo) {
@@ -106,10 +120,20 @@ public class Product {
 		this.product_sales = product_sales;
 	}
 
+
+	public Date getProduct_time() {
+		return product_time;
+	}
+
+	public void setProduct_time(Date product_time) {
+		this.product_time = product_time;
+	}
+
 	@Override
 	public String toString() {
 		return "Product{" +
-				"product_name='" + product_name + '\'' +
+				"product_id=" + product_id +
+				", product_name='" + product_name + '\'' +
 				", product_info='" + product_info + '\'' +
 				", product_price=" + product_price +
 				", product_stock=" + product_stock +
@@ -118,6 +142,7 @@ public class Product {
 				", product_photo='" + product_photo + '\'' +
 				", product_style='" + product_style + '\'' +
 				", product_sales=" + product_sales +
+				", product_time=" + product_time +
 				'}';
 	}
 }
