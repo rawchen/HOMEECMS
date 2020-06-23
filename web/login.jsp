@@ -9,13 +9,13 @@
 </head>
 <body><!-------------------login-------------------------->
 <div class="login">
-    <form action="${pageContext.request.contextPath}/loginServlet" method="post"><h1><a href="index.jsp"><img src="images/temp/logo.png"></a></h1>
+    <form action="${pageContext.request.contextPath}/loginServlet" method="post"><h1><a href="indexServlet"><img src="images/temp/logo.png"></a></h1>
         <p></p>
-        <div class="msg-warn hide"><b></b>公共场所不建议自动登录，以防账号丢失</div>
-        <p><input type="text" name="userName" value="" placeholder="昵称/邮箱/手机号"></p>
-        <p><input type="text" name="passWord" value="" placeholder="密码"></p>
+        <div class="msg-warn hide"><b></b>登录时注意电脑环境，以防账号丢失</div>
+        <p><input type="text" name="userName" value="" placeholder="昵称/邮箱/手机号" required></p>
+        <p><input type="password" name="passWord" value="" placeholder="密码" required></p>
         <p><input type="submit" name="" value="登  录"></p>
-        <p class="txt"><a class="" href="reg.html">免费注册</a><a href="forget.html">忘记密码？</a></p></form>
+        <p class="txt"><a class="" href="reg.jsp">免费注册</a><a href="forget.html">忘记密码？</a></p></form>
 </div>
 </body>
 </html>

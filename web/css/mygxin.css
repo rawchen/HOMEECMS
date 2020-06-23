@@ -20,6 +20,7 @@
 }
 
 .Bott .zuo h3 a img {
+    border-radius: 45px;
     display: block;
     margin: 0 auto;
 }
@@ -85,9 +86,6 @@
 
 .Bott .you .tx div a.fl {
     display: block;
-    width: 90px;
-    height: 90px;
-    border-radius: 45px;
     border: 1px solid #e3e3e3;
     padding: 1px;
 }

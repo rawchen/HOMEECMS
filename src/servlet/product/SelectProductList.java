@@ -2,8 +2,11 @@ package servlet.product;
 
 import entity.Category;
 import entity.Product;
+import entity.User;
+import service.CartService;
 import service.CategoryService;
 import service.ProductService;
+import service.impl.CartServiceImpl;
 import service.impl.CategoryServiceImpl;
 import service.impl.ProductServiceImpl;
 
@@ -12,12 +15,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/selectProductList")
 public class SelectProductList extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        //查询购物车数量
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("name");
+
+        String cartCount = "0";
+        CartService service1 = new CartServiceImpl();
+        if (user != null) {
+            cartCount = String.valueOf(service1.findCartCountByUserId(user.getUser_id()));
+        }else {
+            cartCount = "?";
+        }
+        request.setAttribute("cartCount",cartCount);
+
 
         String cid = request.getParameter("cid");
         if (cid != null && !cid.trim().equals("")) {

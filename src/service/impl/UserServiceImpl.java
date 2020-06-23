@@ -23,11 +23,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Boolean addUser(User u) {
-        if (dao.addUser(u) == true) {
-            return true;
-        }else {
-            return false;
-        }
+        return dao.addUser(u) == true;
     }
 
     @Override
@@ -56,5 +52,15 @@ public class UserServiceImpl implements UserService {
         int totalPage = (totalCount % rows) == 0 ? totalCount/rows : (totalCount/rows) + 1;
         pb.setTotalPage(totalPage);
         return pb;
+    }
+
+    @Override
+    public User findUserByUserId(int user_id) {
+        return dao.findUserByUserId(user_id);
+    }
+
+    @Override
+    public User findUserByUserName(String userName) {
+        return dao.findUserByUserName(userName);
     }
 }

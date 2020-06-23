@@ -15,4 +15,8 @@ public interface UserService {
     Boolean addUser(User u);
 
     PageBean<User> findUserByPage(String currentPage,String rows);
+
+    User findUserByUserId(int user_id);
+
+    User findUserByUserName(String userName);
 }

@@ -24,12 +24,11 @@ html, body {
 .login form, .reg form {
     position: fixed;
     top: 15%;
-    right: 140px;
-    padding: 20px 0;
+    right: 200px;
+    padding: 20px 50px;
    
     z-index: 10;
     background: #fff;
-    padding-left:50px;
 }
 
 .msg-warn {
@@ -46,14 +45,11 @@ html, body {
 .login form {
     top: 18%;
     border: 1px solid #dbdbdb;
-    width: 440px;
     height: 310px;
 }
 
 .reg form {
-    width: 580px;
-
-    background: #fff;
+    background: #cfcfcf4f;
 }
 
 .reg form h1, .login form h1 {
@@ -72,23 +68,41 @@ html, body {
 }
 
 .reg form input, .login form input {
-    width: 270px;
+    width: 280px;
     height: 30px;
     border-radius: 3px;
 }
 
 .reg form input[type="text"], .login form input[type="text"] {
     border: 1px solid #dbdbdb;
-    font-size: 20px;
+    font-size: 12px;
     padding-left: 10px;
+    padding-top: 0px;
 }
 
-.reg input[type="submit"], .login input[type="submit"] {
-    width: 280px;
+.reg form input[type="password"], .login form input[type="password"] {
+    border: 1px solid #dbdbdb;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-top: 0px;
+}
+
+.reg input[type="submit"] {
+    width: 290px;
     background: #C10000;
-    font-size: 20px;
+    font-size: 16px;
     border: none;
     color: #fff;
+    padding-top: 0px;
+}
+
+.login input[type="submit"] {
+    width: 280px;
+    background: #C10000;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    padding-top: 0px;
 }
 
 div.reg form input.code {
@@ -99,10 +113,10 @@ div.reg form p.txtL {
     text-align: left;
 }
 
-div.reg form p.txtL img {
-    width: 97px;
-    height: 37px;
-    vertical-align: middle;
+div.reg form p.txtL a img {
+    width: 111px;
+    vertical-align: bottom;
+    margin-left: 14px;
 }
 
 div.reg form p.txtL a {
@@ -110,9 +124,10 @@ div.reg form p.txtL a {
 }
 
 .reg form p.txt, .login form p.txt {
-    width: 280px;
+    /*width: 280px;*/
+    /*text-align: right;*/
     margin: 10px auto 0;
-    text-align: right;
+
 }
 
 .reg p.txt a, .login p.txt a {

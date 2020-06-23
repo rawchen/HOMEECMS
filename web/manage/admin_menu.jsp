@@ -4,10 +4,10 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>简单通用文章系统后台管理模板</title>
+    <title>后台管理</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/manage/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/manage/css/main.css"/>
-    <script src="${pageContext.request.contextPath}/manage/js/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>
 </head>
 <body>
 <div class="topbar-wrap white">
@@ -23,7 +23,7 @@
             <ul class="top-info-list clearfix">
                 <li><a href="#">管理员:${name.user_name}</a></li>
                 <li><a href="#">修改密码</a></li>
-                <li><a href="${pageContext.request.contextPath}/admin_logout">退出</a></li>
+                <li><a href="${pageContext.request.contextPath}/logoutAdminServlet">退出</a></li>
             </ul>
         </div>
     </div>
@@ -41,19 +41,20 @@
                         <li><a href="${pageContext.request.contextPath}/userListServlet"><i class="icon-font">&#xe008;</i>用户管理</a></li>
                         <li><a href="${pageContext.request.contextPath}/categoryListServlet"><i class="icon-font">&#xe005;</i>分类管理</a></li>
                         <li><a href="${pageContext.request.contextPath}/productListServlet"><i class="icon-font">&#xe006;</i>商品管理</a></li>
-                        <li><a href="admin_order.jsp"><i class="icon-font">&#xe004;</i>订单管理</a></li>
-                        <li><a href="admin_message.jsp"><i class="icon-font">&#xe012;</i>留言管理</a></li>
-                        <li><a href="admin_news.jsp"><i class="icon-font">&#xe052;</i>新闻管理</a></li>
+                        <li><a href="#"><i class="icon-font">&#xe004;</i>订单管理</a></li>
+                        <li><a href="#"><i class="icon-font">&#xe012;</i>评论管理</a></li>
+                        <li><a href="#"><i class="icon-font">&#xe052;</i>通知管理</a></li>
+                        <li><a href="#"><i class="icon-font">&#xe052;</i>轮播图(待开发)</a></li>
                       
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="icon-font">&#xe018;</i>系统管理</a>
                     <ul class="sub-menu">
-                        <li><a href="system.jsp"><i class="icon-font">&#xe017;</i>系统设置</a></li>
-                        <li><a href="system.jsp"><i class="icon-font">&#xe037;</i>清理缓存</a></li>
-                        <li><a href="system.jsp"><i class="icon-font">&#xe046;</i>数据备份</a></li>
-                        <li><a href="system.jsp"><i class="icon-font">&#xe045;</i>数据还原</a></li>
+                        <li><a href="#"><i class="icon-font">&#xe017;</i>系统设置(待开发)</a></li>
+
+                        <li><a href="#"><i class="icon-font">&#xe046;</i>数据备份(待开发)</a></li>
+                        <li><a href="#"><i class="icon-font">&#xe045;</i>数据还原(待开发)</a></li>
                     </ul>
                 </li>
             </ul>

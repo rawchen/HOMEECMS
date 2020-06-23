@@ -6,7 +6,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="#">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
@@ -67,7 +67,7 @@
                                 <td><img src="${pageContext.request.contextPath}/upload/user/${u.user_photo}" style="width: 40px;"></td>
 
 	                            <td>
-	                                <a class="link-update" href="admin_touserupdate?id=${u.user_id}&cpage=${cpage}">修改</a>
+	                                <a class="link-update" href="manage/updateUserServlet?uid=${u.user_id}">修改</a>
 	                              
 	                              <c:if test="${u.user_status ==1 }">
 	                                <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name} }】吗？', '${pageContext.request.contextPath}/manage/admin_douserdel?id=${u.user_id}&cpage=${cpage }')">删除</a>

@@ -83,12 +83,13 @@
         </div>
     </div>
 </div><!--返回顶部-->
-<div class="gotop"><a href="cart.jsp">
-    <dl>
+<div class="gotop"><a href="toCartServlet">
+    <dl class="goCart">
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>
+        <span>${cartCount}</span></dl>
     </dl>
-</a><a href="mygxin.jsp">
+</a><a href="toUserInfoServlet">
     <dl>
         <dt><img src="img/gt3.png"/></dt>
         <dd>个人<br/>中心</dd>

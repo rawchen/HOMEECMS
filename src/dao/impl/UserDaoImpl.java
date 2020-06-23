@@ -63,4 +63,28 @@ public class UserDaoImpl implements UserDao {
         String sql = "select * from tb_user limit ? , ?";
         return template.query(sql, new BeanPropertyRowMapper<User>(User.class),start,rows);
     }
+
+    @Override
+    public User findUserByUserId(int user_id) {
+        try {
+            String sql = "select * from tb_user where user_id = ?";
+            User u = template.queryForObject(sql,new BeanPropertyRowMapper<User>(User.class),user_id);
+            return u;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public User findUserByUserName(String userName) {
+        try {
+            String sql = "select * from tb_user where user_name = ?";
+            User u = template.queryForObject(sql,new BeanPropertyRowMapper<User>(User.class),userName);
+            return u;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

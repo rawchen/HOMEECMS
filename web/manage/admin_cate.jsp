@@ -6,7 +6,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">分类管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="#">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">分类管理</span></div>
         </div>
      
         <div id="register" class="result-wrap">

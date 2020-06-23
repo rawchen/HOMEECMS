@@ -3,6 +3,7 @@ package entity;
 public class Address {
     private int id;
     private int user_id;
+    private String user_name;
     private String user_phone;
     private String user_address;
 
@@ -10,10 +11,19 @@ public class Address {
 
     }
 
-    public Address(int user_id, String user_phone, String user_address) {
+    public Address(int user_id, String user_name,  String user_phone, String user_address) {
         this.user_id = user_id;
+        this.user_name = user_name;
         this.user_phone = user_phone;
         this.user_address = user_address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getUser_id() {
@@ -22,6 +32,14 @@ public class Address {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public String getUser_name() {
+        return user_name;
+    }
+
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public String getUser_phone() {

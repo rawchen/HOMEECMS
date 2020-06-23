@@ -12,7 +12,7 @@
 <body><!----------------------------------------order------------------>
 <div class="head ding">
     <div class="wrapper clearfix">
-        <div class="clearfix" id="top"><h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
+        <div class="clearfix" id="top"><h1 class="fl"><a href="indexServlet"><img src="img/logo.png"/></a></h1>
             <div class="fr clearfix" id="top1"><p class="fl"><a href="#" id="login">登录</a><a href="#" id="reg">注册</a>
             </p>
                 <form action="#" method="get" class="fl"><input type="text" placeholder="搜索"/><input type="button"/>
@@ -23,50 +23,20 @@
             </div>
         </div>
         <ul class="clearfix" id="bott">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="#">所有商品</a>
-                <div class="sList">
-                    <div class="wrapper  clearfix"><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav1.jpg"/></dt>
-                            <dd>浓情欧式</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav2.jpg"/></dt>
-                            <dd>浪漫美式</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav3.jpg"/></dt>
-                            <dd>雅致中式</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav6.jpg"/></dt>
-                            <dd>简约现代</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav7.jpg"/></dt>
-                            <dd>创意装饰</dd>
-                        </dl>
-                    </a></div>
-                </div>
-            </li>
-            <li><a href="flowerDer.html">装饰摆件</a>
-                <div class="sList2">
-                    <div class="clearfix"><a href="proList.html">干花花艺</a><a href="vase_proList.html">花瓶花器</a></div>
-                </div>
-            </li>
-            <li><a href="decoration.html">布艺软饰</a>
-                <div class="sList2">
-                    <div class="clearfix"><a href="zbproList.html">桌布罩件</a><a href="bzproList.html">抱枕靠垫</a></div>
-                </div>
-            </li>
-            <li><a href="paint.html">墙式壁挂</a></li>
-            <li><a href="perfume.html">蜡艺香薰</a></li>
-            <li><a href="idea.html">创意家居</a></li>
+            <li><a href="indexServlet">首页</a></li>
+            <c:forEach var="f" items="${flist}">
+                <li><a href="selectProductList?fid=${f.category_id}">${f.category_name}</a>
+                    <div class="sList2">
+                        <div class="clearfix">
+                            <c:forEach var="c" items="${clist}">
+                                <c:if test="${f.category_id == c.category_parentid}">
+                                    <a href="selectProductList?cid=${c.category_id}">${c.category_name}</a>
+                                </c:if>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </li>
+            </c:forEach>
         </ul>
     </div>
 </div>
@@ -78,26 +48,17 @@
         <div class="orderL fl"><!--------h3----------------><h3>收件信息<a href="#" class="fr">新增地址</a></h3>
             <!--------addres---------------->
             <div class="addres clearfix">
-                <div class="addre fl on">
-                    <div class="tit clearfix"><p class="fl">${name.USER_NAME} <span class="default">[默认地址]</span></p>
-                        <p class="fr"><a href="#">删除</a><span>|</span><a href="#" class="edit">编辑</a></p></div>
-                    <div class="addCon"><p>${name.USER_ADDRESS }</p>
-                        <p>15732570937</p></div>
-                </div>
-                <div class="addre fl">
-                    <div class="tit clearfix"><p class="fl">张三2</p>
-                        <p class="fr"><a href="#" class="setDefault">设为默认</a><span>|</span><a
-                                href="#">删除</a><span>|</span><a href="#" class="edit">编辑</a></p></div>
-                    <div class="addCon"><p>河北省&nbsp;唐山市&nbsp;路北区&nbsp;大学生公寓村</p>
-                        <p>15732570937</p></div>
-                </div>
-                <div class="addre fl">
-                    <div class="tit clearfix"><p class="fl">张三3</p>
-                        <p class="fr"><a href="#" class="setDefault">设为默认</a><span>|</span><a
-                                href="#">删除</a><span>|</span><a href="#" class="edit">编辑</a></p></div>
-                    <div class="addCon"><p>河北省&nbsp;唐山市&nbsp;路北区&nbsp;大学生公寓村</p>
-                        <p>15732570937</p></div>
-                </div>
+
+                <c:forEach var="a" items="${address}">
+                    <div class="addre fl on">
+                        <div class="tit clearfix"><p class="fl">${a.user_name} <span class="default">[默认地址]</span></p>
+                            <p class="fr"><a href="#">删除</a><span>|</span><a href="#" class="edit">编辑</a></p></div>
+                        <div class="addCon"><p>${a.user_address}</p>
+                            <p>${a.user_phone}</p></div>
+                    </div>
+                </c:forEach>
+
+
             </div>
             <h3>支付方式</h3><!--------way---------------->
             <div class="way clearfix"><img class="on" src="images/temp/way01.jpg"><img src="images/temp/way02.jpg"><img
@@ -107,26 +68,38 @@
             </div>
         </div>
         <div class="orderR fr">
-            <div class="msg"><h3>订单内容<a href="showcart" class="fr">返回购物车</a></h3><!--------ul---------------->
+            <div class="msg"><h3>订单内容<a href="toCartServlet" class="fr">返回购物车</a></h3><!--------ul---------------->
               
-              <c:forEach var="rs" items="${requestScope.shoplist }">
-              
-                <ul class="clearfix">
-                    <li class="fl"><img width="100" height="100" src="images/product/${rs.cart_p_filename}"></li>
-                    <li class="fl"><p>${rs.cart_p_name }</p>
-                        <p>颜色分类：烟灰色玻璃瓶</p>
-                        <p>数量：${rs.cart_quantity}</p></li>
-                    <li class="fr">￥${rs.cart_p_price * rs.cart_quantity}.00</li>
-                </ul>
-                
-                </c:forEach>
+<%--              <c:forEach var="rs" items="${requestScope.shoplist }">--%>
+<%--              --%>
+<%--                <ul class="clearfix">--%>
+<%--                    <li class="fl"><img width="100" height="100" src="images/product/${rs.cart_p_filename}"></li>--%>
+<%--                    <li class="fl"><p>${rs.cart_p_name }</p>--%>
+<%--                        <p>颜色分类：烟灰色玻璃瓶</p>--%>
+<%--                        <p>数量：${rs.cart_quantity}</p></li>--%>
+<%--                    <li class="fr">￥${rs.cart_p_price * rs.cart_quantity}.00</li>--%>
+<%--                </ul>--%>
+<%--                --%>
+<%--                </c:forEach>--%>
+
+
+                    <ul class="clearfix">
+                        <li class="fl"><img width="100" height="100" src="${pageContext.request.contextPath}/upload/product/${product.product_photo}"></li>
+                        <li class="fl"><p>${rs.cart_p_name}</p>
+                            <p>颜色分类：${product.product_name}</p>
+                            <p>单价：</p></li>
+                        <li class="fr">￥${product.product_price}.00</li>
+                    </ul>
+
            
             </div><!--------tips---------------->
-            <div class="tips"><p><span class="fl">商品金额：</span><span class="fr">￥${totalprice}.00</span></p>
+            <div class="tips">
+                <p><span class="fl">商品金额：</span><span class="fr">￥${price}.00</span></p>
+                <p><span class="fl">数量：</span><span class="fr">${count}</span></p>
                 <p><span class="fl">优惠金额：</span><span class="fr">￥0.00</span></p>
                 <p><span class="fl">运费：</span><span class="fr">免运费</span></p></div><!--------tips count---------------->
-            <div class="count tips"><p><span class="fl">合计：</span><span class="fr">￥${totalprice}.00</span></p></div>
-            <!--<input type="button" name="" value="去支付">--> <a href="ok.html" class="pay">去支付</a></div>
+            <div class="count tips"><p><span class="fl">合计：</span><span class="fr">￥${totalPrice}.00</span></p></div>
+            <!--<input type="button" name="" value="去支付">--> <a href="toPayServlet" class="pay">去支付</a></div>
     </div>
 </div><!--编辑弹框--><!--遮罩-->
 <div class="mask"></div>
@@ -141,21 +114,22 @@
         </select><select>
             <option value="配送区域">配送区域</option>
         </select></div>
-        <textarea name="" rows="" cols="" placeholder="详细地址"></textarea><input type="text" placeholder="邮政编码"/>
+        <textarea name="" rows="" cols="" placeholder="详细地址"></textarea>
         <div class="bc"><input type="button" value="保存"/><input type="button" value="取消"/></div>
     </form>
 </div><!--返回顶部-->
-<div class="gotop"><a href="cart.html">
-    <dl>
+<div class="gotop"><a href="toCartServlet">
+    <dl  class="goCart">
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>
+        <span>${cartCount}</span></dl>
     </dl>
 </a><a href="#" class="dh">
     <dl>
         <dt><img src="img/gt2.png"/></dt>
         <dd>联系<br/>客服</dd>
     </dl>
-</a><a href="mygxin.html">
+</a><a href="toUserInfoServlet">
     <dl>
         <dt><img src="img/gt3.png"/></dt>
         <dd>个人<br/>中心</dd>

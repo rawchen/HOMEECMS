@@ -2,8 +2,11 @@ package servlet.product;
 
 import entity.Category;
 import entity.Product;
+import entity.User;
+import service.CartService;
 import service.CategoryService;
 import service.ProductService;
+import service.impl.CartServiceImpl;
 import service.impl.CategoryServiceImpl;
 import service.impl.ProductServiceImpl;
 
@@ -48,8 +51,19 @@ public class ToProductViewServlet extends HttpServlet {
         List<Product> productAllList =  service2.findAllProduct();
         request.setAttribute("lastlist",productAllList);
 
-
         //查询购物车数量
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("name");
+
+        String cartCount = "0";
+        CartService service1 = new CartServiceImpl();
+        if (user != null) {
+            cartCount = String.valueOf(service1.findCartCountByUserId(user.getUser_id()));
+        }else {
+            cartCount = "?";
+        }
+
+        request.setAttribute("cartCount",cartCount);
 
 
 /*

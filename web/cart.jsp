@@ -4,7 +4,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8"/>
-    <title>cart</title>
+    <title>我的购物车</title>
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
     <link rel="stylesheet" type="text/css" href="css/proList.css"/>
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
@@ -12,7 +12,7 @@
 <body><!--------------------------------------cart--------------------->
 <div class="head ding">
     <div class="wrapper clearfix">
-        <div class="clearfix" id="top"><h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
+        <div class="clearfix" id="top"><h1 class="fl"><a href="indexServlet"><img src="img/logo.png"/></a></h1>
             <div class="fr clearfix" id="top1"><p class="fl"><a href="login.html" id="login">登录</a><a href="reg.html"
                                                                                                       id="reg">注册</a>
             </p>
@@ -24,50 +24,20 @@
             </div>
         </div>
         <ul class="clearfix" id="bott">
-            <li><a href="index.html">首页</a></li>
-            <li><a href="#">所有商品</a>
-                <div class="sList">
-                    <div class="wrapper  clearfix"><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav1.jpg"/></dt>
-                            <dd>浓情欧式</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav2.jpg"/></dt>
-                            <dd>浪漫美式</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav3.jpg"/></dt>
-                            <dd>雅致中式</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav6.jpg"/></dt>
-                            <dd>简约现代</dd>
-                        </dl>
-                    </a><a href="paint.html">
-                        <dl>
-                            <dt><img src="img/nav7.jpg"/></dt>
-                            <dd>创意装饰</dd>
-                        </dl>
-                    </a></div>
-                </div>
-            </li>
-            <li><a href="flowerDer.html">装饰摆件</a>
-                <div class="sList2">
-                    <div class="clearfix"><a href="proList.html">干花花艺</a><a href="vase_proList.html">花瓶花器</a></div>
-                </div>
-            </li>
-            <li><a href="decoration.html">布艺软饰</a>
-                <div class="sList2">
-                    <div class="clearfix"><a href="zbproList.html">桌布罩件</a><a href="bzproList.html">抱枕靠垫</a></div>
-                </div>
-            </li>
-            <li><a href="paint.html">墙式壁挂</a></li>
-            <li><a href="perfume.html">蜡艺香薰</a></li>
-            <li><a href="idea.html">创意家居</a></li>
+            <li><a href="indexServlet">首页</a></li>
+            <c:forEach var="f" items="${flist}">
+                <li><a href="selectProductList?fid=${f.category_id}">${f.category_name}</a>
+                    <div class="sList2">
+                        <div class="clearfix">
+                            <c:forEach var="c" items="${clist}">
+                                <c:if test="${f.category_id == c.category_parentid}">
+                                    <a href="selectProductList?cid=${c.category_id}">${c.category_name}</a>
+                                </c:if>
+                            </c:forEach>
+                        </div>
+                    </div>
+                </li>
+            </c:forEach>
         </ul>
     </div>
 </div>
@@ -85,30 +55,29 @@
             <div>小计</div>
             <div>操作</div>
         </div>
-       
-       <c:forEach var="rs" items="${requestScope.shoplist }">
-       
+
+       <c:forEach var="rs" items="${cartList}">
         <div class="th">
             <div class="pro clearfix"><label class="fl">
-            	<input name="ck" type="checkbox" value="${rs.cart_id }"/>
+            	<input name="ck" type="checkbox" value="${rs.cart_id}"/>
             	
             	<span></span></label>
-            	<a class="fl" href="selectproductview?id=${rs.cart_p_id }">
+            	<a class="fl" href="toProductViewServlet?id=${rs.product_id}" target="_blank">
                 <dl class="clearfix">
-                    <dt class="fl"><img width="120" height="120" src="images/product/${rs.cart_p_filename }"></dt>
-                    <dd class="fl"><p>${rs.cart_p_name }</p>
-                        <p>图书分类</p>
-                        <p>好书+内容全</p></dd>
+                    <dt class="fl"><img width="120" height="120" src="${pageContext.request.contextPath}/upload/product/${rs.product_photo}"></dt>
+                    <dd class="fl"><p>${rs.product_name}</p>
+                        <p>家居分类</p>
+                        <p>xxx</p></dd>
                 </dl>
             </a></div>
-            <div class="price">￥${rs.cart_p_price }.00</div>
+            <div class="price">￥${rs.product_price }.00</div>
             <div class="number">
             	<p class="num clearfix">
             	<img class="fl sub" src="images/temp/sub.jpg">
-            	<span datasrc="${rs.cart_id }" class="fl">${rs.cart_quantity }</span>
+            	<span datasrc="${rs.cart_id }" class="fl">${rs.product_quantity }</span>
             	<img class="fl add" src="images/temp/add.jpg"></p>
            </div>
-            <div class="price sAll">￥${rs.cart_p_price * rs.cart_quantity }.00</div>
+            <div class="price sAll">￥${rs.product_price * rs.product_quantity }.00</div>
             <div class="price"><a class="del" datasrc="${rs.cart_id }" href="#2">删除</a></div>
         </div>
        
@@ -143,17 +112,12 @@
 <div class="mask"></div>
 <div class="tipDel"><p>确定要删除该商品吗？</p>
     <p class="clearfix"><a class="fl cer" href="#">确定</a><a class="fr cancel" href="#">取消</a></p></div><!--返回顶部-->
-<div class="gotop"><a href="cart.html">
-    <dl>
-        <dt><img src="img/gt1.png"/></dt>
-        <dd>去购<br/>物车</dd>
-    </dl>
-</a><a href="#" class="dh">
+<div class="gotop"><a href="#" class="dh">
     <dl>
         <dt><img src="img/gt2.png"/></dt>
         <dd>联系<br/>客服</dd>
     </dl>
-</a><a href="mygxin.html">
+</a><a href="toUserInfoServlet">
     <dl>
         <dt><img src="img/gt3.png"/></dt>
         <dd>个人<br/>中心</dd>

@@ -24,6 +24,14 @@ public class Cart {
 		this.product_photo = product_photo;
 	}
 
+	public int getCart_id() {
+		return cart_id;
+	}
+
+	public void setCart_id(int cart_id) {
+		this.cart_id = cart_id;
+	}
+
 	public int getProduct_id() {
 		return product_id;
 	}

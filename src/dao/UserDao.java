@@ -14,4 +14,8 @@ public interface UserDao {
     int findTotalCount();
 
     List<User> findByPage(int start, int rows);
+
+    User findUserByUserId(int user_id);
+
+    User findUserByUserName(String userName);
 }

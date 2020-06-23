@@ -32,7 +32,8 @@
             <div class="fr intro">
                 <div class="title"><h4>${p.product_name}</h4>
                     <p>【${p.product_name}${p.product_name}】&emsp;&emsp;&emsp;<span style="font-size: 14px;color: #000000">销量 :</span> <span style="font-size: 16px;">123</span></p><span>￥${p.product_price}.00</span></div>
-                <div class="proIntro"><p>颜色分类</p>
+                <div class="proIntro">
+                    <p>颜色分类</p>
                     <div class="smallImg clearfix categ">
                         <p class="fl"><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}"
                                                                             alt="${p.product_name}"
@@ -43,22 +44,55 @@
                     <p>数量&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;库存<span>${p.product_stock}</span>件</p>
                     <div class="num clearfix">
                     		<img class="fl sub" src="images/temp/sub.jpg">
-                    		<span id="count" class="fl" contentEditable="true">1</span><img
+                    		<span id="countP" class="fl" contentEditable="true">1</span><img
                             class="fl add" src="images/temp/add.jpg">
                         <p class="please fl">请选择商品属性!</p></div>
                 </div>
                 <div class="btns clearfix">
-                	<a href="javascript:shopAdd(${p.product_id },'z')"><p class="buy fl">立即购买</p></a>
-                	<a href="javascript:shopAdd(${p.product_id },'s')""><p class="cart fr"> 加入购物车</p></a></div>
+                    <input id="userid" type="hidden" value="${name.user_id}">
+
+                	<a href="javascript:void(0);" onclick ="js_method(${p.product_id})";><p class="buy fl">立即购买</p></a>
+
+                    <a href="javascript:void(0);" onclick ="js_method2(${p.product_id})"><p class="cart fr"> 加入购物车</p></a></div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
+    function js_method(a) {
+        if ($(".categ p").hasClass("on")) {
+
+            var cont=document.getElementById("count");
+            location.href='toOrderServlet?uid='+document.getElementById("userid").value+'&pid='+a+'&count='+document.getElementById("countP").innerHTML;
+
+            $(".proIntro").css("border", "none");
+            $(".num .please").hide()
+        } else {
+            $(".proIntro").css("border", "1px solid #c10000");
+            $(".num .please").show()
+        }
+
+    }
+    function js_method2(a) {
+        if ($(".categ p").hasClass("on")) {
+
+            var cont=document.getElementById("count");
+            location.href='indexServlet?uid='+document.getElementById("userid").value+'&pid='+a+'&count='+document.getElementById("countP").innerHTML;
+
+            $(".proIntro").css("border", "none");
+            $(".num .please").hide()
+        } else {
+            $(".proIntro").css("border", "1px solid #c10000");
+            $(".num .please").show()
+        }
+
+    }
+</script>
+<script>
 	function shopAdd(id, url) {
 		var count = document.getElementById("count").innerHTML;
-		
+
 		location.href='cartadd?id='+id+'&count='+count+'&url='+url;
 		
 	}
@@ -189,11 +223,11 @@
         </div>
     </div>
 </div><!--返回顶部-->
-<div class="gotop"><a href="showcart">
+<div class="gotop"><a href="toCartServlet">
     <dl class="goCart">
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>
-        <span>99</span></dl>
+        <span>${cartCount}</span></dl>
 </a><a href="#" class="dh">
     <dl>
         <dt><img src="img/gt2.png"/></dt>

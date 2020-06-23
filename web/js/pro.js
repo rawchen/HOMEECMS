@@ -61,10 +61,12 @@ $(function () {
             $(this).parent("p").removeClass("on")
         })
     });
-    $(".btns a").click(function () {
+    /*$(".btns a").click(function () {
         if ($(".categ p").hasClass("on")) {
             if ($(this).children().hasClass("buy")) {
-                $(this).attr("href", "order.html")
+                // location.href='cartadd?id='+id+'&count='+count+'&url='+url;
+                location.href='toOrderServlet?id='+"" +'  '+$("#count");
+                // $(this).attr("href", "order.html")
             }
             $(".proIntro").css("border", "none");
             $(".num .please").hide()
@@ -72,7 +74,7 @@ $(function () {
             $(".proIntro").css("border", "1px solid #c10000");
             $(".num .please").show()
         }
-    });
+    });*/
     $(".smallImg > img").mouseover(function () {
         $(this).css("border", "1px solid #c10000").siblings("img").css("border", "none");
         var c = $(this).attr("data-src");

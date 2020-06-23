@@ -37,7 +37,7 @@ public class LoginAdminServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
 
             out.write("<script>");
-            out.write("alert('用户登录失败！');");
+            out.write("alert('管理员登录失败！');");
             out.write("location.href='manage/login.jsp'");
             out.write("</script>");
             out.close();

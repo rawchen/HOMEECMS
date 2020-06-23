@@ -20,28 +20,27 @@ import javax.servlet.http.HttpSession;
 @WebFilter("/manage/*")
 public class AdminLogin implements Filter {
 
-    /**
-     * Default constructor. 
-     */
     public AdminLogin() {
     }
 
-	/**
-	 * @see Filter#destroy()
-	 */
 	public void destroy() {
 	}
 
-	/**
-	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
-	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest)request;
 		HttpServletResponse resp = (HttpServletResponse)response;
 		
 		req.setCharacterEncoding("UTF-8");
-		resp.setContentType("text/html;charset=utf-8");
-		
+		String url=req.getRequestURI();
+
+		if(url.indexOf(".css")>0) {
+			chain.doFilter(req, resp);
+			return;
+		}else {
+			response.setContentType("text/html; charset=UTF-8");
+		}
+
+
 		
 		HttpSession session = req.getSession();
 		

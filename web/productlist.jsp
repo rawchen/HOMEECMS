@@ -84,17 +84,17 @@
         </div>
     </div>
     <a class="more" href="proDetail.html">查看更多细节</a></div><!--返回顶部-->
-<div class="gotop"><a href="cart.html">
+<div class="gotop"><a href="toCartServlet">
     <dl class="goCart">
         <dt><img src="img/gt1.png"/></dt>
         <dd>去购<br/>物车</dd>
-        <span>123</span></dl>
+        <span>${cartCount}</span></dl>
 </a><a href="#" class="dh">
     <dl>
         <dt><img src="img/gt2.png"/></dt>
         <dd>联系<br/>客服</dd>
     </dl>
-</a><a href="mygxin.html">
+</a><a href="toUserInfoServlet">
     <dl>
         <dt><img src="img/gt3.png"/></dt>
         <dd>个人<br/>中心</dd>
