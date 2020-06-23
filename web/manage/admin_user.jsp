@@ -49,6 +49,7 @@
                             <th>是否vip</th>
                             <th>vip剩余时间(Day)</th>
                             <th>头像</th>
+                            <th>权限</th>
                             <th>操作</th>
                         </tr>
                         
@@ -61,11 +62,23 @@
 	                             <td> ${u.user_name  }</td>
 	                             <td> ${u.user_nickname  }</td>
 	                             <td> ${u.user_password  }</td>
-	                              <td> ${'男'.equals(u.user_sex)?'男':'女' }</td>
+	                             <c:if test="${empty u.user_sex}">
+                                    <td></td>
+                                 </c:if>
+                                <c:if test="${not empty u.user_sex}">
+                                    <td> ${'男'.equals(u.user_sex)?'男':'女' }</td>
+                                </c:if>
+
+
 	                               <td> ${u.user_vip  }</td>
 	                                <td> ${u.user_viptime  }</td>
                                 <td><img src="${pageContext.request.contextPath}/upload/user/${u.user_photo}" style="width: 40px;"></td>
-
+                                <c:if test="${u.user_status==1}">
+                                    <td>用户</td>
+                                </c:if>
+                                <c:if test="${u.user_status!=1}">
+                                    <td>管理员</td>
+                                </c:if>
 	                            <td>
 	                                <a class="link-update" href="manage/updateUserServlet?uid=${u.user_id}">修改</a>
 	                              

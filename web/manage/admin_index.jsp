@@ -48,9 +48,9 @@
                     <li>
                         <label class="res-lab">北京时间</label><span class="res-info"><%= new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss").format(new Date()) %></span>
                     </li>
-                    <li>
-                        <label class="res-lab">服务器IP</label><span class="res-info"><%= request.getLocalAddr() %></span>
-                    </li>
+<%--                    <li>--%>
+<%--                        <label class="res-lab">服务器IP</label><span class="res-info"><%= request.getLocalAddr() %></span>--%>
+<%--                    </li>--%>
                 </ul>
             </div>
         </div>

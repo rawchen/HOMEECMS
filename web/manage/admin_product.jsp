@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="result-content">
-                    <table class="result-tab" width="60%">
+                    <table class="result-tab" width="100%">
                         <tr>
             
                             <th>ID</th>
