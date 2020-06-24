@@ -63,4 +63,9 @@ public class UserServiceImpl implements UserService {
     public User findUserByUserName(String userName) {
         return dao.findUserByUserName(userName);
     }
+
+    @Override
+    public List<User> findUserListByKey(String keywords) {
+        return dao.findUserListByKey(keywords);
+    }
 }

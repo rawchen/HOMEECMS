@@ -10,7 +10,7 @@
         </div>
         <div class="search-wrap">
             <div class="search-content">
-                <form action="${pageContext.request.contextPath}/manage/admin_douserselect" method="get">
+                <form action="${pageContext.request.contextPath}/manage/userListByKeyServlet" method="post">
                     <table class="search-tab">
                         <tr>
                             <!--   th width="120">选择分类:</th>
@@ -21,7 +21,7 @@
                                 </select>
                             </td-->
                             <th width="70">关键字:</th>
-                            <td><input class="common-text" placeholder="关键字" name="keywords" value="${param.keywords}" id="" type="text"></td>
+                            <td><input class="common-text" placeholder="关键字" required name="keywords" value="${param.keywords}" id="" type="text"></td>
                             <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
                         </tr>
                     </table>
@@ -33,6 +33,7 @@
                 <div class="result-title">
                     <div class="result-list">
                         <a href="manage/admin_useradd.jsp"><i class="icon-font"></i>新增用户</a>
+                        <a href="${pageContext.request.contextPath}/userListServlet"><i class="icon-font"></i>所有用户</a>
                         <a id="batchDel" href="javascript:delmore('你确定删除这些用户吗？', 'myform')"><i class="icon-font"></i>批量删除</a>
                         <!--  a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a -->
                     </div>
@@ -55,8 +56,6 @@
                         
                         <c:forEach var="u" items="${pb.list}">
 	                        <tr>
-	                        	
-	                        	
 	                            <td class="tc"><input name="id[]" value="${u.user_id}" type="checkbox"></td>
 	                            <td> ${u.user_id  }</td>
 	                             <td> ${u.user_name  }</td>
@@ -89,6 +88,41 @@
 	                            </td>
 	                        </tr>
 	                    </c:forEach>
+
+                        <c:forEach var="u" items="${userList}">
+                            <tr>
+                                <td class="tc"><input name="id[]" value="${u.user_id}" type="checkbox"></td>
+                                <td> ${u.user_id  }</td>
+                                <td> ${u.user_name  }</td>
+                                <td> ${u.user_nickname  }</td>
+                                <td> ${u.user_password  }</td>
+                                <c:if test="${empty u.user_sex}">
+                                    <td></td>
+                                </c:if>
+                                <c:if test="${not empty u.user_sex}">
+                                    <td> ${'男'.equals(u.user_sex)?'男':'女' }</td>
+                                </c:if>
+
+
+                                <td> ${u.user_vip  }</td>
+                                <td> ${u.user_viptime  }</td>
+                                <td><img src="${pageContext.request.contextPath}/upload/user/${u.user_photo}" style="width: 40px;"></td>
+                                <c:if test="${u.user_status==1}">
+                                    <td>用户</td>
+                                </c:if>
+                                <c:if test="${u.user_status!=1}">
+                                    <td>管理员</td>
+                                </c:if>
+                                <td>
+                                    <a class="link-update" href="manage/updateUserServlet?uid=${u.user_id}">修改</a>
+
+                                    <c:if test="${u.user_status ==1 }">
+                                        <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name} }】吗？', '${pageContext.request.contextPath}/manage/admin_douserdel?id=${u.user_id}&cpage=${cpage }')">删除</a>
+                                    </c:if>
+
+                                </td>
+                            </tr>
+                        </c:forEach>
                         
                         
                         <script>
@@ -118,16 +152,16 @@
                         </script>
                         
                     </table>
-                    <div class="list-page"> 
-                    	共 ${pb.totalCount} 条记录， 当前 ${pb.currentPage}/${pb.totalPage} 页
-                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=1&row=5">首页</a>
-                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.currentPage-1<1?1:pb.currentPage-1}&row=5">上一页</a>
-                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.currentPage+1>pb.totalPage?pb.totalPage:pb.currentPage+1}&row=5">下一页</a>
-                    	<a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.totalPage}&row=5">尾页</a>
-                  
-                    
-                    
-                    </div>
+                    <c:if test="${empty userList}">
+                        <div class="list-page">
+                            共 ${pb.totalCount} 条记录， 当前 ${pb.currentPage}/${pb.totalPage} 页
+                            <a href="${pageContext.request.contextPath}/userListServlet?currentPage=1&row=5">首页</a>
+                            <a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.currentPage-1<1?1:pb.currentPage-1}&row=5">上一页</a>
+                            <a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.currentPage+1>pb.totalPage?pb.totalPage:pb.currentPage+1}&row=5">下一页</a>
+                            <a href="${pageContext.request.contextPath}/userListServlet?currentPage=${pb.totalPage}&row=5">尾页</a>
+                        </div>
+                    </c:if>
+
                 </div>
             </form>
         </div>

@@ -65,6 +65,10 @@ public class ToProductViewServlet extends HttpServlet {
 
         request.setAttribute("cartCount",cartCount);
 
+        request.getRequestDispatcher("productview.jsp").forward(request, response);
+
+
+
 
 /*
         //获取最近访问
@@ -120,7 +124,7 @@ public class ToProductViewServlet extends HttpServlet {
         }*/
 
 
-        request.getRequestDispatcher("productview.jsp").forward(request, response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

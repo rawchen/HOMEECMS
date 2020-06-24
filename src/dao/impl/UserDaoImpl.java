@@ -87,4 +87,16 @@ public class UserDaoImpl implements UserDao {
             return null;
         }
     }
+
+    @Override
+    public List<User> findUserListByKey(String keywords) {
+        try {
+            String sql = "select * from tb_user where user_name like '%' ? '%' or user_nickname like '%' ? '%'";
+            List<User> user = template.query(sql,new BeanPropertyRowMapper<User>(User.class),keywords,keywords);
+            return user;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

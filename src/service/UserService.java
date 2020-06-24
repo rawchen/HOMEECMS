@@ -19,4 +19,6 @@ public interface UserService {
     User findUserByUserId(int user_id);
 
     User findUserByUserName(String userName);
+
+    List<User> findUserListByKey(String keywords);
 }

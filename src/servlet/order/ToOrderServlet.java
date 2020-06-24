@@ -47,8 +47,6 @@ public class ToOrderServlet extends HttpServlet {
             request.setAttribute("totalPrice",totalPrice);
 
             //查询购物车数量
-
-
             String cartCount = "0";
             CartService service3 = new CartServiceImpl();
             if (user != null) {
@@ -63,6 +61,20 @@ public class ToOrderServlet extends HttpServlet {
             System.out.println(order);
             OrderService service4 = new OrderServiceImpl();
             service4.addOrder(order);
+
+
+            //添加此订单的订单列表
+            //查询该订单中商品及数量
+            String product_quantity = count;
+            String order_id = order.getOrder_id();
+            int product_id = p.getProduct_id();
+
+            OrderList orderList = new OrderList(order_id,product_id,product_quantity);
+
+            OrderListService service5 = new OrderListServiceImpl();
+            service5.addOrderList(orderList);
+
+
 
             request.getRequestDispatcher("order.jsp").forward(request, response);
         }else {
