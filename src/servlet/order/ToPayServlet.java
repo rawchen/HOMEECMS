@@ -11,6 +11,8 @@ import java.io.IOException;
 public class ToPayServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+
         response.sendRedirect("ok.jsp");
     }
 

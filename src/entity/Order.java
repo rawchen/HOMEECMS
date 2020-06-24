@@ -12,6 +12,7 @@ public class Order {
     private String is_pay;
     private String is_ship;
     private String is_receipt;
+    private int address_id;
 
     public Order(){
 
@@ -25,6 +26,14 @@ public class Order {
         this.is_pay = is_pay;
         this.is_ship = is_ship;
         this.is_receipt = is_receipt;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getOrder_id() {
@@ -83,16 +92,26 @@ public class Order {
         this.is_receipt = is_receipt;
     }
 
+    public int getAddress_id() {
+        return address_id;
+    }
+
+    public void setAddress_id(int address_id) {
+        this.address_id = address_id;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
-                "order_id='" + order_id + '\'' +
+                "id=" + id +
+                ", order_id='" + order_id + '\'' +
                 ", user_id=" + user_id +
                 ", order_price=" + order_price +
                 ", order_time=" + order_time +
                 ", is_pay='" + is_pay + '\'' +
                 ", is_ship='" + is_ship + '\'' +
                 ", is_receipt='" + is_receipt + '\'' +
+                ", address_id=" + address_id +
                 '}';
     }
 }

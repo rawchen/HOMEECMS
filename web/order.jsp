@@ -50,13 +50,39 @@
             <div class="addres clearfix">
 
                 <c:forEach var="a" items="${address}">
-                    <div class="addre fl on">
-                        <div class="tit clearfix"><p class="fl">${a.user_name} <span class="default">[默认地址]</span></p>
+                    <input type="hidden" value="${a.address_id}" id="addressId">
+                    <div class="addre fl">
+                        <div class="tit clearfix"><p class="fl">${a.user_name}</p>
                             <p class="fr"><a href="#">删除</a><span>|</span><a href="#" class="edit">编辑</a></p></div>
                         <div class="addCon"><p>${a.user_address}</p>
                             <p>${a.user_phone}</p></div>
                     </div>
                 </c:forEach>
+
+                    <script>
+                        function js_method(a) {
+                            $(".addres div").each(function(){
+                                if(this.hasClass("on")){
+                                    alert($("this input").val());
+                                }
+                            });
+                            if ($(".addres div").hasClass("on")) {
+                                // $(".addres div").each()
+                                //
+                                // alert("123");
+                                // var b = $(".addres input").val();
+                                // // var cont=document.getElementById("addressId");
+                                // alert(b);
+                                // location.href='toPayServlet?pid='+a+'&pid='+a+'&count='+document.getElementById("countP").innerHTML;
+                                //
+                                // $(".proIntro").css("border", "none");
+                                // $(".num .please").hide()
+                            } else {
+                                alert("请确认收货信息！");
+                            }
+
+                        }
+                    </script>
 
 
             </div>
@@ -99,7 +125,7 @@
                 <p><span class="fl">优惠金额：</span><span class="fr">￥0.00</span></p>
                 <p><span class="fl">运费：</span><span class="fr">免运费</span></p></div><!--------tips count---------------->
             <div class="count tips"><p><span class="fl">合计：</span><span class="fr">￥${totalPrice}.00</span></p></div>
-            <!--<input type="button" name="" value="去支付">--> <a href="toPayServlet" class="pay">去支付</a></div>
+            <!--<input type="button" name="" value="去支付">--> <a href="javascript:void(0);" onclick ="js_method(${order.order_id})"; class="pay">去支付</a></div>
     </div>
 </div><!--编辑弹框--><!--遮罩-->
 <div class="mask"></div>

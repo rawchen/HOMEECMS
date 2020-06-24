@@ -59,6 +59,8 @@ public class ToOrderServlet extends HttpServlet {
             //添加此订单为待支付订单
             Order order = new Order(System.currentTimeMillis() +""+ user.getUser_id(),user.getUser_id(),totalPrice,new Date(),"0","0","0");
             System.out.println(order);
+
+            request.setAttribute("order",order);
             OrderService service4 = new OrderServiceImpl();
             service4.addOrder(order);
 

@@ -96,7 +96,6 @@
 		location.href='cartadd?id='+id+'&count='+count+'&url='+url;
 		
 	}
-
 </script>
 
 <div class="introMsg wrapper clearfix">

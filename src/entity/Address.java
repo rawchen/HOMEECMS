@@ -1,7 +1,7 @@
 package entity;
 
 public class Address {
-    private int id;
+    private int address_id;
     private int user_id;
     private String user_name;
     private String user_phone;
@@ -18,12 +18,12 @@ public class Address {
         this.user_address = user_address;
     }
 
-    public int getId() {
-        return id;
+    public int getAddress_id() {
+        return address_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAddress_id(int address_id) {
+        this.address_id = address_id;
     }
 
     public int getUser_id() {
@@ -61,7 +61,9 @@ public class Address {
     @Override
     public String toString() {
         return "Address{" +
-                "user_id=" + user_id +
+                "address_id=" + address_id +
+                ", user_id=" + user_id +
+                ", user_name='" + user_name + '\'' +
                 ", user_phone='" + user_phone + '\'' +
                 ", user_address='" + user_address + '\'' +
                 '}';

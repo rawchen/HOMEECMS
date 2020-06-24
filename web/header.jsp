@@ -5,14 +5,18 @@
 <div class="head">
     <div class="wrapper clearfix">
         <div class="clearfix" id="top"><h1 class="fl"><a href="indexServlet"><img alt="" src="img/logo.png"/></a></h1>
-            <div class="fr clearfix" id="top1"><p class="fl">
+            <div class="fr clearfix" id="top1">
+
+
             	<c:if test="${isLogin !=1 }">
+                    <p class="fl" style="padding-top: 7px;">
             		<a href="login.jsp" id="login">登录</a><a href="reg.jsp" id="reg">注册</a>
             	</c:if>
             	
             	<c:if test="${isLogin ==1 }">
-
-                    你好：<b style="font-size: 18px">${name.user_name}</b>
+                    <p class="fl" style="background-color: #d8d8d8;padding-right: 15px;">
+                    <img src="${pageContext.request.contextPath}/upload/user/${name.user_photo}" style="width: 30px; border-radius: 45px;vertical-align: middle;">
+                    <b style="font-size: 14px">${name.user_name}</b>
             	
             	</c:if>
 <%--            	<c:if test="${isAdminLogin ==1 }">--%>
