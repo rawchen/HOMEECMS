@@ -50,8 +50,8 @@
             <div class="addres clearfix">
 
                 <c:forEach var="a" items="${address}">
-                    <input type="hidden" value="${a.address_id}" id="addressId">
                     <div class="addre fl">
+                        <input type="hidden" value="${a.address_id}" id="addressId">
                         <div class="tit clearfix"><p class="fl">${a.user_name}</p>
                             <p class="fr"><a href="#">删除</a><span>|</span><a href="#" class="edit">编辑</a></p></div>
                         <div class="addCon"><p>${a.user_address}</p>
@@ -60,20 +60,17 @@
                 </c:forEach>
 
                     <script>
-                        function js_method(a) {
-                            $(".addres div").each(function(){
-                                if(this.hasClass("on")){
-                                    alert($("this input").val());
-                                }
-                            });
+                        function js_method(b) {
+
                             if ($(".addres div").hasClass("on")) {
-                                // $(".addres div").each()
-                                //
-                                // alert("123");
-                                // var b = $(".addres input").val();
-                                // // var cont=document.getElementById("addressId");
-                                // alert(b);
-                                // location.href='toPayServlet?pid='+a+'&pid='+a+'&count='+document.getElementById("countP").innerHTML;
+                                var a = 0;
+                                $(".addres div").each(function(){
+                                    if($(this).hasClass("on")){
+                                        a = $(this).children("input").val();
+
+                                    }
+                                });
+                                location.href='toPayServlet?oid='+b+'&aid='+a;
                                 //
                                 // $(".proIntro").css("border", "none");
                                 // $(".num .please").hide()
