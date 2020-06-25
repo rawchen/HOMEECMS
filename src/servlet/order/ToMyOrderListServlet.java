@@ -2,11 +2,14 @@ package servlet.order;
 
 import entity.Category;
 import entity.Order;
+import entity.OrderList;
 import entity.User;
 import service.CategoryService;
+import service.OrderListService;
 import service.OrderService;
 import service.UserService;
 import service.impl.CategoryServiceImpl;
+import service.impl.OrderListServiceImpl;
 import service.impl.OrderServiceImpl;
 import service.impl.UserServiceImpl;
 
@@ -17,7 +20,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/toMyOrderListServlet")
 public class ToMyOrderListServlet extends HttpServlet {
@@ -41,7 +46,12 @@ public class ToMyOrderListServlet extends HttpServlet {
             List<Order> orders = service2.findOrderByUserId(user.getUser_id());
             request.setAttribute("orders", orders);
 
+            OrderListService service3 = new OrderListServiceImpl();
 
+            Map<Order, OrderList> map = new HashMap<Order, OrderList>();
+            for (Order o:orders) {
+                OrderList OL = service3
+            }
 
             request.getRequestDispatcher("myorderlist.jsp").forward(request, response);
         } else {
