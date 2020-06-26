@@ -57,7 +57,7 @@
                               <tr>
                                 <th><i class="require-red">*</i>商品介绍：</th>
                                 <td>
-                                    <textarea name="productInfo" placeholder="请输入吐槽内容" required lay-verify="required" class="layui-textarea">${p.product_info}</textarea>
+                                    <textarea name="productInfo" placeholder="请输入内容" required lay-verify="required" class="layui-textarea">${p.product_info}</textarea>
                                     <script>
                                         CKEDITOR.replace( 'productInfo' );
                                     </script>

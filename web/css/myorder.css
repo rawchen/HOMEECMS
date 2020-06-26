@@ -497,10 +497,10 @@
 
 /*编辑个人信息*/
 .pj, .chak {
-    width: 410px;
+    width: 1300px;
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 24%;
+    left: 20%;
     margin-top: -180px;
     margin-left: -220px;
     z-index: 30;

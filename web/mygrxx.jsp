@@ -61,7 +61,7 @@
                 <h4>账户管理</h4>
                 <ul>
                     <li class="on"><a href="toMyInfoServlet">个人信息</a></li>
-                    <li><a href="remima.html">修改密码</a></li>
+
                 </ul>
             </div>
         </div>
@@ -85,9 +85,25 @@
 <div class="bj">
     <div class="clearfix"><a href="#" class="fr gb"><img src="img/icon4.png"/></a></div>
     <h3>编辑基础资料</h3>
-    <form action="${pageContext.request.contextPath}/updateUserInfoServlet" method="get"><p><label>用户：</label><input type="text" readonly value="${user.user_name}"/></p>
+    <form action="${pageContext.request.contextPath}/updateUserInfoServlet" method="post"><p><label>用户：</label><input type="text" readonly value="${user.user_name}"/></p>
         <p><label>昵称：</label><input type="text" name="nickname" value="${user.user_nickname}"/></p>
-        <p><label>性别：</label><span><input type="radio" name="sex" value="男"/>男</span><span><input type="radio" name="sex" value="女"/>女</span></p>
+        <p><label>性别：</label>
+            <span>
+            <c:if test="${user.user_sex=='男'}">
+                <input type="radio" checked name="sex" value="男"/>男</span><span>
+                <input type="radio" name="sex" value="女"/>女</span>
+            </c:if>
+            <c:if test="${user.user_sex=='女'}">
+                <input type="radio" name="sex" value="男"/>男</span><span>
+                <input type="radio" checked name="sex" value="女"/>女</span>
+            </c:if>
+            <c:if test="${user.user_sex!='女' && user.user_sex!='男'}">
+                <input type="radio" name="sex" value="男"/>男</span><span>
+                <input type="radio" name="sex" value="女"/>女</span>
+            </c:if>
+        </p>
+
+
         <div class="bc"><input type="submit" value="保存"/><input type="button" value="取消"/></div>
     </form>
 </div><!--高级设置修改-->
@@ -104,7 +120,7 @@
 <div class="avatar">
     <div class="clearfix"><a href="#" class="fr gb"><img src="img/icon4.png"/></a></div>
     <h3>修改头像</h3>
-    <form action="#" method="post" enctype="multipart/form-data"><h4>请上传图片</h4><input accept="image/*" type="file" value="上传头像"/>
+    <form action="updateUserPhotoServlet" method="post" enctype="multipart/form-data"><h4>请上传图片</h4><input accept="image/*" type="file" name="photo" value="上传头像"/>
         <p>jpg或png，大小不超过2M</p><input type="submit" value="提交"/></form>
 </div><!--返回顶部-->
 <div class="gotop"><a href="toCartServlet">

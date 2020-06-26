@@ -24,4 +24,8 @@ public interface UserDao {
     void delUserById(int uid);
 
     void updatePasswordById(int user_id, String p);
+
+    void updatePhotoById(int userId, String fileName);
+
+    void updateInfoById(int userId, String sex, String nickname);
 }

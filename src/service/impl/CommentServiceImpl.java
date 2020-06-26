@@ -14,4 +14,9 @@ public class CommentServiceImpl implements CommentService {
     public List<Comment> findCommentByProductId(int productId) {
         return dao.findCommentByProductId(productId);
     }
+
+    @Override
+    public void addComment(Comment comment) {
+        dao.addComment(comment);
+    }
 }

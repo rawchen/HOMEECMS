@@ -6,11 +6,12 @@
     <title>最家</title>
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
     <link rel="stylesheet" type="text/css" href="css/myorder.css"/>
+    <script src="https://cdn.ckeditor.com/4.14.0/full/ckeditor.js"></script>
 </head>
 <body><!------------------------------head------------------------------>
 <div class="head ding">
     <div class="wrapper clearfix">
-        <div class="clearfix" id="top"><h1 class="fl"><a href="index.html"><img src="img/logo.png"/></a></h1>
+        <div class="clearfix" id="top"><h1 class="fl"><a href="indexServlet"><img src="img/logo.png"/></a></h1>
             <div class="fr clearfix" id="top1"><p class="fl"><a href="#" id="login">登录</a><a href="#" id="reg">注册</a>
             </p>
                 <form action="searchProductServlet" method="post" class="fl"><input required type="text" name="key" placeholder="热门搜索：干花花瓶"/><input
@@ -39,7 +40,7 @@
     </div>
 </div><!------------------------------idea------------------------------>
 <div class="address mt">
-    <div class="wrapper clearfix"><a href="index.html" class="fl">首页</a><span>/</span><a href="toUserInfoServlet" class="on">个人中心</a><span>/</span><a
+    <div class="wrapper clearfix"><a href="indexServlet" class="fl">首页</a><span>/</span><a href="toUserInfoServlet" class="on">个人中心</a><span>/</span><a
             href="myprod.html" class="on">待评价商品</a></div>
 </div><!------------------------------Bott------------------------------>
 <div class="Bott">
@@ -61,7 +62,7 @@
                 <h4>账户管理</h4>
                 <ul>
                     <li><a href="toMyInfoServlet">个人信息</a></li>
-                    <li><a href="remima.html">修改密码</a></li>
+
                 </ul>
             </div>
         </div>
@@ -115,13 +116,23 @@
 <div class="pj">
     <div class="clearfix"><a href="#" class="fr gb"><img src="img/icon4.png"/></a></div>
     <h3>商品评分</h3>
-    <form action="#" method="get">
+    <form action="addCommentServlet" method="post">
         <div class="clearfix"><p class="fl">请打分：</p>
-            <p class="fl" id="xin"><a href="#2"><img src="img/xin.png"/></a><a href="#2"><img src="img/xin.png"/></a><a
+            <p class="fl" id="xin"><a href="#22"><img src="img/xin.png"/></a><a href="#2"><img src="img/xin.png"/></a><a
                     href="#2"><img src="img/xin.png"/></a><a href="#2"><img src="img/xin.png"/></a><a href="#2"><img
                     src="img/xin.png"/></a></p></div>
-        <textarea name="" rows="" cols="" placeholder="请输入评价"></textarea>
-        <div class="bc"><input type="button" value="保存"/><input type="button" value="取消"/></div>
+
+
+
+            <textarea name="commentInfo" placeholder="请输入评价" required lay-verify="required" class="layui-textarea"></textarea>
+            <script>
+                CKEDITOR.replace( 'commentInfo' );
+            </script>
+
+
+
+<%--        <textarea name="" rows="" cols="" placeholder="请输入评价"></textarea>--%>
+        <div class="bc"><input type="submit" value="保存"/><input type="button" value="取消"/></div>
     </form>
 </div><!--查看评价-->
 <div class="chak">

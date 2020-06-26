@@ -23,4 +23,14 @@ public class CommentDaoImpl implements CommentDao {
             return null;
         }
     }
+
+    @Override
+    public void addComment(Comment comment) {
+        try {
+            String sql = "insert into tb_comment(user_id, product_id, comment_time, comment_content) values(?,?,?,?)";
+            template.update(sql,comment.getUser_id(),comment.getProduct_id(),comment.getComment_time(),comment.getComment_content());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
 }

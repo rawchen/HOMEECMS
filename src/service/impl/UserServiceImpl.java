@@ -78,4 +78,14 @@ public class UserServiceImpl implements UserService {
     public void updatePasswordById(int user_id, String p) {
         dao.updatePasswordById(user_id,p);
     }
+
+    @Override
+    public void updatePhotoById(int userId, String fileName) {
+        dao.updatePhotoById(userId,fileName);
+    }
+
+    @Override
+    public void updateInfoById(int userId, String sex, String nickname) {
+        dao.updateInfoById(userId, sex, nickname);
+    }
 }

@@ -129,4 +129,24 @@ public class UserDaoImpl implements UserDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void updatePhotoById(int userId, String fileName) {
+        try {
+            String sql = "update tb_user set user_photo = ? where user_id = ?";
+            template.update(sql,fileName,userId);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateInfoById(int userId, String sex, String nickname) {
+        try {
+            String sql = "update tb_user set user_sex = ?,user_nickname = ? where user_id = ?";
+            template.update(sql,sex,nickname,userId);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
 }
