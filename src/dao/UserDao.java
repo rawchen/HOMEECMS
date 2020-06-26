@@ -20,4 +20,8 @@ public interface UserDao {
     User findUserByUserName(String userName);
 
     List<User> findUserListByKey(String keywords);
+
+    void delUserById(int uid);
+
+    void updatePasswordById(int user_id, String p);
 }

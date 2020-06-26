@@ -17,7 +17,7 @@
                     <a href="toAddProductServlet"><i class="icon-font">&#xe001;</i>新增商品</a>
                     <a href="${pageContext.request.contextPath}/productListServlet"><i class="icon-font">&#xe005;</i>查看商品</a>
                     <a href="${pageContext.request.contextPath}/userListServlet"><i class="icon-font">&#xe048;</i>查看用户</a>
-                    <a href="#"><i class="icon-font">&#xe041;</i>查看订单</a>
+                    <a href="${pageContext.request.contextPath}/toAllOrderListServlet"><i class="icon-font">&#xe041;</i>查看订单</a>
                     <a href="#"><i class="icon-font">&#xe01e;</i>查看评论</a>
                 </div>
             </div>

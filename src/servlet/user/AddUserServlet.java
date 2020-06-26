@@ -61,14 +61,15 @@ public class AddUserServlet extends HttpServlet {
         UserService service = new UserServiceImpl();
         Boolean flag = service.addUser(u);
         if (flag) {
+            response.sendRedirect(request.getContextPath()+"/userListServlet");
+        }else {
             PrintWriter out = response.getWriter();
-
             out.write("<script>");
-            out.write("alert('插入成功！');");
-//            out.write("location.href='login.jsp'");
+            out.write("alert('新增用户失败！');");
             out.write("</script>");
             out.close();
         }
+
 
     }
 

@@ -1,13 +1,16 @@
 package servlet.product;
 
 import entity.Category;
+import entity.Comment;
 import entity.Product;
 import entity.User;
 import service.CartService;
 import service.CategoryService;
+import service.CommentService;
 import service.ProductService;
 import service.impl.CartServiceImpl;
 import service.impl.CategoryServiceImpl;
+import service.impl.CommentServiceImpl;
 import service.impl.ProductServiceImpl;
 
 import javax.servlet.ServletException;
@@ -64,6 +67,15 @@ public class ToProductViewServlet extends HttpServlet {
         }
 
         request.setAttribute("cartCount",cartCount);
+
+        //查询评论
+        int productId = Integer.valueOf(id);
+
+        CommentService service3 = new CommentServiceImpl();
+        List<Comment> comments= service3.findCommentByProductId(productId);
+        request.setAttribute("comments",comments);
+
+        System.out.println(comments);
 
         request.getRequestDispatcher("productview.jsp").forward(request, response);
 
@@ -130,4 +142,5 @@ public class ToProductViewServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }
+
 }

@@ -78,7 +78,7 @@
         if ($(".categ p").hasClass("on")) {
 
             var cont=document.getElementById("count");
-            location.href='indexServlet?uid='+document.getElementById("userid").value+'&pid='+a+'&count='+document.getElementById("countP").innerHTML;
+            location.href='addCartServlet?uid='+document.getElementById("userid").value+'&pid='+a+'&count='+document.getElementById("countP").innerHTML;
 
             $(".proIntro").css("border", "none");
             $(".num .please").hide()
@@ -106,81 +106,22 @@
                 ${p.product_info}
             </div>
             <div class="eva">
-                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
-                    <div class="perR fl"><p>馨***呀</p>
-                        <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
-                            <p><img src="images/temp/eva02.jpg"></p>
-                            <p><img src="images/temp/eva03.jpg"></p>
-                            <p><img src="images/temp/eva04.jpg"></p>
-                            <p><img src="images/temp/eva05.jpg"></p></div>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
-                    <div class="perR fl"><p>么***周</p>
-                        <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
-                    <div class="perR fl"><p>馨***呀</p>
-                        <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
-                            <p><img src="images/temp/eva02.jpg"></p>
-                            <p><img src="images/temp/eva03.jpg"></p>
-                            <p><img src="images/temp/eva04.jpg"></p>
-                            <p><img src="images/temp/eva05.jpg"></p></div>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
-                    <div class="perR fl"><p>么***周</p>
-                        <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
-                    <div class="perR fl"><p>馨***呀</p>
-                        <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
-                            <p><img src="images/temp/eva02.jpg"></p>
-                            <p><img src="images/temp/eva03.jpg"></p>
-                            <p><img src="images/temp/eva04.jpg"></p>
-                            <p><img src="images/temp/eva05.jpg"></p></div>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
-                    <div class="perR fl"><p>么***周</p>
-                        <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
-                    <div class="perR fl"><p>馨***呀</p>
-                        <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
-                            <p><img src="images/temp/eva02.jpg"></p>
-                            <p><img src="images/temp/eva03.jpg"></p>
-                            <p><img src="images/temp/eva04.jpg"></p>
-                            <p><img src="images/temp/eva05.jpg"></p></div>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
-                    <div class="perR fl"><p>么***周</p>
-                        <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per01.jpg">
-                    <div class="perR fl"><p>馨***呀</p>
-                        <p>不好意思评价晚了，产品很好，价格比玻璃品便宜，没有我担心的杂色，发货快，包装好，全5分</p>
-                        <div class="clearfix"><p><img src="images/temp/eva01.jpg"></p>
-                            <p><img src="images/temp/eva02.jpg"></p>
-                            <p><img src="images/temp/eva03.jpg"></p>
-                            <p><img src="images/temp/eva04.jpg"></p>
-                            <p><img src="images/temp/eva05.jpg"></p></div>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
-                <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
-                    <div class="perR fl"><p>么***周</p>
-                        <p>花瓶超级棒，我看图以为是光面的，收货发现是磨砂，但感觉也超有质感，很喜欢。磨砂上面还有点纹路，不过觉得挺自然的，不影响美观。包装也很好，绝对不会磕碎碰坏，好评！</p>
-                        <p><span>2016年12月27日08:31</span><span>颜色分类：大中小三件套（不含花）</span></p></div>
-                </div>
+                <c:if test="${empty comments}">
+                    <div class="per clearfix">
+                        <div class="perR fl"><p>该商品还没有人评论哦</p>
+                            <p>
+
+                            <p><span></span></p></div>
+                    </div>
+                </c:if>
+                <c:forEach var="c" items="${comments}">
+                    <div class="per clearfix"><img class="fl" src="images/temp/per02.jpg">
+                        <div class="perR fl"><p>用户ID：${c.user_id}</p>
+                            <p>${c.comment_content}
+
+                            <p><span>${c.comment_time}</span></p></div>
+                    </div>
+                </c:forEach>
             </div>
         </div>
     </div>
@@ -232,7 +173,7 @@
         <dt><img src="img/gt2.png"/></dt>
         <dd>联系<br/>客服</dd>
     </dl>
-</a><a href="mygxin.html">
+</a><a href="toUserInfoServlet">
     <dl>
         <dt><img src="img/gt3.png"/></dt>
         <dd>个人<br/>中心</dd>

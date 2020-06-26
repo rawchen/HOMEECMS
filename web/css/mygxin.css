@@ -140,30 +140,48 @@
 
 /*地址管理*/
 .Bott .you .add {
-    display: flex;
+    /*display: flex;*/
     justify-content: space-around;
 }
 
-.Bott .you .add div:nth-child(1) {
-    width: 268px;
-    height: 178px;
-    border: 1px solid #E0E0E0;
-    text-align: center;
-}
+/*.Bott .you .add div:nth-child(1) {*/
+/*    width: 268px;*/
+/*    height: 178px;*/
+/*    border: 1px solid #E0E0E0;*/
+/*    text-align: center;*/
+/*}*/
 
-.Bott .you .add div:nth-child(1) a {
-    width: 30px;
-    display: block;
-    margin: 60px auto 0;
-}
+/*.Bott .you .add div:nth-child(1) a {*/
+/*    width: 30px;*/
+/*    display: block;*/
+/*    margin: 60px auto 0;*/
+/*}*/
 
-.Bott .you .add div:nth-child(2) {
+.Bott .you .add div {
+    margin-left: 10px;
+    margin-top: 10px;
     width: 244px;
     height: 158px;
     border: 1px solid #E0E0E0;
     padding: 20px 0 0 24px;
     color: #757575;
     line-height: 20px;
+    float: left;
+}
+
+.Bott .you .add div:hover {
+    border: 1px solid #A10000;
+}
+
+.Bott .you .add div:nth-child(1) {
+    padding-top: 70px;
+    padding-left: 70px;
+    width: 198px;
+    height: 108px;
+}
+
+.Bott .you .add div:nth-child(1):hover {
+    border: 1px solid #A10000;
 }
 
 .Bott .you .add div p:nth-child(1) {
@@ -172,16 +190,12 @@
     color: #262626;
 }
 
-.Bott .you .add div:nth-child(2) a {
+.Bott .you .add div a {
     color: #A10000;
     display: inline-block;
     margin-right: 10px;
 }
 
-.Bott .you .add div:nth-child(3) {
-    width: 268px;
-    height: 178px;
-}
 
 /*添加地址*/
 body {
@@ -214,7 +228,7 @@ body {
     position: absolute;
     top: 50%;
     left: 38%;
-    margin-top: -180px;
+    margin-top: -310px;
     margin-left: -150px;
     z-index: 30;
     background: #fff;

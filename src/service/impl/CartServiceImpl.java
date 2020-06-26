@@ -19,4 +19,9 @@ public class CartServiceImpl implements CartService {
     public List<Cart> findCartListByUserId(int i) {
         return dao.findCartListByUserId(i);
     }
+
+    @Override
+    public void addCart(Cart cart) {
+        dao.addCart(cart);
+    }
 }

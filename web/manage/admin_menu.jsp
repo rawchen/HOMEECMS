@@ -41,7 +41,7 @@
                         <li><a href="${pageContext.request.contextPath}/userListServlet"><i class="icon-font">&#xe008;</i>用户管理</a></li>
                         <li><a href="${pageContext.request.contextPath}/categoryListServlet"><i class="icon-font">&#xe005;</i>分类管理</a></li>
                         <li><a href="${pageContext.request.contextPath}/productListServlet"><i class="icon-font">&#xe006;</i>商品管理</a></li>
-                        <li><a href="#"><i class="icon-font">&#xe004;</i>订单管理</a></li>
+                        <li><a href="${pageContext.request.contextPath}/toAllOrderListServlet"><i class="icon-font">&#xe004;</i>订单管理</a></li>
                         <li><a href="#"><i class="icon-font">&#xe012;</i>评论管理</a></li>
                         <li><a href="#"><i class="icon-font">&#xe052;</i>通知管理</a></li>
                         <li><a href="#"><i class="icon-font">&#xe052;</i>轮播图(待开发)</a></li>

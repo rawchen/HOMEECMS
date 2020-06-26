@@ -1,8 +1,7 @@
 package service;
 
-import entity.Category;
+import entity.PageBean;
 import entity.Product;
-
 import java.util.List;
 
 public interface ProductService {
@@ -18,9 +17,13 @@ public interface ProductService {
 
     List<Product> findProductByCategoryCid(int productCid);
 
+    PageBean<Product> findProductByPage(String currentPage, String rows);
+
     List<Product> findProductTimeSort();
 
     List<Product> findProductSalesSort();
 
     List<Product> findProductByCategoryFid(int fid);
+
+    List<Product> findProductListByKey(String key);
 }

@@ -1,11 +1,15 @@
 package servlet.product;
 
 import entity.Category;
+import entity.PageBean;
 import entity.Product;
+
 import service.CategoryService;
 import service.ProductService;
+
 import service.impl.CategoryServiceImpl;
 import service.impl.ProductServiceImpl;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,11 +22,29 @@ import java.util.List;
 @WebServlet("/productListServlet")
 public class ProductListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String currentPage = request.getParameter("currentPage");//当前页码
+        String rows = request.getParameter("rows");//每页显示条数
+
+        if (currentPage == null || "".equals(currentPage)) {
+            currentPage = "1";
+        }
+        if (rows == null || "".equals(rows)) {
+            rows = "5";
+        }
+
+
+
+
         ProductService service = new ProductServiceImpl();
 
-        List<Product> plist = service.findAllProduct();
+        PageBean<Product> pb = service.findProductByPage(currentPage,rows);
+        request.setAttribute("pb",pb );
 
-        request.setAttribute("plist", plist);
+
+//        List<Product> plist = service.findAllProduct();
+//
+//        request.setAttribute("plist", plist);
 
         CategoryService service2 = new CategoryServiceImpl();
         List<Category> f = service2.findCategoryListByName("father");

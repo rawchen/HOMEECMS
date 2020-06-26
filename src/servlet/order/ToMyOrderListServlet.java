@@ -4,14 +4,8 @@ import entity.Category;
 import entity.Order;
 import entity.OrderList;
 import entity.User;
-import service.CategoryService;
-import service.OrderListService;
-import service.OrderService;
-import service.UserService;
-import service.impl.CategoryServiceImpl;
-import service.impl.OrderListServiceImpl;
-import service.impl.OrderServiceImpl;
-import service.impl.UserServiceImpl;
+import service.*;
+import service.impl.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -46,12 +40,8 @@ public class ToMyOrderListServlet extends HttpServlet {
             List<Order> orders = service2.findOrderByUserId(user.getUser_id());
             request.setAttribute("orders", orders);
 
-            OrderListService service3 = new OrderListServiceImpl();
+            ProductService service3 = new ProductServiceImpl();
 
-            Map<Order, OrderList> map = new HashMap<Order, OrderList>();
-            for (Order o:orders) {
-                OrderList OL = service3
-            }
 
             request.getRequestDispatcher("myorderlist.jsp").forward(request, response);
         } else {

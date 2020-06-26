@@ -45,10 +45,10 @@ public class UserListServlet extends HttpServlet {
         PageBean<User> pb = service.findUserByPage(currentPage,rows);
         request.setAttribute("pb",pb );
 
-        List<User> list = service.findAllUser();
-
-        //放到请求对象域里
-        request.setAttribute("userlist", list);
+//        List<User> list = service.findAllUser();
+//
+//        //放到请求对象域里
+//        request.setAttribute("userlist", list);
 //        request.setAttribute("tsum", arr[0]);
 //        request.setAttribute("tpage", arr[1]);
         request.setAttribute("cpage", cpage);

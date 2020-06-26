@@ -54,14 +54,24 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public int findTotalCount() {
-        String sql = "select count(*) from tb_user";
-        return template.queryForObject(sql, Integer.class);
+        try {
+            String sql = "select count(*) from tb_user";
+            return template.queryForObject(sql, Integer.class);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return 0;
+        }
     }
 
     @Override
     public List<User> findByPage(int start, int rows) {
-        String sql = "select * from tb_user limit ? , ?";
-        return template.query(sql, new BeanPropertyRowMapper<User>(User.class),start,rows);
+        try {
+            String sql = "select * from tb_user limit ? , ?";
+            return template.query(sql, new BeanPropertyRowMapper<User>(User.class),start,rows);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
@@ -97,6 +107,26 @@ public class UserDaoImpl implements UserDao {
         } catch (DataAccessException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    @Override
+    public void delUserById(int uid) {
+        try {
+            String sql = "delete from tb_user where user_id=?";
+            template.update(sql,uid);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updatePasswordById(int user_id, String p) {
+        try {
+            String sql = "update tb_user set user_password = ? where user_id = ?";
+            template.update(sql,p,user_id);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
         }
     }
 }

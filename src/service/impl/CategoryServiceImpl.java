@@ -34,4 +34,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void addCategory(Category category) {
         dao.addCategory(category);
     }
+
+    @Override
+    public void delCategoryById(int cid2) {
+        dao.delCategoryById(cid2);
+    }
 }

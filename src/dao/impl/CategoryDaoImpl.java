@@ -71,4 +71,14 @@ public class CategoryDaoImpl implements CategoryDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void delCategoryById(int cid2) {
+        try {
+            String sql = "delete from tb_category where category_id = ?";
+            template.update(sql,cid2);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
 }

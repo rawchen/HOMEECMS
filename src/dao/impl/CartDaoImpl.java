@@ -35,4 +35,14 @@ public class CartDaoImpl implements CartDao {
             return null;
         }
     }
+
+    @Override
+    public void addCart(Cart c) {
+        try {
+            String sql = "insert into tb_cart(product_id,user_id,product_name,product_price,product_quantity,product_style,product_photo) values(?,?,?,?,?,?,?)";
+            template.update(sql,c.getProduct_id(),c.getUser_id(),c.getProduct_name(),c.getProduct_price(),c.getProduct_quantity(),c.getProduct_style(),c.getProduct_photo());
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
 }

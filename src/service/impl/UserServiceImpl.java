@@ -68,4 +68,14 @@ public class UserServiceImpl implements UserService {
     public List<User> findUserListByKey(String keywords) {
         return dao.findUserListByKey(keywords);
     }
+
+    @Override
+    public void delUserById(int uid) {
+        dao.delUserById(uid);
+    }
+
+    @Override
+    public void updatePasswordById(int user_id, String p) {
+        dao.updatePasswordById(user_id,p);
+    }
 }

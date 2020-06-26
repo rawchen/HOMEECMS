@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="result-content">
-                    <table class="result-tab" width="40%">
+                    <table class="result-tab" width="86%">
                         <tr>
             
                             <th>ID</th>
@@ -29,13 +29,13 @@
                         </tr>
                         
                         <c:forEach var="cate" items="${catelist}">
-                        
-                        	 <c:if test="${cate.category_parentid ==0 }">
+
+                        	 <c:if test="${cate.category_parentid == 0 }">
 		                        <tr>
 		                        	<td>${cate.category_id }</td>
 		                        	<td>|-${cate.category_name }</td>
 		                        	<td><a href="admin_tocateupdate?id=${cate.category_id }">修改</a> <a href="javascript:catedel(${cate.category_id })">删除</a></td>
-		                        
+
 		                        </tr>
 		                      	 <c:forEach var="zcate" items="${catelist}">
 		                      	 	<c:if test="${zcate.category_parentid ==cate.category_id }">
@@ -43,7 +43,7 @@
 				                        	<td>${zcate.category_id }</td>
 				                        	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;｜-${zcate.category_name }</td>
 				                        	<td><a href="admin_tocateupdate?id=${zcate.category_id }">修改</a> <a href="javascript:catedel(${zcate.category_id })">删除</a></td>
-				                        
+
 				                        </tr>
 				                      </c:if>
 		                          </c:forEach>
@@ -54,8 +54,7 @@
                         <script>
                         	function catedel(id) {
                         		if(confirm("你确认要删除这个分类吗")) {
-                        			location.href="admin_docatedel?id="+id;
-                        			
+                        			location.href="${pageContext.request.contextPath}/manage/delCategoryByIdServlet?id="+id;
                         		}
                         	}
                         	

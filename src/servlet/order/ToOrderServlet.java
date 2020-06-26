@@ -57,24 +57,33 @@ public class ToOrderServlet extends HttpServlet {
             request.setAttribute("cartCount",cartCount);
 
             //添加此订单为待支付订单
-            Order order = new Order(System.currentTimeMillis() +""+ user.getUser_id(),user.getUser_id(),totalPrice,new Date(),"0","0","0");
-            System.out.println(order);
+
+            //添加此订单的订单列表
+            //查询该订单中商品及数量
+            int product_quantity = Integer.valueOf(count);
+            int product_id = p.getProduct_id();
+
+            Order order = new Order(System.currentTimeMillis() +""+ user.getUser_id(),user.getUser_id(),totalPrice,new Date(),"0","0","0",product_id,product_quantity);
+            ProductService service5 = new ProductServiceImpl();
+            Product product = service5.findProductById(product_id);
+            order.setProduct_name(product.getProduct_name());
+            order.setProduct_photo(product.getProduct_photo());
+            order.setProduct_price(product.getProduct_price());
 
             request.setAttribute("order",order);
             OrderService service4 = new OrderServiceImpl();
             service4.addOrder(order);
 
 
-            //添加此订单的订单列表
-            //查询该订单中商品及数量
-            String product_quantity = count;
-            String order_id = order.getOrder_id();
-            int product_id = p.getProduct_id();
 
-            OrderList orderList = new OrderList(order_id,product_id,product_quantity);
-
-            OrderListService service5 = new OrderListServiceImpl();
-            service5.addOrderList(orderList);
+//            String product_quantity = count;
+//            String order_id = order.getOrder_id();
+//            int product_id = p.getProduct_id();
+//
+//            OrderList orderList = new OrderList(order_id,product_id,product_quantity);
+//
+//            OrderListService service5 = new OrderListServiceImpl();
+//            service5.addOrderList(orderList);
 
 
 

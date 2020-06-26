@@ -14,4 +14,14 @@ public interface OrderDao {
     void updateOrderIsPay(String oid, String s);
 
     List<Order> findOrderByUserId(int user_id);
+
+    List<Order> findAllOrder();
+
+    int findTotalCount();
+
+    List<Order> findByPage(int start, int rows);
+
+    List<Order> findOrderListByKey(String keywords);
+
+    List<Order> findOrderByUserIdAndIsReceipt(int user_id);
 }

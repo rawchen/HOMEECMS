@@ -55,10 +55,10 @@
                            
                         </tr>
                         
-                        <c:forEach var="p" items="${plist }">
+                        <c:forEach var="p" items="${pb.list }">
                         	<tr>
                         		<td>${p.product_id }</td>
-                        		<td><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}" width="80" height="80">
+                        		<td><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}" width="60px" height="60px">
                         			${p.product_name }
                         		</td>
                                 <td>￥${p.product_price}.00</td>
@@ -70,11 +70,26 @@
                         		</td>
                         	</tr>
 	                    </c:forEach>
+                        <c:forEach var="p" items="${plist}">
+                            <tr>
+                                <td>${p.product_id }</td>
+                                <td><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}" width="60px" height="60px">
+                                        ${p.product_name }
+                                </td>
+                                <td>￥${p.product_price}.00</td>
+                                <td>${p.product_stock}</td>
+                                <td>${p.product_time}</td>
+                                <td>
+                                    <a href="${pageContext.request.contextPath}/manage/toUpdateProductServlet?productId=${p.product_id}">修改</a>
+                                    <a href="javascript:del(${p.product_id});">删除</a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         
                         
                         <script>
                         	function del(id) {
-                        		if(confirm("你确认要删除这个分类吗")) {
+                        		if(confirm("你确认要删除这个商品吗")) {
                         			location.href="${pageContext.request.contextPath}/manage/delProductServlet?productId="+id
                         		}
                         	}
@@ -83,6 +98,15 @@
                         </script>
                         
                     </table>
+                    <c:if test="${empty plist}">
+                        <div class="list-page">
+                            共 ${pb.totalCount} 条记录， 当前 ${pb.currentPage}/${pb.totalPage} 页
+                            <a href="${pageContext.request.contextPath}/productListServlet?currentPage=1&row=5">首页</a>
+                            <a href="${pageContext.request.contextPath}/productListServlet?currentPage=${pb.currentPage-1<1?1:pb.currentPage-1}&row=5">上一页</a>
+                            <a href="${pageContext.request.contextPath}/productListServlet?currentPage=${pb.currentPage+1>pb.totalPage?pb.totalPage:pb.currentPage+1}&row=5">下一页</a>
+                            <a href="${pageContext.request.contextPath}/productListServlet?currentPage=${pb.totalPage}&row=5">尾页</a>
+                        </div>
+                    </c:if>
                     
                 </div>
             </form>

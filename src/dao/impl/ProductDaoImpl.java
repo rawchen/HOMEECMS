@@ -1,6 +1,7 @@
 package dao.impl;
 
 import dao.ProductDao;
+import entity.PageBean;
 import entity.Product;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -113,4 +114,39 @@ public class ProductDaoImpl implements ProductDao {
             return null;
         }
     }
+
+    @Override
+    public List<Product> findByPage(int start, int rows) {
+        try {
+            String sql = "select * from tb_product order by product_time desc limit ? , ?";
+            return template.query(sql, new BeanPropertyRowMapper<Product>(Product.class),start,rows);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public int findTotalCount() {
+        try {
+            String sql = "select count(*) from tb_product";
+            return template.queryForObject(sql, Integer.class);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    @Override
+    public List<Product> findProductListByKey(String key) {
+        try {
+            String sql = "select * from tb_product where product_name like '%' ? '%'";
+            List<Product> p = template.query(sql,new BeanPropertyRowMapper<Product>(Product.class),key);
+            return p;
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

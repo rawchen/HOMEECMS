@@ -13,12 +13,17 @@ public class Order {
     private String is_ship;
     private String is_receipt;
     private int address_id;
+    private int product_id;
+    private int product_quantity;
+    private String product_name;
+    private String product_photo;
+    private int product_price;
 
     public Order(){
 
     }
 
-    public Order(String order_id, int user_id, int order_price, Date order_time, String is_pay, String is_ship, String is_receipt) {
+    public Order(String order_id, int user_id, int order_price, Date order_time, String is_pay, String is_ship, String is_receipt,int product_id,int product_quantity) {
         this.order_id = order_id;
         this.user_id = user_id;
         this.order_price = order_price;
@@ -26,6 +31,8 @@ public class Order {
         this.is_pay = is_pay;
         this.is_ship = is_ship;
         this.is_receipt = is_receipt;
+        this.product_id = product_id;
+        this.product_quantity = product_quantity;
     }
 
     public int getId() {
@@ -100,6 +107,47 @@ public class Order {
         this.address_id = address_id;
     }
 
+
+    public int getProduct_id() {
+        return product_id;
+    }
+
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
+    }
+
+    public int getProduct_quantity() {
+        return product_quantity;
+    }
+
+    public void setProduct_quantity(int product_quantity) {
+        this.product_quantity = product_quantity;
+    }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public String getProduct_photo() {
+        return product_photo;
+    }
+
+    public void setProduct_photo(String product_photo) {
+        this.product_photo = product_photo;
+    }
+
+    public int getProduct_price() {
+        return product_price;
+    }
+
+    public void setProduct_price(int product_price) {
+        this.product_price = product_price;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -112,6 +160,11 @@ public class Order {
                 ", is_ship='" + is_ship + '\'' +
                 ", is_receipt='" + is_receipt + '\'' +
                 ", address_id=" + address_id +
+                ", product_id=" + product_id +
+                ", product_quantity=" + product_quantity +
+                ", product_name='" + product_name + '\'' +
+                ", product_photo='" + product_photo + '\'' +
+                ", product_price=" + product_price +
                 '}';
     }
 }

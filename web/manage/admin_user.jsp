@@ -80,10 +80,10 @@
                                 </c:if>
 	                            <td>
 	                                <a class="link-update" href="manage/updateUserServlet?uid=${u.user_id}">修改</a>
-	                              
-	                              <c:if test="${u.user_status ==1 }">
-	                                <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name} }】吗？', '${pageContext.request.contextPath}/manage/admin_douserdel?id=${u.user_id}&cpage=${cpage }')">删除</a>
-	                              </c:if>
+
+                                    <c:if test="${u.user_name !='admin' }">
+                                        <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name}】吗？', '${pageContext.request.contextPath}/manage/delUserByIdServlet?id=${u.user_id}')">删除</a>
+                                    </c:if>
 	                            
 	                            </td>
 	                        </tr>
@@ -116,8 +116,8 @@
                                 <td>
                                     <a class="link-update" href="manage/updateUserServlet?uid=${u.user_id}">修改</a>
 
-                                    <c:if test="${u.user_status ==1 }">
-                                        <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name} }】吗？', '${pageContext.request.contextPath}/manage/admin_douserdel?id=${u.user_id}&cpage=${cpage }')">删除</a>
+                                    <c:if test="${u.user_name !='admin' }">
+                                        <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name}】吗？', '${pageContext.request.contextPath}/manage/delUserByIdServlet?id=${u.user_id}')">删除</a>
                                     </c:if>
 
                                 </td>

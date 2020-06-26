@@ -24,7 +24,8 @@ public class ToCartServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("name");
-
+//        String isLogin = (String)session.getAttribute("isLogin");
+//        if (user != null && "1".equals(isLogin)) {
         if (user != null) {
             CategoryService service1 = new CategoryServiceImpl();
             List<Category> flist = service1.findCategoryListByName("father");

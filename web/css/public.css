@@ -79,7 +79,7 @@ article, aside, figcaption, figure, footer, header, hgroup, nav, section, summar
 }
 
 div#top {
-    border-bottom: 1px solid #eaeaea;
+    /*border-bottom: 1px solid #eaeaea;*/
 }
 
 /*解决ie6的兼容性问题*/

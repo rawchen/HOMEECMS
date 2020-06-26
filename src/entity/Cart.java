@@ -5,8 +5,8 @@ public class Cart {
 	private int product_id;
 	private int user_id;
 	private String product_name;
-	private String product_price;
-	private String product_quantity;
+	private int product_price;
+	private int product_quantity;
 	private String product_style;
 	private String product_photo;
 
@@ -14,7 +14,7 @@ public class Cart {
 
 	}
 
-	public Cart(int product_id, int user_id, String product_name, String product_price, String product_quantity, String product_style, String product_photo) {
+	public Cart(int product_id, int user_id, String product_name, int product_price, int product_quantity, String product_style, String product_photo) {
 		this.product_id = product_id;
 		this.user_id = user_id;
 		this.product_name = product_name;
@@ -56,19 +56,19 @@ public class Cart {
 		this.product_name = product_name;
 	}
 
-	public String getProduct_price() {
+	public int getProduct_price() {
 		return product_price;
 	}
 
-	public void setProduct_price(String product_price) {
+	public void setProduct_price(int product_price) {
 		this.product_price = product_price;
 	}
 
-	public String getProduct_quantity() {
+	public int getProduct_quantity() {
 		return product_quantity;
 	}
 
-	public void setProduct_quantity(String product_quantity) {
+	public void setProduct_quantity(int product_quantity) {
 		this.product_quantity = product_quantity;
 	}
 

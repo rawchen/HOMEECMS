@@ -58,7 +58,7 @@
                     <dl>
                         <dt><span class="abl"></span><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}" style="width: 356px;"><span class="abr"></span></dt>
                         <dd>${p.product_name}</dd>
-                        <dd><span>￥${p.product_price}.00</span></dd>
+                        <dd><span>￥${p.product_price}.00</span><span style="color: #1A1A1A">${p.product_time}</span></dd>
                     </dl>
                 </a>
             </c:forEach>
@@ -76,7 +76,7 @@
                     <dl>
                         <dt><span class="abl"></span><img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}" style="width: 268px;"><span class="abr"></span></dt>
                         <dd>${p.product_name}</dd>
-                        <dd><span>￥${p.product_price}.00</span></dd>
+                        <dd><span>￥${p.product_price}.00</span>&emsp;<span style="color: #1A1A1A">SALE ${p.product_sales}</span></dd>
                     </dl>
                 </a>
             </c:forEach>

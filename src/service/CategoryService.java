@@ -15,4 +15,5 @@ public interface CategoryService {
 
     void addCategory(Category category);
 
+    void delCategoryById(int cid2);
 }
