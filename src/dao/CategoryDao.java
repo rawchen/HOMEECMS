@@ -17,4 +17,6 @@ public interface CategoryDao {
     void addCategory(Category category);
 
     void delCategoryById(int cid2);
+
+    void updateCategoryName(String categoryName, int categoryId);
 }

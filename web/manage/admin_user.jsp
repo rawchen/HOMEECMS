@@ -79,7 +79,7 @@
                                     <td>管理员</td>
                                 </c:if>
 	                            <td>
-	                                <a class="link-update" href="manage/updateUserServlet?uid=${u.user_id}">修改</a>
+	                                <a class="link-update" href="${pageContext.request.contextPath}/manage/toupdateUserListServlet?id=${u.user_id}">修改</a>
 
                                     <c:if test="${u.user_name !='admin' }">
                                         <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name}】吗？', '${pageContext.request.contextPath}/manage/delUserByIdServlet?id=${u.user_id}')">删除</a>
@@ -114,7 +114,7 @@
                                     <td>管理员</td>
                                 </c:if>
                                 <td>
-                                    <a class="link-update" href="manage/updateUserServlet?uid=${u.user_id}">修改</a>
+                                    <a class="link-update" href="${pageContext.request.contextPath}/manage/toupdateUserListServlet?id=${u.user_id}">修改</a>
 
                                     <c:if test="${u.user_name !='admin' }">
                                         <a class="link-del" href="javascript:Delete('你确定要删除用户【${u.user_name}】吗？', '${pageContext.request.contextPath}/manage/delUserByIdServlet?id=${u.user_id}')">删除</a>

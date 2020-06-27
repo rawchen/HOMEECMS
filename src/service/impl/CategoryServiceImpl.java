@@ -39,4 +39,9 @@ public class CategoryServiceImpl implements CategoryService {
     public void delCategoryById(int cid2) {
         dao.delCategoryById(cid2);
     }
+
+    @Override
+    public void updateCategoryName(String categoryName, int categoryId) {
+        dao.updateCategoryName(categoryName,categoryId);
+    }
 }

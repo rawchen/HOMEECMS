@@ -34,7 +34,7 @@
 		                        <tr>
 		                        	<td>${cate.category_id }</td>
 		                        	<td>|-${cate.category_name }</td>
-		                        	<td><a href="admin_tocateupdate?id=${cate.category_id }">修改</a> <a href="javascript:catedel(${cate.category_id })">删除</a></td>
+		                        	<td><a href="${pageContext.request.contextPath}/manage/toUpdateCategoryServlet?cid=${cate.category_id }">修改</a> <a href="javascript:catedel(${cate.category_id })">删除</a></td>
 
 		                        </tr>
 		                      	 <c:forEach var="zcate" items="${catelist}">
@@ -42,7 +42,7 @@
 				                      	 <tr>
 				                        	<td>${zcate.category_id }</td>
 				                        	<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;｜-${zcate.category_name }</td>
-				                        	<td><a href="admin_tocateupdate?id=${zcate.category_id }">修改</a> <a href="javascript:catedel(${zcate.category_id })">删除</a></td>
+				                        	<td><a href="${pageContext.request.contextPath}/manage/toUpdateCategoryServlet?cid=${zcate.category_id }">修改</a> <a href="javascript:catedel(${zcate.category_id })">删除</a></td>
 
 				                        </tr>
 				                      </c:if>

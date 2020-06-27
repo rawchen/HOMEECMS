@@ -149,4 +149,14 @@ public class UserDaoImpl implements UserDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void updateUserById(User u) {
+        try {
+            String sql = "update tb_user set user_name =?,user_nickname=?,user_password=?,user_sex=?,user_vip=?,user_viptime=?,user_photo=? where user_id=?";
+            template.update(sql,u.getUser_name(),u.getUser_nickname(),u.getUser_password(),u.getUser_sex(),u.getUser_vip(),u.getUser_viptime(),u.getUser_photo(),u.getUser_id());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -28,4 +28,6 @@ public interface UserDao {
     void updatePhotoById(int userId, String fileName);
 
     void updateInfoById(int userId, String sex, String nickname);
+
+    void updateUserById(User u);
 }

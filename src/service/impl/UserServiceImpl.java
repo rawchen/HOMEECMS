@@ -88,4 +88,9 @@ public class UserServiceImpl implements UserService {
     public void updateInfoById(int userId, String sex, String nickname) {
         dao.updateInfoById(userId, sex, nickname);
     }
+
+    @Override
+    public void updateUserById(User u) {
+        dao.updateUserById(u);
+    }
 }

@@ -81,4 +81,14 @@ public class CategoryDaoImpl implements CategoryDao {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public void updateCategoryName(String categoryName, int categoryId) {
+        try {
+            String sql = "update tb_category set category_name = ? where category_id = ?";
+            template.update(sql,categoryName,categoryId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

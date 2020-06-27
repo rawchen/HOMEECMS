@@ -10,33 +10,27 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form action="${pageContext.request.contextPath}/manage/admin_docateupdate" method="post" id="myform" name="myform">
+                <form action="${pageContext.request.contextPath}/manage/updateCategoryServlet" method="post" id="myform" name="myform">
                 	<input type="hidden" name="id" value="${cate1.CATE_ID }">
                     <table class="insert-tab" width="100%">
                         <tbody>
                             <tr>
-                                <th><i class="require-red">*</i>父级分类：</th>
+                                <th><i class="require-red">*</i>分类id：</th>
                                 <td>
-                                    <select class="common-text required"  name="parentId">
-                                    	<option value="0">根分类</option>
-                                    	<c:forEach var="cate" items="${catelist }">
-                                    		<c:if test="${cate.CATE_PARENT_ID == 0 }">
-                                    			<c:if test="${cate1.CATE_PARENT_ID == cate.CATE_ID}">
-                                    				<option value="${cate.CATE_ID }" selected="selected"> ${cate.CATE_NAME } </option>
-                                    			</c:if>
-                                    			<c:if test="${cate1.CATE_PARENT_ID != cate.CATE_ID}">
-                                    				<option value="${cate.CATE_ID }"> ${cate.CATE_NAME } </option>
-                                    			</c:if>
-                                    		</c:if>
-                                    	</c:forEach>
-                                    </select>
+                                    <input class="common-text required" id="title" readonly name="categoryId" size="50" value="${c.category_id}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>分类名：</th>
+                                <td>
+                                    <input class="common-text required" id="title" readonly name="catename" size="50" value="${c.category_name}" type="text">
                                 </td>
                             </tr>
                             
                              <tr>
-                                <th><i class="require-red">*</i>分类名称：</th>
+                                <th><i class="require-red">*</i>更改后名称：</th>
                                 <td>
-                                    <input class="common-text required" id="title" name="className" size="50" value="${cate1.CATE_NAME }" type="text">
+                                    <input class="common-text required" id="title" name="categoryName" size="50" value="" type="text">
                                 </td>
                             </tr>
                             
