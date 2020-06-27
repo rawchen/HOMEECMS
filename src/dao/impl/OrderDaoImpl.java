@@ -124,4 +124,34 @@ public class OrderDaoImpl implements OrderDao {
         }
     }
 
+    @Override
+    public void updateOrderIsShip(String oid) {
+        try {
+            String sql = "update tb_order set is_ship = '1' where order_id = ?";
+            template.update(sql,oid);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void updateOrderIsReceipt(String oid) {
+        try {
+            String sql = "update tb_order set is_receipt = '1' where order_id = ?";
+            template.update(sql,oid);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void delOrderById(String oid) {
+        try {
+            String sql = "delete from tb_order where order_id = ?";
+            template.update(sql,oid);
+        } catch (DataAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -78,4 +78,19 @@ public class OrderServiceImpl implements OrderService {
     public List<Order> findOrderByUserIdAndIsReceipt(int user_id) {
         return dao.findOrderByUserIdAndIsReceipt(user_id);
     }
+
+    @Override
+    public void updateOrderIsShip(String oid) {
+        dao.updateOrderIsShip(oid);
+    }
+
+    @Override
+    public void updateOrderIsReceipt(String oid) {
+        dao.updateOrderIsReceipt(oid);
+    }
+
+    @Override
+    public void delOrderById(String oid) {
+        dao.delOrderById(oid);
+    }
 }

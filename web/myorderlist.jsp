@@ -109,23 +109,27 @@
                         <p class="fl"><a href="#">${o.product_name}</a><a href="#">¥${o.product_price}.00×${o.product_quantity}</a></p>
                         <p class="fr">
                             <c:if test="${'0'==o.is_pay && '0'==o.is_ship && '0'==o.is_receipt}">
-                                <a href="">取消订单</a>
+                                <a href="delOrderServlet?oid=${o.order_id}">取消订单</a>
                             </c:if>
 
-                            <a href="myprod.html">
+
 
                             <c:if test="${'0'==o.is_pay && '0'==o.is_ship && '0'==o.is_receipt}">
+                            <a href="toOrderServlet?pid=${o.product_id}&count=${o.product_quantity}&oid=${o.order_id}">
                                 支付
 
                             </c:if>
                             <c:if test="${'1'==o.is_pay && '0'==o.is_ship && '0'==o.is_receipt}">
+                                <a href="#">
                                 催一催
                             </c:if>
 
                             <c:if test="${'1'==o.is_pay && '1'==o.is_ship && '0'==o.is_receipt}">
+                                    <a href="toEnOrderIsReceiptServlet?oid=${o.order_id}">
                                 确认收货
                             </c:if>
                             <c:if test="${'1'==o.is_pay && '1'==o.is_ship && '1'==o.is_receipt}">
+                                        <a href="toMyCommentListServlet">
                                 给星星
                             </c:if>
 

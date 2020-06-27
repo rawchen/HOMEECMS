@@ -6,7 +6,7 @@
     <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="#">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="#">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">订单管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
@@ -20,7 +20,7 @@
                                     <option value="19">精品界面</option><option value="20">推荐界面</option>
                                 </select>
                             </td-->
-                            <th width="70">关键字:</th>
+                            <th width="70">订单号:</th>
                             <td><input class="common-text" placeholder="关键字" required name="keywords" value="${param.keywords}" id="" type="text"></td>
                             <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
                         </tr>
@@ -75,7 +75,7 @@
 
                                     </c:if>
                                     <c:if test="${'1'==o.is_pay && '0'==o.is_ship && '0'==o.is_receipt}">
-                                        <a class="link-update" href="manage/updateOrderIsShipServlet?oid=${o.order_id}">点击发货</a>
+                                        <a class="link-update" href="javascript:Delete('你确定订单号为${o.order_id}的货物发货吗？','manage/updateOrderIsShipServlet?oid=${o.order_id}')">点击发货</a>
                                     </c:if>
 
                                     <c:if test="${'1'==o.is_pay && '1'==o.is_ship && '0'==o.is_receipt}">

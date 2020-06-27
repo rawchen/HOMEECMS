@@ -31,7 +31,7 @@
             </div>
             <div class="fr intro">
                 <div class="title"><h4>${p.product_name}</h4>
-                    <p>【${p.product_name}${p.product_name}】&emsp;&emsp;&emsp;<span style="font-size: 14px;color: #000000">销量 :</span> <span style="font-size: 16px;">123</span></p><span>￥${p.product_price}.00</span></div>
+                    <p>【${p.product_name}${p.product_name}】&emsp;&emsp;&emsp;<span style="font-size: 14px;color: #000000">销量 :</span> <span style="font-size: 16px;">${p.product_sales}</span></p><span>￥${p.product_price}.00</span></div>
                 <div class="proIntro">
                     <p>颜色分类</p>
                     <div class="smallImg clearfix categ">

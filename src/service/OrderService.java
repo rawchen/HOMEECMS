@@ -23,4 +23,10 @@ public interface OrderService {
     List<Order> findOrderListByKey(String keywords);
 
     List<Order> findOrderByUserIdAndIsReceipt(int user_id);
+
+    void updateOrderIsShip(String oid);
+
+    void updateOrderIsReceipt(String oid);
+
+    void delOrderById(String oid);
 }

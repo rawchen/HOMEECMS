@@ -20,7 +20,7 @@
                                     <option value="19">精品界面</option><option value="20">推荐界面</option>
                                 </select>
                             </td-->
-                            <th width="70">关键字:</th>
+                            <th width="130px">用户名/昵称:</th>
                             <td><input class="common-text" placeholder="关键字" required name="keywords" value="${param.keywords}" id="" type="text"></td>
                             <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
                         </tr>
