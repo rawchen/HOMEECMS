@@ -39,20 +39,6 @@
     <div class="wrapper">
         <h2><img src="img/ih2.jpg"/></h2>
         <div class="flower clearfix tran">
-
-<%--            <c:forEach var="p" items="${newProductList}">--%>
-<%--                <a href="toProductViewServlet?id=${p.product_id}" class="clearfix" style="float: left;" >--%>
-<%--                    <div>--%>
-<%--                        <span class="abl"></span>--%>
-<%--                        <img src="${pageContext.request.contextPath}/upload/product/${p.product_photo}" style="width: 228px;">--%>
-<%--                        <span class="abr"></span>--%>
-<%--                        <br>${p.product_name}--%>
-<%--                        <br><span>￥${p.product_price}.00</span>--%>
-<%--                    </div>--%>
-<%--                </a>--%>
-<%--            </c:forEach>--%>
-
-
             <c:forEach var="p" items="${newProductList}">
                 <a href="toProductViewServlet?id=${p.product_id}" class="clearfix">
                     <dl>
@@ -62,8 +48,6 @@
                     </dl>
                 </a>
             </c:forEach>
-
-
         </div>
     </div>
 </div><!------------------------------ad------------------------------><a href="#" class="ad"><img
