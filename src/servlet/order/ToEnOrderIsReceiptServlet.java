@@ -31,7 +31,6 @@ public class ToEnOrderIsReceiptServlet extends HttpServlet {
             response.sendRedirect("login.jsp");
         }
 
-
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
