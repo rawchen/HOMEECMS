@@ -104,9 +104,7 @@
 				}
 				
 			});
-			
 			location.href="orderselect?eids="+str;
-		
 	}
 </script>
 <div class="mask"></div>
