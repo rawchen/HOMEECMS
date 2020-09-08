@@ -3,8 +3,11 @@
 
 ## 环境技术
 Jsp+Servlet+Druid+JDBC-Template+JQuery+Js +EL/JSTL+BeanUtils
+
 服务器：Tomcat_8.5
+
 数据库：MySQL_5.6.46
+
 开发工具：IDEA_2019.1.3
 
 ## 项目Demo前端界面
@@ -21,6 +24,7 @@ Jsp+Servlet+Druid+JDBC-Template+JQuery+Js +EL/JSTL+BeanUtils
 4. 为项目添加Tomcat配置，Deployment下Application context设置为：/HOMEECMS
 
 管理员 帐号：admin 密码：admin
+
 用户 帐号：yoyling 密码：yoyling
 
 ## 功能模块图
