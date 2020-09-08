@@ -1,4 +1,4 @@
-# HOMEECMS
+# 家居电子商城HOMEECMS
 大二下的JavaWeb小学期课程写的一个家居电子商城管理系统，没有spring框架，纯servlet，线上家居电子商城系统，主要实现了用户注册，登录、浏览，查看家居商品信息，购物车，订单，支付，查看通知以及管理员对用户信息的管理，订单管理，商品管理，通知管理，分类等的管理。
 
 ## 环境技术
@@ -10,6 +10,8 @@ Jsp+Servlet+Druid+JDBC-Template+JQuery+Js +EL/JSTL+BeanUtils
 ## 项目Demo前端界面
 
 > http://web2.yoyling.com
+>
+> 后端地址：/manage/admin_index.jsp
 
 ## 项目使用说明
 
