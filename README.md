@@ -14,7 +14,7 @@ Jsp+Servlet+Druid+JDBC-Template+JQuery+Js +EL/JSTL+BeanUtils
 
 > http://web2.yoyling.com
 >
-> 后端地址：/manage/admin_index.jsp
+> 后端地址：http://web2.yoyling.com/admin_index.jsp
 
 ## 项目使用说明
 
