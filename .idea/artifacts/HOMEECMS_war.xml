@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HOMEECMS:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/HOMEECMS_war</output-path>
+    <root id="archive" name="HOMEECMS_war.war">
+      <element id="artifact" artifact-name="HOMEECMS:war exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
