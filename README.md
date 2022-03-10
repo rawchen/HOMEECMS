@@ -10,11 +10,11 @@ Jsp+Servlet+Druid+JDBC-Template+JQuery+Js +EL/JSTL+BeanUtils
 
 开发工具：IDEA_2019.1.3
 
-## 项目Demo前端界面
+## 项目演示
 
-> http://web2.yoyling.com
+> https://ecms.rawchen.com
 >
-> 后端地址：http://web2.yoyling.com/admin_index.jsp
+> 后端管理：https://ecms.rawchen.com/admin_index.jsp
 
 ## 项目使用说明
 
